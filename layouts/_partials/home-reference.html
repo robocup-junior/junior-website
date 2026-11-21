@@ -1,12 +1,13 @@
+{{ $home := .Params.home }}
 
 		<section class="lp-slider">
 
 	<div class="lp-staticslider">
-					<img class="lp-staticslider-image" alt="RoboCupJunior" src="/wp-content/uploads/2025/08/WhatsApp-Image-2025-07-28-at-11.15.08_3ae6818e-2048x1152-1.jpg">
+					<img class="lp-staticslider-image" alt="{{ $home.slider.image_alt }}" src="{{ $home.slider.image }}">
 				<div class="staticslider-caption">
 			<div class="staticslider-caption-inside">
-				 <h2 class="staticslider-caption-title"><span>RoboCupJunior</span></h2>				<span class="staticslider-sep"></span>				 <div class="staticslider-caption-text"><span>Creating a learning environment for today, fostering technological advancement for tomorrow</span></div>				<div class="staticslider-caption-buttons">
-					<a class="staticslider-button" href="/about/">What is RoboCupJunior</a>					<a class="staticslider-button" href="/gettingstarted/">Getting Started</a>				</div>
+				 <h2 class="staticslider-caption-title"><span>{{ $home.slider.title }}</span></h2>				<span class="staticslider-sep"></span>				 <div class="staticslider-caption-text"><span>{{ $home.slider.tagline }}</span></div>				<div class="staticslider-caption-buttons">
+					{{ range $i, $button := $home.slider.buttons }}{{ if $i }} {{ end }}<a class="staticslider-button" href="{{ $button.url }}">{{ $button.label }}</a>{{ end }}				</div>
 			</div>
 		</div>
 	</div><!-- .lp-staticslider -->
@@ -19,224 +20,7 @@
 
 
 
-<section class="rcjhp-feature" aria-label="About RoboCupJunior">
-<style>
-.rcjhp-feature{--rcj-blue:#001242;--rcj-blue-soft:#f3f7f5;--rcj-primary-accent:#d40560;--rcj-secondary-accent:#6678b7;--rcj-text:#001242;--rcj-muted:#4f5968;--rcj-border:#d9e1e7;--rcj-white:#ffffff;width:100%;max-width:100%;display:block;clear:both;font-family:inherit;overflow:hidden}
-.rcjhp-feature,.rcjhp-feature *{box-sizing:border-box}
-.rcjhp-inner{width:100%;max-width:1320px;margin:0 auto}
-.rcjhp-feature a:focus-visible{outline:3px solid var(--rcj-primary-accent);outline-offset:3px}
-
-/* Hero */
-.rcjhp-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
-.rcjhp-hero-text{min-width:0}
-.rcjhp-hero-text h2{color:var(--rcj-white);font-size:clamp(2.8rem,4vw,4rem);line-height:1;margin:0 0 26px;font-weight:900;letter-spacing:-0.04em}
-.rcjhp-hero-text h2 span{display:block;color:var(--rcj-primary-accent);font-size:clamp(3rem,4.2vw,4.2rem)}
-.rcjhp-hero-text p{font-size:1.12rem;line-height:1.65;margin:0 0 22px;color:rgba(255,255,255,0.9);max-width:660px}
-.rcjhp-hero-image{position:relative;min-width:0;min-height:500px;border-radius:26px;overflow:hidden;background:#111827;box-shadow:0 24px 70px rgba(0,0,0,0.35)}
-.rcjhp-hero-image img{width:100%;height:100%;min-height:500px;object-fit:cover;display:block;opacity:0.82}
-.rcjhp-hero-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:36px;background:linear-gradient(180deg,rgba(0,18,66,0.08) 0%,rgba(0,18,66,0.28) 38%,rgba(0,18,66,0.88) 100%)}
-.rcjhp-hero-overlay p{font-family:Poppins,"Source Sans Pro",sans-serif;color:var(--rcj-white);font-size:clamp(2.4rem,4.2vw,4.6rem);line-height:0.95;margin:0;font-weight:950;letter-spacing:-0.045em;max-width:640px;text-shadow:0 8px 34px rgba(0,0,0,0.5)}
-
-/* Buttons */
-.rcjhp-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-.rcjhp-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 22px;border-radius:999px;font-weight:800;font-size:0.95rem;line-height:1.2;text-decoration:none;transition:transform 0.2s ease,opacity 0.2s ease}
-.rcjhp-button:hover{transform:translateY(-2px);opacity:0.92}
-.rcjhp-button-primary{background:var(--rcj-primary-accent);color:var(--rcj-white)}
-.rcjhp-button-secondary{background:rgba(255,255,255,0.12);color:var(--rcj-white);border:1px solid rgba(255,255,255,0.3)}
-.rcjhp-button-dark{background:var(--rcj-blue);color:var(--rcj-white)}
-.rcjhp-button-light{background:var(--rcj-blue-soft);color:var(--rcj-blue);border:1px solid var(--rcj-border)}
-
-/* Keep button text readable in every state (the theme recolours links on hover) */
-.rcjhp-feature a.rcjhp-button-primary:link,.rcjhp-feature a.rcjhp-button-primary:visited,.rcjhp-feature a.rcjhp-button-primary:hover,.rcjhp-feature a.rcjhp-button-primary:focus,.rcjhp-feature a.rcjhp-button-primary:active{color:var(--rcj-white) !important;text-decoration:none}
-.rcjhp-feature a.rcjhp-button-secondary:link,.rcjhp-feature a.rcjhp-button-secondary:visited,.rcjhp-feature a.rcjhp-button-secondary:hover,.rcjhp-feature a.rcjhp-button-secondary:focus,.rcjhp-feature a.rcjhp-button-secondary:active{color:var(--rcj-white) !important;text-decoration:none}
-.rcjhp-feature a.rcjhp-button-dark:link,.rcjhp-feature a.rcjhp-button-dark:visited,.rcjhp-feature a.rcjhp-button-dark:hover,.rcjhp-feature a.rcjhp-button-dark:focus,.rcjhp-feature a.rcjhp-button-dark:active{color:var(--rcj-white) !important;text-decoration:none}
-.rcjhp-feature a.rcjhp-button-light:link,.rcjhp-feature a.rcjhp-button-light:visited,.rcjhp-feature a.rcjhp-button-light:hover,.rcjhp-feature a.rcjhp-button-light:focus,.rcjhp-feature a.rcjhp-button-light:active{color:var(--rcj-blue) !important;text-decoration:none}
-
-/* Section headings on navy */
-.rcjhp-head{margin:72px 0 26px;max-width:900px}
-.rcjhp-head h2{color:var(--rcj-white);font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 14px;font-weight:900;letter-spacing:-0.035em}
-.rcjhp-head p{color:rgba(255,255,255,0.85);font-size:1.1rem;line-height:1.65;margin:0}
-
-/* League cards */
-.rcjhp-league-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.rcjhp-league-card{position:relative;display:block;min-height:260px;border-radius:18px;overflow:hidden;background:#111827;text-decoration:none;color:var(--rcj-white);box-shadow:0 12px 32px rgba(0,0,0,0.2)}
-.rcjhp-league-card img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block;opacity:0.65;transition:transform 0.25s ease,opacity 0.25s ease}
-.rcjhp-league-card:hover img{transform:scale(1.04);opacity:0.82}
-.rcjhp-league-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:70px 20px 20px;background:linear-gradient(180deg,rgba(0,18,66,0.06) 0%,rgba(0,18,66,0.32) 38%,rgba(0,18,66,0.92) 100%)}
-.rcjhp-league-overlay h3{color:var(--rcj-white);font-size:clamp(1.35rem,1.8vw,1.7rem);font-weight:900;line-height:1.05;margin:0 0 8px;text-shadow:0 2px 18px rgba(0,0,0,0.45)}
-.rcjhp-league-overlay p{color:rgba(255,255,255,0.92);font-size:0.88rem;line-height:1.35;margin:0;text-shadow:0 2px 14px rgba(0,0,0,0.35)}
-
-/* Translucent cards: why RCJ + journey steps */
-.rcjhp-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.rcjhp-card-grid.rcjhp-steps{grid-template-columns:repeat(4,minmax(0,1fr))}
-.rcjhp-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:24px;color:var(--rcj-white)}
-.rcjhp-card h3{color:var(--rcj-white);font-size:1.45rem;line-height:1.25;margin:0 0 10px;font-weight:850}
-.rcjhp-card p{color:rgba(255,255,255,0.82);margin:0;line-height:1.55;font-size:0.98rem}
-a.rcjhp-card{display:flex;flex-direction:column;gap:6px;text-decoration:none;transition:transform 0.2s ease,background 0.2s ease}
-a.rcjhp-card:hover{transform:translateY(-3px);background:rgba(255,255,255,0.16)}
-.rcjhp-step-num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--rcj-primary-accent);color:var(--rcj-white);font-weight:900}
-.rcjhp-card .rcjhp-more{margin-top:auto;padding-top:10px;color:var(--rcj-white);font-weight:800}
-
-/* Info cards (RCJ pathway + RoboCup objective) */
-.rcjhp-info-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;margin:72px 0 32px;align-items:stretch}
-.rcjhp-info-card{background:var(--rcj-white);color:var(--rcj-text);border-radius:24px;padding:34px;box-shadow:0 16px 44px rgba(0,0,0,0.18);border-top:8px solid var(--rcj-primary-accent);min-width:0}
-.rcjhp-info-card:nth-child(2){border-top-color:var(--rcj-secondary-accent)}
-.rcjhp-logo-box{background:var(--rcj-white);border:1px solid var(--rcj-border);border-radius:18px;padding:24px;margin:0 0 24px;min-height:150px;display:flex;align-items:center;justify-content:center}
-.rcjhp-logo-box img{max-width:100%;max-height:130px;width:auto;height:auto;object-fit:contain;display:block}
-.rcjhp-info-card h2{color:var(--rcj-blue);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.05;margin:0 0 18px;font-weight:900;letter-spacing:-0.035em}
-.rcjhp-info-card p{color:var(--rcj-muted);font-size:1.02rem;line-height:1.65;margin:0 0 14px}
-
-/* Closing */
-.rcjhp-closing{background:var(--rcj-white);color:var(--rcj-text);border-radius:24px;padding:34px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center}
-.rcjhp-closing h2{margin:0 0 10px;color:var(--rcj-blue);font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.08;font-weight:900;letter-spacing:-0.03em}
-.rcjhp-closing p{margin:0;color:var(--rcj-muted);font-size:1.02rem;line-height:1.6;max-width:760px}
-.rcjhp-closing .rcjhp-actions{margin-top:0}
-
-
-/* Bands: each part of the page is its own block */
-.rcjhp-band{padding:64px 20px}
-.rcjhp-band-navy{background:var(--rcj-blue);color:var(--rcj-white)}
-.rcjhp-band-light{background:var(--rcj-blue-soft);color:var(--rcj-text)}
-.rcjhp-band-grey{background:#eceff2;color:var(--rcj-text)}
-.rcjhp-band-white{background:var(--rcj-white);color:var(--rcj-text)}
-.rcjhp-band .rcjhp-head{margin-top:0}
-.rcjhp-band:not(.rcjhp-band-navy) .rcjhp-head h2{color:var(--rcj-blue)}
-.rcjhp-band:not(.rcjhp-band-navy) .rcjhp-head p{color:var(--rcj-muted)}
-.rcjhp-band:not(.rcjhp-band-navy) .rcjhp-card{background:var(--rcj-blue-soft);border:1px solid var(--rcj-border);border-top:6px solid var(--rcj-primary-accent)}
-.rcjhp-band:not(.rcjhp-band-navy) .rcjhp-card:nth-child(2){border-top-color:var(--rcj-secondary-accent)}
-.rcjhp-band:not(.rcjhp-band-navy) .rcjhp-card h3{color:var(--rcj-blue)}
-.rcjhp-band:not(.rcjhp-band-navy) .rcjhp-card p{color:var(--rcj-muted)}
-.rcjhp-band .rcjhp-info-grid{margin:0}
-.rcjhp-band-grey .rcjhp-info-card{box-shadow:0 10px 30px rgba(0,18,66,0.10)}
-
-/* Responsive */
-@media (max-width:1000px){
-.rcjhp-hero,.rcjhp-info-grid,.rcjhp-closing{grid-template-columns:1fr}
-.rcjhp-card-grid.rcjhp-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-.rcjhp-hero-image,.rcjhp-hero-image img{min-height:440px}
-}
-@media (max-width:760px){
-.rcjhp-band{padding:44px 16px}
-.rcjhp-card-grid,.rcjhp-card-grid.rcjhp-steps,.rcjhp-league-grid{grid-template-columns:1fr}
-.rcjhp-hero-text h2{font-size:clamp(2.2rem,10vw,3.2rem)}
-.rcjhp-hero-text h2 span{font-size:clamp(2.4rem,11vw,3.4rem)}
-.rcjhp-hero-image,.rcjhp-hero-image img{min-height:420px}
-.rcjhp-hero-overlay{padding:28px}
-.rcjhp-hero-overlay p{font-size:clamp(2.4rem,12vw,3.8rem)}
-.rcjhp-info-card,.rcjhp-closing{padding:26px}
-.rcjhp-head{margin-top:56px}
-.rcjhp-button{width:100%}
-}
-@media (prefers-reduced-motion:reduce){
-.rcjhp-feature *{transition:none !important}
-.rcjhp-button:hover,a.rcjhp-card:hover,.rcjhp-league-card:hover img{transform:none}
-}
-</style>
-
-<!-- 1. What is RoboCupJunior? -->
-<div class="rcjhp-band rcjhp-band-navy"><div class="rcjhp-inner">
-<div class="rcjhp-hero">
-<div class="rcjhp-hero-text">
-<h2>What is <span>RoboCupJunior?</span></h2>
-<p>RoboCupJunior is a global robotics challenge for school students up to age 19. Teams design, build and program fully autonomous robots, exploring robotics, coding, engineering, teamwork and innovation through hands-on competition.</p>
-<p>Students can compete with any robot, any software and any level of experience, from first-time builders to advanced teams preparing for international competition.</p>
-<div class="rcjhp-actions">
-<a class="rcjhp-button rcjhp-button-primary" href="/gettingstarted/">How to get started</a>
-<a class="rcjhp-button rcjhp-button-secondary" href="/events/">Find an event</a>
-</div>
-</div>
-<div class="rcjhp-hero-image">
-<img decoding="async" src="/wp-content/uploads/2026/06/Robocup-889.jpg" width="3265" height="4898" alt="Students and robots at a RoboCupJunior competition">
-<div class="rcjhp-hero-overlay"><p>Any robot.<br>Any software.<br>Any experience.</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="rcjhp-band rcjhp-band-light"><div class="rcjhp-inner">
-<!-- 2. Leagues -->
-<div class="rcjhp-head">
-<h2>Three leagues to choose from</h2>
-<p>Every league has entry-level divisions for teams taking part for the first time, and a pathway all the way to the RoboCup Major Leagues.</p>
-</div>
-<div class="rcjhp-league-grid">
-<a class="rcjhp-league-card" href="/soccer/">
-<img decoding="async" loading="lazy" src="/wp-content/uploads/2024/11/53863673616_19aea93f0d_z.jpg" width="427" height="640" alt="RoboCupJunior Soccer robots on a competition field">
-<div class="rcjhp-league-overlay"><h3>Soccer</h3><p>Small, autonomous robots play two-on-two games, finding the ball with infrared sensors or cameras and working together as a team.</p></div>
-</a>
-<a class="rcjhp-league-card" href="/rescue/">
-<img decoding="async" loading="lazy" src="/wp-content/uploads/2024/11/53866181552_25ddf9b673_z.jpg" width="427" height="640" alt="Students preparing a RoboCupJunior Rescue robot">
-<div class="rcjhp-league-overlay"><h3>Rescue</h3><p>Robots simulate disaster rescues, from line following to exploring a maze, finding and rescuing “victims” in increasingly realistic scenarios.</p></div>
-</a>
-<a class="rcjhp-league-card" href="/onstage/">
-<img decoding="async" loading="lazy" src="/wp-content/uploads/2024/11/53865281079_cf700ca12b.jpg" width="333" height="499" alt="Students presenting a RoboCupJunior OnStage performance">
-<div class="rcjhp-league-overlay"><h3>OnStage</h3><p>Robots perform creative routines with music, costumes and storytelling, showcasing programming, creativity and engineering.</p></div>
-</a>
-</div>
-</div></div>
-
-<div class="rcjhp-band rcjhp-band-white"><div class="rcjhp-inner">
-<!-- 3. Why RoboCupJunior -->
-<div class="rcjhp-head">
-<h2>Why RoboCupJunior?</h2>
-<p>Built so that any school, club or community group can take part, and keep growing year after year.</p>
-</div>
-<div class="rcjhp-card-grid">
-<div class="rcjhp-card"><h3>Any platform</h3><p>RoboCupJunior is not tied to one robot kit, brand or programming language. Students build, code and innovate with the tools that work for them.</p></div>
-<div class="rcjhp-card"><h3>Consistent global challenges</h3><p>Internationally recognised challenges support progression from local events through to regional, SuperRegional and international competition.</p></div>
-<div class="rcjhp-card"><h3>Skills for the future</h3><p>Students develop practical STEM skills alongside communication, collaboration, creativity, problem solving and leadership.</p></div>
-</div>
-</div></div>
-
-<div class="rcjhp-band rcjhp-band-navy"><div class="rcjhp-inner">
-<!-- 4. Start your journey -->
-<div class="rcjhp-head">
-<h2>Start your journey</h2>
-<p>Whether you are a student, parent, teacher or mentor, these guides take you from your first robot to your first competition and beyond.</p>
-</div>
-<div class="rcjhp-card-grid rcjhp-steps">
-<a class="rcjhp-card" href="/robocup-beginners-guide/"><span class="rcjhp-step-num" aria-hidden="true">1</span><h3>Starting a Team</h3><p>Form a team, choose a robot, keep costs down and find tutorials for your league.</p><span class="rcjhp-more" aria-hidden="true">Read more →</span></a>
-<a class="rcjhp-card" href="/qualification/"><span class="rcjhp-step-num" aria-hidden="true">2</span><h3>Qualification and Competitions</h3><p>How the season works, how regions qualify teams, and how to enter events outside your region.</p><span class="rcjhp-more" aria-hidden="true">Read more →</span></a>
-<a class="rcjhp-card" href="/your-first-competition/"><span class="rcjhp-step-num" aria-hidden="true">3</span><h3>Your First Competition</h3><p>What to expect at an event, what to pack, and how to handle things going wrong.</p><span class="rcjhp-more" aria-hidden="true">Read more →</span></a>
-<a class="rcjhp-card" href="/for-educators/"><span class="rcjhp-step-num" aria-hidden="true">4</span><h3>For Educators</h3><p>Why robotics works in schools, and how to start a program with your students.</p><span class="rcjhp-more" aria-hidden="true">Read more →</span></a>
-</div>
-</div></div>
-
-<div class="rcjhp-band rcjhp-band-grey"><div class="rcjhp-inner">
-<!-- 5. RoboCupJunior and RoboCup -->
-<div class="rcjhp-info-grid">
-<div class="rcjhp-info-card">
-<div class="rcjhp-logo-box"><img decoding="async" loading="lazy" src="/wp-content/uploads/2024/10/RCjr_high_L.jpg" width="1189" height="683" alt="RoboCupJunior logo"></div>
-<h2>A pathway for every student</h2>
-<p>For over 25 years, RoboCupJunior has guided students from their first steps in robotics to sophisticated projects at local, regional and international events.</p>
-<p>It is the educational pathway into RoboCup: many students go on to university RoboCup teams, research and engineering careers, and come back as mentors, judges and organizers.</p>
-</div>
-<div class="rcjhp-info-card">
-<div class="rcjhp-logo-box"><img decoding="async" loading="lazy" src="/wp-content/uploads/2025/01/robocup.jpg" width="750" height="330" alt="RoboCup logo"></div>
-<h2>The RoboCup Objective</h2>
-<p>RoboCup is an international initiative that has advanced robotics and AI since 1997. Its grand challenge: by 2050, a team of fully autonomous humanoid robots will beat the human World Cup champions.</p>
-<div class="rcjhp-actions">
-<a class="rcjhp-button rcjhp-button-dark" href="https://www.robocup.org/">Learn more about the RoboCup Federation</a>
-<a class="rcjhp-button rcjhp-button-light" href="https://www.robocup.org/objective">Read the RoboCup Objective</a>
-</div>
-</div>
-</div>
-</div></div>
-
-<div class="rcjhp-band rcjhp-band-navy"><div class="rcjhp-inner">
-<!-- 6. Closing -->
-<div class="rcjhp-closing">
-<div>
-<h2>Building future engineers, researchers, innovators and leaders.</h2>
-<p>From beginner-friendly competitions to research-inspired challenges, RoboCupJunior gives students a pathway to grow their skills, represent their region and join a worldwide robotics community.</p>
-</div>
-<div class="rcjhp-actions">
-<a class="rcjhp-button rcjhp-button-primary" href="/robocup-beginners-guide/">Start a team</a>
-<a class="rcjhp-button rcjhp-button-light" href="/gettingstarted/">Find your region</a>
-</div>
-</div>
-</div></div>
-
-</section>
+{{ partial "home-feature.html" (dict "home" $home) }}
 
 
 
@@ -244,7 +28,7 @@ a.rcjhp-card:hover{transform:translateY(-3px);background:rgba(255,255,255,0.16)}
 
 
 
-<h2 class="wp-block-heading">RoboCupJunior News</h2>
+<h2 class="wp-block-heading">{{ $home.news_heading }}</h2>
 </div>	</div>
 
 	</section><!-- #lp-text-one -->

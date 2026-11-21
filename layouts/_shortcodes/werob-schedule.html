@@ -1,0 +1,14 @@
+{{- $page := .Page -}}
+{{- if eq (.Get "striped") "true" }}<figure class="wp-block-table is-style-stripes has-normal-font-size">{{ end -}}
+<table{{ if ne (.Get "striped") "true" }} class="wp-block-table"{{ end }}><tbody>
+{{- range split (strings.TrimSpace .Inner) "\n" -}}
+  {{- if . -}}<tr>
+    {{- range split . " | " -}}
+      {{- $cell := . -}}{{- $span := hasPrefix $cell "{colspan=3}" -}}
+      {{- if $span }}{{ $cell = strings.TrimPrefix "{colspan=3}" $cell }}{{ end -}}
+      {{- if eq $cell "{empty}" }}{{ $cell = "" }}{{ end -}}
+      <td{{ if $span }} colspan="3"{{ end }}>{{ $page.RenderString $cell }}</td>
+    {{- end -}}
+  </tr>{{- end -}}
+{{- end -}}
+</tbody></table>{{ if eq (.Get "striped") "true" }}</figure>{{ end }}

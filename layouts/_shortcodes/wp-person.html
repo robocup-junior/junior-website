@@ -1,0 +1,5 @@
+{{- $image := .Get "image" -}}
+{{- $info := index hugo.Data.wp_images $image | default dict -}}
+{{- $profile := .Get "profile-url" -}}
+{{- $style := $info.style | default "object-fit:cover;width:250px;height:250px" -}}
+<figure class="{{ .Get "figure-class" }}">{{ with .Get "image-url" }}<a href="{{ . }}">{{ end }}<img loading="lazy" decoding="async"{{ with $info.width }} width="{{ . }}"{{ end }}{{ with $info.height }} height="{{ . }}"{{ end }} src="{{ $image }}" alt=""{{ with $info.class }} class="{{ . }}"{{ end }} style="{{ $style | safeCSS }}"{{ with $info.srcset }} srcset="{{ . }}"{{ end }}{{ with $info.sizes }} sizes="{{ . }}"{{ end }}>{{ with .Get "image-url" }}</a>{{ end }}<figcaption class="wp-element-caption">{{ with $profile }}<a href="{{ . }}"{{ if eq ($.Get "link-data") "true" }} data-type="link" data-id="{{ . }}"{{ end }} target="_blank" rel="noreferrer noopener">{{ end }}{{ .Get "name" }}{{ with $profile }}</a>{{ end }}{{ with .Get "term" }}<br>{{ . }}{{ end }}</figcaption></figure>

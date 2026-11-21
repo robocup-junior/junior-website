@@ -1,0 +1,53 @@
+{{- /* Read RoboCup's event listings directly, without depending on WordPress. */ -}}
+{{- $events := slice -}}
+{{- $valid := false -}}
+{{- with try (resources.GetRemote .url (dict "timeout" "3s")) -}}
+  {{- with .Value -}}
+    {{- $blocks := findRE `(?s)<h4>\s*<a href="/events/[0-9]+">.*?</a>\s*</h4>.*?<a href="/events/[0-9]+">Read More</a>` .Content -}}
+    {{- /* A recognizable empty listing is different from a failed fetch. */ -}}
+    {{- if and (eq (len $blocks) 0) (in .Content `<div class="gdlr-blog-content">`) (not (findRE `<h4>\s*<a href="/events/` .Content)) -}}
+      {{- $valid = true -}}
+    {{- end -}}
+    {{- if gt (len $blocks) 0 -}}
+      {{- $valid = true -}}
+      {{- range first $.limit $blocks -}}
+        {{- $head := index (findRE `(?s)<h4>.*?</h4>` . 1) 0 -}}
+        {{- $path := replaceRE `(?s).*?href="([^"]+)".*` `$1` $head -}}
+        {{- $title := replaceRE `(?s).*?<a[^>]*>(.*?)</a>.*` `$1` $head | htmlUnescape | plainify -}}
+        {{- $dates := findRE `<strong>[^<]+</strong>` . 2 -}}
+        {{- $start := "" -}}{{- $end := "" -}}
+        {{- if ge (len $dates) 1 -}}
+          {{- $date := index $dates 0 | plainify | htmlUnescape | strings.TrimSpace -}}
+          {{- $date = replaceRE `^([0-9]) ` `0${1} ` $date -}}
+          {{- with try (time.AsTime $date) -}}{{- with .Value -}}{{- $start = .Format "2006-01-02" -}}{{- end -}}{{- end -}}
+        {{- end -}}
+        {{- if ge (len $dates) 2 -}}
+          {{- $date := index $dates 1 | plainify | htmlUnescape | strings.TrimSpace -}}
+          {{- $date = replaceRE `^([0-9]) ` `0${1} ` $date -}}
+          {{- with try (time.AsTime $date) -}}{{- with .Value -}}{{- $end = .Format "2006-01-02" -}}{{- end -}}{{- end -}}
+        {{- end -}}
+        {{- if and $title $start -}}
+          {{- $description := "" -}}
+          {{- with findRE `(?s)<div class="blog-info blog-date">.*?<div class="clear"></div>` . 1 -}}
+            {{- $description = index . 0 -}}
+            {{- $description = replaceRE `(?s)^.*?<div class="gdlr-space" style="margin-top: 30px;"></div>.*?<div class="gdlr-space" style="margin-top: 30px;"></div>` "" $description -}}
+            {{- $description = replaceRE `(?s)<div class="clear"></div>$` "" $description -}}
+            {{- $description = replaceRE `</?(?:div|p|br)[^>]*>` " " $description -}}
+            {{- $description = $description | plainify | htmlUnescape | strings.TrimSpace -}}
+            {{- $description = replaceRE `\s+` " " $description -}}
+          {{- end -}}
+          {{- $image := "" -}}
+          {{- with findRE `<img[^>]+src="[^"]+"[^>]*>` . 1 -}}
+            {{- $image = replaceRE `(?s).*?src="([^"]+)".*` `$1` (index . 0) | htmlUnescape -}}
+            {{- if hasPrefix $image "/" -}}{{- $image = printf "https://www.robocup.org%s" $image -}}{{- end -}}
+            {{- if not (hasPrefix $image "https://www.robocup.org/") -}}{{- $image = "" -}}{{- end -}}
+          {{- end -}}
+          {{- $events = $events | append (dict "title" $title "url" (printf "https://www.robocup.org%s" $path) "start" $start "end" $end "image" $image "excerpt" $description) -}}
+        {{- else -}}
+          {{- $valid = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "valid" $valid "events" $events) -}}

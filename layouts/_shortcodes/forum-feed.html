@@ -42,5 +42,5 @@
   {{- end -}}
   </ul></div></div>
 {{- else -}}
-  {{ .Inner | safeHTML }}
+  {{ index site.Data.forum_fallbacks $key | safeHTML }}
 {{- end -}}

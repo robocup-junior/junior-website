@@ -1,0 +1,67 @@
+<div class="rcjed" id="educator-resources">
+<style>
+.rcjed{margin:1em 0 2em}
+.rcjed h3{margin:1.4em 0 .5em}
+.rcjed-list{list-style:none !important;margin:0 !important;padding:0 !important}
+.rcjed-list li{margin:0 0 .6em !important;padding:0 0 .6em;border-bottom:1px solid #dcdfe3;line-height:1.45}
+.rcjed-src{display:block;font-size:.85em;color:#555}
+.rcjed-more{margin:.6em 0 0;font-weight:700}
+.rcjed a:focus-visible{outline:3px solid #d40560;outline-offset:2px}
+</style>
+<div class="rcjed-body">
+<h3>Teaching and curriculum</h3>
+<ul class="rcjed-list">
+<li><a href="https://wiki.robotika.sk/robowiki/images/7/74/Edurob_open_roberta_lab_tutorial_series.pdf">EduRob Open Roberta Lab Tutorial Series</a> <span class="rcjed-src">EduRob24 Summer School, TU Graz</span></li>
+<li><a href="https://www.robocupjunior.org.au/wp-content/uploads/2021/05/ACARA01.pdf">How RoboCupJunior Addresses the Australian Curriculum: Technologies</a> <span class="rcjed-src">RoboCupJunior Australia</span></li>
+<li><a href="https://www.robocupjunior.org.au/wp-content/uploads/2021/05/ACARA02.pdf">RoboCupJunior Mapped to the Design and Technologies Scope and Sequence</a> <span class="rcjed-src">RoboCupJunior Australia</span></li>
+<li><a href="https://www.robocupjunior.org.au/wp-content/uploads/2021/05/ACARA03.pdf">RoboCupJunior Mapped to the Digital Technologies Scope and Sequence</a> <span class="rcjed-src">RoboCupJunior Australia</span></li>
+<li><a href="https://www.robocupjunior.org.au/wp-content/uploads/2021/05/ACARA08.pdf">RoboCupJunior Project Sections Mapped to Curriculum Content Descriptors</a> <span class="rcjed-src">RoboCupJunior Australia</span></li>
+<li><a href="https://www.robocupjunior.org.au/wp-content/uploads/2021/05/ACARA05.pdf">Robotics Project Lifecycle Template</a> <span class="rcjed-src">RoboCupJunior Australia</span></li>
+<li><a href="https://www.robocupjunior.org.au/wp-content/uploads/2021/05/ACARA10.pdf">Robotics Teaching and Learning Program Example</a> <span class="rcjed-src">RoboCupJunior Australia</span></li>
+</ul>
+<h3>Research on RoboCupJunior</h3>
+<ul class="rcjed-list">
+<li><a href="https://www.frontiersin.org/articles/10.3389/frobt.2024.1394849/full">Editorial: Educational Robotics and Competitions</a> <span class="rcjed-src">Frontiers in Robotics and AI, 2024</span></li>
+<li><a href="https://www.frontiersin.org/articles/10.3389/frobt.2022.915322/full">Moving Robotics Competitions Virtual: The Case Study of RoboCupJunior Soccer Simulation (SoccerSim)</a> <span class="rcjed-src">Frontiers in Robotics and AI, 2022</span></li>
+<li><a href="https://link.springer.com/article/10.1007/s10846-021-01364-8">sBotics: Gamified Framework for Educational Robotics</a> <span class="rcjed-src">Journal of Intelligent and Robotic Systems, 2021</span></li>
+<li><a href="https://arxiv.org/abs/1901.03229">RoboCup Junior in the Hunter Region: Driving the Future of Robotic STEM Education</a> <span class="rcjed-src">RoboCup 2018 Symposium, 2019</span></li>
+<li><a href="https://infoscience.epfl.ch/entities/publication/e8c982ae-10a8-493e-9131-e65681885943">Robotic Rescue Simulation for Computing Teaching in the UK: A Case Study</a> <span class="rcjed-src">IEEE EDUCON 2016, 2016</span></li>
+<li><a href="https://journals.sagepub.com/doi/10.1177/1729881416662789">Why It Is Harder to Run RoboCup in South Africa</a> <span class="rcjed-src">International Journal of Advanced Robotic Systems, 2016</span></li>
+<li><a href="https://peer.asee.org/20743.pdf">Learning Experience Through RoboCupJunior: Promoting Engineering and Computational Thinking Skills through Robotics Competition</a> <span class="rcjed-src">ASEE Annual Conference 2014, 2014</span></li>
+<li><a href="https://link.springer.com/content/pdf/10.1007/978-3-642-32060-6_6.pdf">RoboCupJunior: A Decade Later</a> <span class="rcjed-src">RoboCup 2011 Symposium, 2012</span></li>
+</ul>
+</div>
+<p class="rcjed-more"><a href="/resources/#rf-educators">Browse all resources for educators →</a></p>
+<script>
+(function(){
+var root=document.getElementById('educator-resources'); if(!root||!window.fetch) return;
+var GROUPS=[
+  ['teaching','Teaching and curriculum',99,'#rf-educators-teaching'],
+  ['research','Research on RoboCupJunior',99,'#rf-educators-research'],
+  ['werob','Talks from WEROB',8,'#rf-educators-werob'],
+  ['other','Getting started, tools and community',10,'#rf-educators']
+];
+function el(tag,cls,text){var e=document.createElement(tag); if(cls) e.className=cls; if(text) e.textContent=text; return e;}
+fetch('https://robocup-junior.github.io/rcj-resources/resources.json',{cache:'no-cache'}).then(function(r){if(!r.ok) throw new Error(r.status); return r.json();}).then(function(j){
+  var list=(j&&j.resources||[]).filter(function(r){return (r.audience||[]).indexOf('educators')>-1;});
+  if(!list.length) return;
+  var body=root.querySelector('.rcjed-body'); body.innerHTML='';
+  GROUPS.forEach(function(g){
+    var items=list.filter(function(r){return g[0]==='other'?['teaching','research','werob'].indexOf(r.type)<0:r.type===g[0];})
+      // Material tied to one country's curriculum goes last.
+      .sort(function(a,b){var la=/Australian/.test(a.description)?1:0, lb=/Australian/.test(b.description)?1:0; return la-lb||(b.year||0)-(a.year||0)||a.title.localeCompare(b.title);});
+    if(!items.length) return;
+    body.appendChild(el('h3',null,g[1]));
+    var ul=el('ul','rcjed-list');
+    items.slice(0,g[2]).forEach(function(r){
+      var li=el('li'); var a=el('a',null,r.title); a.href=String(r.url).replace(/^https:\/\/junior\.robocup\.org(?=\/)/,''); li.appendChild(a);
+      li.appendChild(el('span','rcjed-src',(r.authors?r.authors+' · ':'')+r.source+(r.year?(r.type==='werob'?'':', '+r.year):'')));
+      ul.appendChild(li);
+    });
+    body.appendChild(ul);
+    if(items.length>g[2]){var p=el('p','rcjed-more'); var m=el('a',null,'See all '+items.length+' →'); m.href='/resources/'+g[3]; p.appendChild(m); body.appendChild(p);}
+  });
+}).catch(function(){});
+})();
+</script>
+</div>

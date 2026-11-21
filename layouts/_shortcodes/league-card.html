@@ -1,0 +1,3 @@
+{{- $body := .Page.RenderString (dict "display" "block") .Inner -}}
+{{- $body = replaceRE `<h3 id="[^"]+">(.*?)</h3>` `<p class="rcjlx-sub">${1}</p>` $body -}}
+<details class="rcjlx-card" id="{{ .Get "id" }}"><summary><span class="rcjlx-name">{{ .Get "name" }}</span><span class="rcjlx-line">{{ .Get "line" }}</span></summary><div class="rcjlx-body"><img class="rcjlx-photo" src="{{ .Get "image" }}" alt="{{ .Get "alt" }}" width="1000" height="667" loading="lazy" decoding="async">{{ $body | safeHTML }}<p class="rcjlx-links"><a class="rcjlx-btn" href="{{ .Get "primary-url" }}">{{ .Get "primary-text" }}</a> <a class="rcjlx-btn rcjlx-btn-alt" href="{{ .Get "secondary-url" }}">{{ .Get "secondary-text" }}</a></p></div></details>

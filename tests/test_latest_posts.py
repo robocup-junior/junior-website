@@ -41,8 +41,10 @@ class LatestPostsTest(unittest.TestCase):
                     "wordpress_id": i,
                     "categories": [category],
                 }
-                (site / "content" / "posts" / f"original-{category}.html").write_text(
-                    json.dumps(post) + "\n<p>Original body.</p>\n", encoding="utf-8"
+                extension = "md" if category == "soccer" else "html"
+                body = "Original body.\n" if extension == "md" else "<p>Original body.</p>\n"
+                (site / "content" / "posts" / f"original-{category}.{extension}").write_text(
+                    json.dumps(post) + "\n" + body, encoding="utf-8"
                 )
                 page = (
                     json.dumps({"title": category.title()}) + "\n"
@@ -52,7 +54,7 @@ class LatestPostsTest(unittest.TestCase):
                     '<div class="wp-block-latest-posts__post-excerpt">Captured excerpt</div>'
                     "</li></ul>\n"
                 )
-                (site / "content" / f"{category}.html").write_text(page, encoding="utf-8")
+                (site / "content" / f"{category}.{extension}").write_text(page, encoding="utf-8")
 
             refresh_latest_post_blocks(site)
             for category in ("soccer", "rescue", "onstage"):
@@ -67,7 +69,7 @@ class LatestPostsTest(unittest.TestCase):
                 (site / "content" / "posts" / f"new-{category}.md").write_text(
                     new_post, encoding="utf-8"
                 )
-            edited = site / "content" / "posts" / "original-soccer.html"
+            edited = site / "content" / "posts" / "original-soccer.md"
             edited.write_text(edited.read_text(encoding="utf-8").replace(
                 "Original body.", "Updated original body."
             ), encoding="utf-8")

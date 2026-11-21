@@ -29,6 +29,14 @@ class HomepageNewsTest(unittest.TestCase):
                 ROOT / "layouts" / "_partials" / "home-reference.html",
                 site / "layouts" / "_partials" / "home-reference.html",
             )
+            shutil.copy(
+                ROOT / "layouts" / "_partials" / "home-feature.html",
+                site / "layouts" / "_partials" / "home-feature.html",
+            )
+            home, _ = json.JSONDecoder().raw_decode(
+                (ROOT / "content" / "_index.md").read_text(encoding="utf-8")
+            )
+            (site / "content" / "_index.md").write_text(json.dumps(home), encoding="utf-8")
             original = {
                 "title": "Original news",
                 "date": "2025-01-01T12:00:00",
@@ -64,6 +72,10 @@ class HomepageNewsTest(unittest.TestCase):
                 return (site / "public" / "index.html").read_text(encoding="utf-8")
 
             unchanged = build()
+            self.assertRegex(
+                unchanged,
+                r'</a>\s+<a class="staticslider-button" href="/gettingstarted/">',
+            )
             self.assertIn("Captured excerpt marker.", unchanged)
             self.assertIn("/captured-crop.jpg", unchanged)
             for field in ("title", "featured_image", "wordpress_excerpt", "body"):

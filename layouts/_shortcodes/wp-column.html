@@ -1,0 +1,1 @@
+<div class="wp-block-column{{ if eq (.Get "align") "center" }} is-vertically-aligned-center{{ end }} is-layout-flow wp-block-column-is-layout-flow"{{ with .Get "width" }} style="flex-basis:{{ . | safeCSS }}"{{ end }}>{{ .Inner }}</div>

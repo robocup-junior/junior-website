@@ -1,0 +1,4 @@
+{{- $body := partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) -}}
+{{- $body = replace $body `<ul class="wp-block-list">` `<ul style="padding-left:1.5em" class="wp-block-list">` -}}
+{{- $body = replace $body `<ol class="wp-block-list">` `<ol style="padding-left:1.5em" class="wp-block-list">` -}}
+{{- $body | safeHTML -}}

@@ -1,0 +1,7 @@
+{{- $image := .Get "image" -}}
+{{- $right := eq (.Get "side") "right" -}}
+{{- $fill := eq (.Get "fill") "true" -}}
+{{- $center := eq (.Get "align") "center" -}}
+{{- $figure := dict "image" $image "alt" (.Get "alt") "style" (.Get "style") -}}
+{{- $body := partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) -}}
+<div class="wp-block-media-text{{ if $right }} has-media-on-the-right{{ end }} is-stacked-on-mobile{{ if $center }} is-vertically-aligned-center{{ end }}{{ if $fill }} is-image-fill-element{{ end }}"{{ with .Get "columns" }} style="grid-template-columns:{{ . | safeCSS }}"{{ end }}>{{ if not $right }}{{ partial "wp-media-figure.html" $figure }}{{ end }}<div class="wp-block-media-text__content">{{ $body | safeHTML }}</div>{{ if $right }}{{ partial "wp-media-figure.html" $figure }}{{ end }}</div>

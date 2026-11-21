@@ -1,0 +1,3 @@
+{{- $body := .Page.RenderString (dict "display" "block") .Inner -}}
+{{- $body = replace $body "<table>" `<table class="has-fixed-layout">` -}}
+<figure class="wp-block-table">{{ $body | safeHTML }}</figure>

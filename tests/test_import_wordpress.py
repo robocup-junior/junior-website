@@ -26,6 +26,33 @@ class Response(io.BytesIO):
 
 
 class ImportTests(unittest.TestCase):
+    def test_staging_import_does_not_modify_site_or_reuse_destination(self):
+        page = {
+            "slug": "about", "title": {"rendered": "About"},
+            "date": "2025-01-01", "link": importer.ORIGIN + "/about/",
+            "id": 2, "featured_media": 0,
+            "content": {"rendered": "<p>WordPress content</p>"},
+        }
+        collections = {"pages": [page], "posts?_embed=author,wp:term,wp:featuredmedia": [],
+                       "categories": [], "media?_fields=id,source_url": []}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "site"
+            root.mkdir()
+            target = root / "content" / "about.md"
+            target.parent.mkdir()
+            target.write_text("Local Markdown edit")
+            stage = Path(directory) / "wordpress-export"
+            with (mock.patch.object(importer, "ROOT", root),
+                  mock.patch.object(importer, "read_paginated", side_effect=lambda path: collections[path]),
+                  contextlib.redirect_stdout(io.StringIO()),
+                  contextlib.redirect_stderr(io.StringIO())):
+                importer.main(["--output-dir", str(stage)])
+                with self.assertRaises(SystemExit):
+                    importer.main(["--output-dir", str(stage)])
+            self.assertEqual(target.read_text(), "Local Markdown edit")
+            self.assertIn("WordPress content", (stage / "content/about.html").read_text())
+            self.assertFalse((root / "content/about.html").exists())
+
     def test_all_collection_pages_are_read_from_wordpress_page_count(self):
         calls = []
 
@@ -59,6 +86,20 @@ class ImportTests(unittest.TestCase):
             self.assertEqual(target.read_text(), "Existing Markdown page")
             self.assertFalse(target.with_suffix(".html").exists())
 
+    def test_renamed_markdown_page_requires_staged_import(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / "content" / "renamed.md"
+            target.parent.mkdir()
+            target.write_text('{"url": "/about/"}\nLocal Markdown edit')
+            with (mock.patch.object(importer, "ROOT", root),
+                  mock.patch.object(importer, "read_paginated") as read,
+                  contextlib.redirect_stderr(io.StringIO())):
+                with self.assertRaises(SystemExit):
+                    importer.main(["--overwrite"])
+            read.assert_not_called()
+            self.assertEqual(target.read_text(), '{"url": "/about/"}\nLocal Markdown edit')
+
     def test_existing_latest_posts_page_is_protected_when_missing_from_api(self):
         collections = {"pages": [], "posts?_embed=author,wp:term,wp:featuredmedia": [],
                        "categories": []}
@@ -89,6 +130,21 @@ class ImportTests(unittest.TestCase):
                     importer.main([])
             self.assertEqual(target.read_text(), "Local page")
 
+    def test_existing_forum_fallback_data_requires_overwrite(self):
+        collections = {"pages": [], "posts?_embed=author,wp:term,wp:featuredmedia": [],
+                       "categories": []}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / importer.FORUM_FALLBACK_FILE
+            target.parent.mkdir()
+            target.write_text('{"soccer": "Local fallback"}')
+            with (mock.patch.object(importer, "ROOT", root),
+                  mock.patch.object(importer, "read_paginated", side_effect=lambda path: collections[path]),
+                  contextlib.redirect_stderr(io.StringIO())):
+                with self.assertRaises(SystemExit):
+                    importer.main([])
+            self.assertEqual(target.read_text(), '{"soccer": "Local fallback"}')
+
     def test_existing_content_is_protected_and_protocol_relative_uploads_are_localized(self):
         page = {
             "slug": "about",
@@ -112,7 +168,7 @@ class ImportTests(unittest.TestCase):
                        "categories": categories, "media?_fields=id,source_url": []}
         seen = []
 
-        def download(url):
+        def download(url, root):
             seen.append(url)
             return (url, "not found" if url.endswith("missing.pdf") else None)
 

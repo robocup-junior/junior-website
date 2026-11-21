@@ -11,7 +11,7 @@ import urllib.request
 from pathlib import Path
 
 from latest_posts import SETTINGS as LATEST_POST_CATEGORIES, refresh_latest_post_blocks
-from forum_feed_blocks import FORUM_CONTENT_FILES, refresh_forum_blocks
+from forum_feed_blocks import FORUM_CONTENT_FILES, FORUM_FALLBACK_FILE, refresh_forum_blocks
 
 ORIGIN = 'https://junior.robocup.org'
 ROOT = Path(__file__).resolve().parent.parent
@@ -39,8 +39,8 @@ def normalize_upload_url(url):
 def upload_path(url):
     return urllib.parse.unquote(urllib.parse.urlsplit(url).path).lstrip('/')
 
-def download(url):
-    path = ROOT / 'static' / upload_path(url)
+def download(url, root=None):
+    path = (ROOT if root is None else root) / 'static' / upload_path(url)
     if path.is_file() and path.stat().st_size:
         return url, None
     try:
@@ -53,7 +53,7 @@ def download(url):
     except Exception as exc:
         return url, str(exc)
 
-def download_avatar(author_id, url):
+def download_avatar(author_id, url, root=None):
     """Save the high-resolution WordPress avatar used in post bylines."""
     parsed = urllib.parse.urlsplit(url)
     query = dict(urllib.parse.parse_qsl(parsed.query))
@@ -64,7 +64,7 @@ def download_avatar(author_id, url):
             data = response.read()
             content_type = response.headers.get_content_type()
         extension = {'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp'}.get(content_type, 'img')
-        path = ROOT / 'static' / 'images' / 'avatars' / f'{author_id}.{extension}'
+        path = (ROOT if root is None else root) / 'static' / 'images' / 'avatars' / f'{author_id}.{extension}'
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
         return f'/images/avatars/{author_id}.{extension}', None
@@ -73,40 +73,49 @@ def download_avatar(author_id, url):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--overwrite', action='store_true',
-                        help='replace existing imported content and metadata')
+    destination = parser.add_mutually_exclusive_group()
+    destination.add_argument('--overwrite', action='store_true',
+                             help='replace existing imported HTML content and metadata')
+    destination.add_argument('--output-dir', type=Path,
+                             help='write an HTML export to a new directory for review')
     args = parser.parse_args(argv)
+    root = ROOT
+    if args.output_dir:
+        root = args.output_dir.expanduser().resolve()
+        if root.exists():
+            parser.error(f'output directory already exists: {root}')
+        root.mkdir(parents=True)
+    else:
+        content = root / 'content'
+        markdown = (*content.glob('*.md'), *(content / 'posts').glob('*.md'))
+        if any(path.name != '_index.md' for path in markdown):
+            parser.error('Markdown content exists; use --output-dir to review an HTML export')
     pages = read_paginated('pages')
     posts = read_paginated('posts?_embed=author,wp:term,wp:featuredmedia')
     category_items = read_paginated('categories')
     categories = {c['id']: c['slug'] for c in category_items}
-    paths = [ROOT / 'data' / 'wordpress-posts.json',
-             ROOT / 'data' / 'latest-posts.json']
-    markdown_paths = []
+    paths = [root / 'data' / 'wordpress-posts.json',
+             root / 'data' / 'latest-posts.json',
+             root / FORUM_FALLBACK_FILE]
     for typ, group in [('page', pages), ('post', posts)]:
         for item in group:
             slug = item['slug']
-            directory = ROOT / 'content' / ('posts' if typ == 'post' else '')
+            directory = root / 'content' / ('posts' if typ == 'post' else '')
             path = directory / ('_index.html' if typ == 'page' and slug == 'index'
                                 else slug + '.html')
             paths.append(path)
-            markdown_paths.append(path.with_suffix('.md'))
-    paths.extend(ROOT / 'content' / 'categories' / category['slug'] / '_index.md'
+    paths.extend(root / 'content' / 'categories' / category['slug'] / '_index.md'
                  for category in category_items)
-    paths.extend(ROOT / 'content' / f'{category}.html'
+    paths.extend(root / 'content' / f'{category}.html'
                  for category in LATEST_POST_CATEGORIES)
-    paths.extend(ROOT / filename for filename in FORUM_CONTENT_FILES)
-    markdown_conflicts = [path for path in markdown_paths if path.exists()]
-    if markdown_conflicts:
-        parser.error(f'{len(markdown_conflicts)} Markdown content files conflict with '
-                     'the import; move or rename them before importing')
+    paths.extend(root / filename for filename in FORUM_CONTENT_FILES)
     existing = [path for path in set(paths) if path.exists()]
     if existing and not args.overwrite:
         parser.error(f'{len(existing)} import targets already exist; '
                      'use --overwrite to replace existing content and metadata')
     # Explicit terms retain WordPress names and URLs even with no published posts.
     for category in category_items:
-        term = ROOT / 'content' / 'categories' / category['slug'] / '_index.md'
+        term = root / 'content' / 'categories' / category['slug'] / '_index.md'
         term.parent.mkdir(parents=True, exist_ok=True)
         term.write_text(json.dumps({'title': html.unescape(category['name']),
                                     'url': urllib.parse.urlsplit(category['link']).path},
@@ -151,7 +160,7 @@ def main(argv=None):
     print(f'Downloading {len(urls)} referenced uploads', flush=True)
     failures = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
-        for i, (url, error) in enumerate(pool.map(download, sorted(urls)), 1):
+        for i, (url, error) in enumerate(pool.map(lambda url: download(url, root), sorted(urls)), 1):
             if error:
                 failures[url] = error
             if i % 50 == 0:
@@ -161,13 +170,13 @@ def main(argv=None):
             if url not in failures:
                 post['images'][size] = '/' + urllib.parse.quote(upload_path(url), safe='/')
     for author_id, avatar_url in avatars.items():
-        avatar, error = download_avatar(author_id, avatar_url)
+        avatar, error = download_avatar(author_id, avatar_url, root)
         if error:
             failures[avatar_url] = error
         for post in post_metadata.values():
             if post['author_id'] == author_id:
                 post['avatar'] = avatar
-    metadata_path = ROOT / 'data' / 'wordpress-posts.json'
+    metadata_path = root / 'data' / 'wordpress-posts.json'
     metadata_path.parent.mkdir(parents=True, exist_ok=True)
     metadata_path.write_text(json.dumps(post_metadata, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     def localize(content):
@@ -183,7 +192,7 @@ def main(argv=None):
         for item in group:
             slug = item['slug']
             filename = 'index' if typ == 'page' and slug == 'index' else slug
-            directory = ROOT / 'content' / ('posts' if typ == 'post' else '')
+            directory = root / 'content' / ('posts' if typ == 'post' else '')
             directory.mkdir(parents=True, exist_ok=True)
             if typ == 'page' and slug == 'index':
                 path = directory / '_index.html'
@@ -203,8 +212,8 @@ def main(argv=None):
             if 'class="wp-embedded-content"' in body:
                 body += '\n<script src="/js/wp-embed.min.js" defer></script>'
             path.write_text(json.dumps(front, ensure_ascii=False, indent=2) + '\n' + body + '\n', encoding='utf-8')
-    refresh_latest_post_blocks(ROOT)
-    refresh_forum_blocks(ROOT)
+    refresh_latest_post_blocks(root)
+    refresh_forum_blocks(root)
     print(f'Imported {len(pages)} pages and {len(posts)} posts; {len(failures)} downloads failed')
     for url, error in failures.items():
         print(f'FAILED {url}: {error}')

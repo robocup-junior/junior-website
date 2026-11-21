@@ -1,0 +1,6 @@
+{{- $body := .page.RenderString (dict "display" "block") .text -}}
+{{- $body = replaceRE `<h([1-6]) id="[^"]+">` `<h${1} class="wp-block-heading">` $body -}}
+{{- $body = replace $body "<p>" `<p class="wp-block-paragraph">` -}}
+{{- $body = replace $body "<ul>" `<ul class="wp-block-list">` -}}
+{{- $body = replace $body "<ol>" `<ol class="wp-block-list">` -}}
+{{- return $body -}}

@@ -1,0 +1,5 @@
+{{- $image := .Get "image" -}}
+{{- $info := index hugo.Data.wp_images $image | default dict -}}
+{{- with .Get "wrapper-class" }}<div class="{{ . }}">{{ end -}}
+<figure class="{{ .Get "figure-class" | default "wp-block-image size-large" }}"><img loading="lazy" decoding="async"{{ with $info.width }} width="{{ . }}"{{ end }}{{ with $info.height }} height="{{ . }}"{{ end }}{{ with index $info "data-id" }} data-id="{{ . }}"{{ end }} src="{{ $image }}" alt="{{ .Get "alt" }}"{{ with $info.class }} class="{{ . }}"{{ end }}{{ with $info.style }} style="{{ . | safeCSS }}"{{ end }}{{ with $info.srcset }} srcset="{{ . }}"{{ end }}{{ with $info.sizes }} sizes="{{ . }}"{{ end }}>{{ with .Get "caption" }}<figcaption class="wp-element-caption">{{ $.Page.RenderString . }}</figcaption>{{ end }}</figure>
+{{- with .Get "wrapper-class" }}</div>{{ end -}}

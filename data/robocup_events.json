@@ -1,0 +1,78 @@
+{
+  "upcoming": [
+    {
+      "title": "RoboCup Canada Open 2027",
+      "url": "https://www.robocup.org/events/91",
+      "start": "2027-04-16",
+      "end": "2027-04-18",
+      "image": "",
+      "excerpt": "RoboCup is one of the world’s largest international scientific robotics initiatives dedicated to advancing robotics and artificial intelligence through competition. Canada has participated in RoboCup for many years with teams from Ontario, British Columbia, Québec, Alberta, and other provinces achieving success internationally. The establishment of RoboCup Canada Open provides a sustainable national platform for: developing new teams, improving technical skills, preparing students for..."
+    }
+  ],
+  "past": [
+    {
+      "title": "RoboCup Italian Open 2026 - Humanoid Soccer Workshop and Games",
+      "url": "https://www.robocup.org/events/88",
+      "start": "2026-10-23",
+      "end": "2026-10-25",
+      "image": "",
+      "excerpt": "The RoboCup Italian Open 2026 – Humanoid Soccer Workshop and Games aims to establish a dedicated international RoboCup Humanoid Soccer event in Italy, hosted within Maker Faire Rome-The European Edition(https://makerfairerome.eu/).The event will bring together RoboCup Humanoid Soccer teams, researchers, students,and technology enthusiasts, offering both a competitive tournament and a dedicated technical workshop. Its main purpose is to promote research, education, and public engagement in..."
+    },
+    {
+      "title": "2nd RoboCup Americas Super Regional (ASR) 2026 Canada",
+      "url": "https://www.robocup.org/events/90",
+      "start": "2026-10-22",
+      "end": "2026-10-25",
+      "image": "",
+      "excerpt": "The RoboCup Americas Super Regional Event, is an annual competition that unites middle and high school robotics teams from North, Central, South America and the Caribbean. The event will feature competitions in RoboCupJunior Rescue, Soccer, and OnStage categories, providing a platform for students to showcase their skills, foster international collaboration, and prepare for global International competitions. This will be the platform for Primary students to compete beyond local or national..."
+    },
+    {
+      "title": "RoboCup Junior Australia 2026 Open National Championships",
+      "url": "https://www.robocup.org/events/92",
+      "start": "2026-10-02",
+      "end": "2026-10-04",
+      "image": "",
+      "excerpt": "RoboCup Junior Australia is a project-oriented educational initiative that supports local, regional and international robotic events for young students. Australia has been hosting national competitions for 26 years, attracting students from across Australia to compete against one another. Tens of thousands of students around Australia participate in RoboCup, with thousands more around the world. Learn more about who we are, and how RoboCup develops critical STEM skills in students of all..."
+    },
+    {
+      "title": "WORLD HUMANOID ROBOT GAMES SHL",
+      "url": "https://www.robocup.org/events/89",
+      "start": "2026-08-22",
+      "end": "2026-08-26",
+      "image": "",
+      "excerpt": "The World Humanoid Robot Games is the world's first international, comprehensive science and technology sports event with humanoid robots as the primary competitors. Co-hosted by the People’s Government of Beijing Municipality, China Media Group (CMG), World Robot Cooperation Organization, and RoboCup Asia-Pacific Confederation Board of Trustees, the Games brings together leading forces from around the globe in the fields of robot research, development, and application. It is dedicated to..."
+    },
+    {
+      "title": "ROBOCUP 2026 INCHEON",
+      "url": "https://www.robocup.org/events/80",
+      "start": "2026-06-30",
+      "end": "2026-07-06",
+      "image": "https://www.robocup.org/system/events/images/000/000/080/preview/RC2026.png?1771534155",
+      "excerpt": "For the first time in its history, RoboCup, the world’s largest and most prestigious robotics and artificial intelligence competition, will be held in South Korea. RoboCup 2026 will take place from June 30 to July 6, 2026, at Songdo Convensia in Incheon, and is expected to bring together more than 3,000 competitors, researchers, students, and professionals from dozens of countries, as well as 15,000 visitors interested in robotics, to South Korea. The previous edition of the event was hosted..."
+    },
+    {
+      "title": "European RoboCupJunior Championship 2026",
+      "url": "https://www.robocup.org/events/79",
+      "start": "2026-06-03",
+      "end": "2026-06-06",
+      "image": "",
+      "excerpt": "The European RoboCupJunior Championship is a transregional European event where the best European RoboCupJunior teams, which have prevailed in national qualifying rounds, come together for a challenging European competition. RoboCupJunior is an ideal approach to getting young people excited about science and technology. International RoboCup events are used to promote RoboCup as an attractive tool for communicating the importance of science, technology, engineering, and mathematics for the..."
+    },
+    {
+      "title": "RoboCupJunior Open France 2026",
+      "url": "https://www.robocup.org/events/82",
+      "start": "2026-05-30",
+      "end": "2026-05-31",
+      "image": "",
+      "excerpt": "RoboCup Leagues in contestMajor Leagues : noneJunior LeaguesOnStage : Standard + EntryRescue : Line + Line Entry + Maze + Maze EntrySoccer OpenOther competitionsDiscovery (OnStage for 5 to 10 years old)Soccer Cam TrackOther Activitiesnearly 40 workshops on robotics, IA and Sciences et Techniques (open to grand public)Participation and FeesRegistration price Major : N/ARegistration price Junior : 100 per teamPrice for public : freeOther pricing information (Hall, discounts,..."
+    },
+    {
+      "title": "RoboCup China Open 2026",
+      "url": "https://www.robocup.org/events/85",
+      "start": "2026-05-02",
+      "end": "2026-05-04",
+      "image": "",
+      "excerpt": "The RoboCup China Open 2026 aims to advance robotics research and education in alignment with RoboCup’s non-profit, academic mission. It focuses on fostering innovation in autonomous robotics, artificial intelligence, and STEM education through competitions in soccer, rescue, and home service leagues. The event emphasizes knowledge sharing, skill development, and international collaboration. RoboCup Leagues in contestMajor LeaguesRoboCup Soccer (Humanoid, Simulation 2D/3D , Small Size,..."
+    }
+  ]
+}

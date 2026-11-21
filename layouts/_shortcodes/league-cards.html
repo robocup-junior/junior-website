@@ -1,0 +1,19 @@
+<div class="rcjlx"><style>
+.rcjlx{margin:1em 0 1.5em;display:flex;flex-direction:column;gap:.75em}
+.rcjlx-card{border:1px solid #dcdfe3;border-left:6px solid #32373c;background:#fff}
+.rcjlx-card summary{cursor:pointer;list-style:none;padding:1em 3em 1em 1.1em;position:relative;display:flex;flex-wrap:wrap;gap:.25em 1em;align-items:baseline}
+.rcjlx-card summary::-webkit-details-marker{display:none}
+.rcjlx-card summary::after{content:"+";position:absolute;right:1em;top:50%;transform:translateY(-50%);font-size:1.6em;font-weight:700;line-height:1}
+.rcjlx-card[open] summary::after{content:"\2013"}
+.rcjlx-card summary:focus-visible{outline:3px solid #d40560;outline-offset:2px}
+.rcjlx-name{font-size:1.35em;font-weight:800}
+.rcjlx-line{color:#444}
+.rcjlx-body{padding:0 1.1em 1.1em;border-top:1px solid #eef0f2}
+.rcjlx-body ul{padding-left:1.5em;margin:.25em 0 .75em}
+.rcjlx-photo{display:block;width:100%;height:auto;max-height:340px;object-fit:cover;margin:1em 0 .5em}
+.rcjlx-sub{font-weight:700;margin:.9em 0 .2em}
+.rcjlx-links{display:flex;flex-wrap:wrap;gap:.6em;margin-top:1em}
+.rcjlx a.rcjlx-btn{display:inline-block;padding:.6em 1.1em;background:#32373c;color:#fff !important;font-weight:700;text-transform:uppercase;font-size:.85em;text-decoration:none}
+.rcjlx a.rcjlx-btn-alt{background:#fff;color:#32373c !important;border:2px solid #32373c;padding:calc(.6em - 2px) calc(1.1em - 2px)}
+.rcjlx a.rcjlx-btn:focus-visible{outline:3px solid #d40560;outline-offset:2px}
+</style>{{ .Inner }}</div>

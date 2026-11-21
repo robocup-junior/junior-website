@@ -1,0 +1,6 @@
+<script>
+document.querySelectorAll('a.rcjrf-year').forEach(function(a){a.addEventListener('click',function(e){
+  var q=document.getElementById('rcjrf-q'), b=document.querySelector('#resource-finder [data-group="type"] [data-v="werob"]'); if(!q||!b) return;
+  e.preventDefault(); ['league','level'].forEach(function(g){var all=document.querySelector('#resource-finder [data-group="'+g+'"] [data-v="all"]'); if(all) all.click();}); b.click(); q.value=a.getAttribute('data-year'); q.dispatchEvent(new Event('input')); document.getElementById('resource-finder').scrollIntoView({behavior:'smooth'});
+});});
+</script>

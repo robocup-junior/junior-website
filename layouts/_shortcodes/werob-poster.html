@@ -1,0 +1,2 @@
+{{- $image := .Get "image" -}}{{- $info := index hugo.Data.wp_images $image -}}{{- $url := .Get "url" -}}
+<figure class="wp-block-image size-full"><a href="{{ $url }}" target="_blank" rel=" noopener"><img loading="lazy" decoding="async" width="{{ $info.width }}" height="{{ $info.height }}" src="{{ $image }}" alt="{{ .Get "alt" }}" class="{{ $info.class }}" srcset="{{ $info.srcset }}" sizes="{{ $info.sizes }}"></a><figcaption class="wp-element-caption"><a href="{{ $url }}">{{ $url }}</a></figcaption></figure>

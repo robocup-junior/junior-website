@@ -57,6 +57,8 @@
 <script>
 (function(){
 var root=document.getElementById('resource-finder'); if(!root) return;
+var siteRoot={{ "" | absURL }};
+function siteURL(url){return url.charAt(0)==='/'&&url.charAt(1)!=='/'?siteRoot+url.slice(1):url;}
 var AU='https://www.robocupjunior.org.au', GH='https://github.com/robocup-junior', OS='https://robocup-junior.github.io/onstage/resources/teams/';
 var LEAGUES=[['all','All leagues'],['soccer','Soccer'],['line','Rescue Line'],['maze','Rescue Maze'],['sim','Rescue Simulation'],['onstage','OnStage'],['general','Any league']];
 var LEAGUE_PAGES={soccer:['/soccer/','Soccer'],line:['/rcj-rescue-line/','Rescue Line'],maze:['/rcj-rescue-maze/','Rescue Maze'],sim:['/rcj-rescue-sim/','Rescue Simulation'],onstage:['/onstage/','OnStage'],general:['/robocupjunior-general-rules/','General Rules']};
@@ -249,7 +251,7 @@ function render(){
   var grid=root.querySelector('.rcjrf-grid'); grid.innerHTML='';
   root.querySelector('.rcjrf-count').textContent=list.length+(list.length===1?' resource':' resources')+(state.league==='all'?'':' for '+LBL[state.league]);
   var ll=root.querySelector('.rcjrf-league-link'); ll.innerHTML='';
-  if(LEAGUE_PAGES[state.league]){var a=el('a',null,LEAGUE_PAGES[state.league][1]+' league page →'); if(state.league==='general') a.textContent='General Rules →'; a.href=LEAGUE_PAGES[state.league][0]; ll.appendChild(a);}
+  if(LEAGUE_PAGES[state.league]){var a=el('a',null,LEAGUE_PAGES[state.league][1]+' league page →'); if(state.league==='general') a.textContent='General Rules →'; a.href=siteURL(LEAGUE_PAGES[state.league][0]); ll.appendChild(a);}
   if(!list.length){
     var li=el('li','rcjrf-empty'); li.appendChild(document.createTextNode('No resources match these filters. '));
     var c=el('button','rcjrf-chip','Clear filters'); c.type='button'; c.addEventListener('click',function(){state={league:'all',type:'all',level:'all',audience:'all',q:''}; root.querySelector('#rcjrf-q').value=''; sync(); hash(); render();});
@@ -257,10 +259,10 @@ function render(){
   }
   list.slice(0,shown).forEach(function(r){
     var li=el('li','rcjrf-card');
-    var h=el('p','rcjrf-card-title'); var a=el('a',null,r.t); a.href=r.u; if(/^https?:/.test(r.u)&&r.u.indexOf(location.host)<0){a.rel='noopener';} h.appendChild(a); li.appendChild(h);
+    var h=el('p','rcjrf-card-title'); var a=el('a',null,r.t); a.href=siteURL(r.u); if(/^https?:/.test(r.u)&&r.u.indexOf(location.host)<0){a.rel='noopener';} h.appendChild(a); li.appendChild(h);
     if(r.a) li.appendChild(el('p','rcjrf-by',r.a));
     li.appendChild(el('p','rcjrf-card-desc',r.d));
-    if(r.x){var xp=el('p','rcjrf-extra'); r.x.forEach(function(x,i){if(i) xp.appendChild(document.createTextNode(' · ')); var xa=el('a',null,x[0]); xa.href=x[1]; xa.rel='noopener'; xp.appendChild(xa);}); li.appendChild(xp);}
+    if(r.x){var xp=el('p','rcjrf-extra'); r.x.forEach(function(x,i){if(i) xp.appendChild(document.createTextNode(' · ')); var xa=el('a',null,x[0]); xa.href=siteURL(x[1]); xa.rel='noopener'; xp.appendChild(xa);}); li.appendChild(xp);}
     li.appendChild(el('p','rcjrf-src','From '+r.s));
     var tags=el('div','rcjrf-tags');
     var lg=r.l.map(function(x){return LBL[x];}).join(', ');

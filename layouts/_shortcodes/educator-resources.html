@@ -54,12 +54,12 @@ fetch('https://robocup-junior.github.io/rcj-resources/resources.json',{cache:'no
     body.appendChild(el('h3',null,g[1]));
     var ul=el('ul','rcjed-list');
     items.slice(0,g[2]).forEach(function(r){
-      var li=el('li'); var a=el('a',null,r.title); a.href=String(r.url).replace(/^https:\/\/junior\.robocup\.org(?=\/)/,''); li.appendChild(a);
+      var li=el('li'); var a=el('a',null,r.title); var url=String(r.url).replace(/^https:\/\/junior\.robocup\.org(?=\/)/,''); a.href=url.charAt(0)==='/'&&url.charAt(1)!=='/'?{{ "" | absURL }}+url.slice(1):url; li.appendChild(a);
       li.appendChild(el('span','rcjed-src',(r.authors?r.authors+' · ':'')+r.source+(r.year?(r.type==='werob'?'':', '+r.year):'')));
       ul.appendChild(li);
     });
     body.appendChild(ul);
-    if(items.length>g[2]){var p=el('p','rcjed-more'); var m=el('a',null,'See all '+items.length+' →'); m.href='/resources/'+g[3]; p.appendChild(m); body.appendChild(p);}
+    if(items.length>g[2]){var p=el('p','rcjed-more'); var m=el('a',null,'See all '+items.length+' →'); m.href={{ "resources/" | absURL }}+g[3]; p.appendChild(m); body.appendChild(p);}
   });
 }).catch(function(){});
 })();

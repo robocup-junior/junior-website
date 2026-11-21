@@ -124,7 +124,7 @@
 			<div id="header-image-main-inside">
 				{{ $pageMetadata := index (index hugo.Data "wordpress-pages") (printf "%v" .Params.wordpress_id) }}
 				{{ if and (ne .Section "posts") $pageMetadata.banner_image }}
-				<div class="header-image" style="background-image: url('{{ $pageMetadata.banner_image }}')"></div>
+				<div class="header-image" style="background-image: url('{{ $pageMetadata.banner_image | strings.TrimPrefix "/" | absURL }}')"></div>
 				<img class="header-image" alt="RoboCupJunior" src="{{ $pageMetadata.banner_image }}">
 				<div id="header-page-title">
 				  <div id="header-page-title-inside"><h1 class="entry-title" itemprop="headline">{{ $pageMetadata.banner_title }}</h1></div>

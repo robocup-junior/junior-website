@@ -13,7 +13,7 @@
 @media (max-width: 800px) { .rcj-post-banner > div { padding: 0 1em; } .rcj-post-banner h1 { max-width: none; } }
 @media (max-width: 640px) { .rcj-post-banner h1 { font-size: 1.4em; } }
 </style>
-<div class="rcj-post-banner"{{ with .Params.featured_image }} style="background-image: url('{{ . }}')"{{ end }}><div><div class="rcj-post-title-box"><h1 class="entry-title">{{ .Title }}</h1></div></div></div>
+<div class="rcj-post-banner"{{ with .Params.featured_image }} style="background-image: url('{{ . | strings.TrimPrefix "/" | absURL }}')"{{ end }}><div><div class="rcj-post-title-box"><h1 class="entry-title">{{ .Title }}</h1></div></div></div>
 <div id="content" class="cryout"><div id="container" class="one-column">
   <main id="main" class="main">
     <article class="post type-post status-publish hentry">

@@ -1,0 +1,79 @@
+{
+  "soccer": {
+    "limit": 5,
+    "excerpt_words": 55,
+    "classes": "wp-block-latest-posts__list has-dates has-author wp-block-latest-posts has-normal-font-size is-layout-flow wp-block-latest-posts-is-layout-flow",
+    "items": {
+      "/entry-league-resources/": {
+        "content_hash": "b77264727de59f0a7d8afa9c68251b89",
+        "title": "Entry League Resources",
+        "date": "2025-08-23T07:29:36",
+        "image": "/wp-content/uploads/2025/01/53674413452_61f2824229_o-scaled.jpg",
+        "author": "RoboCup Admin",
+        "html": "<li><div class=\"wp-block-latest-posts__featured-image alignright\"><a href=\"/entry-league-resources/\" aria-label=\"Entry League Resources\"><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"200\" src=\"/wp-content/uploads/2025/01/53674413452_61f2824229_o-300x200.jpg\" class=\"attachment-medium size-medium wp-post-image\" alt=\"\" style=\"\" srcset=\"/wp-content/uploads/2025/01/53674413452_61f2824229_o-300x200.jpg 300w, /wp-content/uploads/2025/01/53674413452_61f2824229_o-1024x683.jpg 1024w, /wp-content/uploads/2025/01/53674413452_61f2824229_o-768x512.jpg 768w, /wp-content/uploads/2025/01/53674413452_61f2824229_o-1536x1024.jpg 1536w, /wp-content/uploads/2025/01/53674413452_61f2824229_o-2048x1365.jpg 2048w, /wp-content/uploads/2025/01/53674413452_61f2824229_o-450x300.jpg 450w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></div><a class=\"wp-block-latest-posts__post-title\" href=\"/entry-league-resources/\">Entry League Resources</a><div class=\"wp-block-latest-posts__post-author\">by RoboCup Admin</div><time datetime=\"2025-08-23T07:29:36-04:00\" class=\"wp-block-latest-posts__post-date\">August 23, 2025</time><div class=\"wp-block-latest-posts__post-excerpt\">Entry League Community Resources RoboCup Junior Australia Tutorial for Soccer Omni-Drive Omnidrive robots use four motors, to allow the robot to respond in any direction to the Soccer ball. This significantly decreases the time it takes for the robot to get to the ball, giving a great game day advantage. To help you get started &hellip;</div></li>"
+      },
+      "/communication-modules/": {
+        "content_hash": "beebe8258490762704821cf862c24c10",
+        "title": "Soccer Communication Modules",
+        "date": "2025-01-31T18:56:57",
+        "image": "/wp-content/uploads/2025/01/rcjv3_dimensions.png",
+        "author": "RoboCup Admin",
+        "html": "<li><div class=\"wp-block-latest-posts__featured-image alignright\"><a href=\"/communication-modules/\" aria-label=\"Soccer Communication Modules\"><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"112\" src=\"/wp-content/uploads/2025/01/rcjv3_dimensions-300x112.png\" class=\"attachment-medium size-medium wp-post-image\" alt=\"\" style=\"\" srcset=\"/wp-content/uploads/2025/01/rcjv3_dimensions-300x112.png 300w, /wp-content/uploads/2025/01/rcjv3_dimensions-1024x383.png 1024w, /wp-content/uploads/2025/01/rcjv3_dimensions-768x287.png 768w, /wp-content/uploads/2025/01/rcjv3_dimensions-1536x574.png 1536w, /wp-content/uploads/2025/01/rcjv3_dimensions-802x300.png 802w, /wp-content/uploads/2025/01/rcjv3_dimensions-800x300.png 800w, /wp-content/uploads/2025/01/rcjv3_dimensions.png 1864w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></div><a class=\"wp-block-latest-posts__post-title\" href=\"/communication-modules/\">Soccer Communication Modules</a><div class=\"wp-block-latest-posts__post-author\">by RoboCup Admin</div><time datetime=\"2025-01-31T18:56:57-05:00\" class=\"wp-block-latest-posts__post-date\">January 31, 2025</time><div class=\"wp-block-latest-posts__post-excerpt\">Introducing the RCJ Soccer SuperTeam Communication Module A Game-Changer for Referees and Teams To make RCJ Soccer SuperTeam games more manageable for referees and to provide a robust and simple way for robot-to-robot and robot-to-referee communication, we are excited to introduce this new communication module. To learn more about the module, check out the GitHub &hellip;</div></li>"
+      },
+      "/rcj-ir-soccer-ball-2026-changes-announced/": {
+        "content_hash": "6ded46ee80780377c059cfd43c029d9f",
+        "title": "RCJ IR Soccer Ball – 2026 Changes Announced",
+        "date": "2025-01-31T05:51:45",
+        "image": "/wp-content/uploads/2025/01/close-scaled.jpg",
+        "author": "RoboCup Admin",
+        "html": "<li><div class=\"wp-block-latest-posts__featured-image alignright\"><a href=\"/rcj-ir-soccer-ball-2026-changes-announced/\" aria-label=\"RCJ IR Soccer Ball &#8211; 2026 Changes Announced\"><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"221\" src=\"/wp-content/uploads/2025/01/close-300x221.jpg\" class=\"attachment-medium size-medium wp-post-image\" alt=\"\" style=\"\" srcset=\"/wp-content/uploads/2025/01/close-300x221.jpg 300w, /wp-content/uploads/2025/01/close-1024x753.jpg 1024w, /wp-content/uploads/2025/01/close-768x565.jpg 768w, /wp-content/uploads/2025/01/close-1536x1130.jpg 1536w, /wp-content/uploads/2025/01/close-2048x1507.jpg 2048w, /wp-content/uploads/2025/01/close-408x300.jpg 408w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></div><a class=\"wp-block-latest-posts__post-title\" href=\"/rcj-ir-soccer-ball-2026-changes-announced/\">RCJ IR Soccer Ball &#8211; 2026 Changes Announced</a><div class=\"wp-block-latest-posts__post-author\">by RoboCup Admin</div><time datetime=\"2025-01-31T05:51:45-05:00\" class=\"wp-block-latest-posts__post-date\">January 31, 2025</time><div class=\"wp-block-latest-posts__post-excerpt\">Soccer Lightweight Ball changes in 2026 Starting in 2026, Lightweight Soccer will be moving to a new IR Ball. The key difference with this ball is the size change from 74mm to 42mm diameter, which is the same size as the Open League’s passive ball. This ball is Open-Source, so anyone can produce one from &hellip;</div></li>"
+      },
+      "/how-to-build-your-own-soccer-field/": {
+        "content_hash": "f697209049c2928bf17bc28977bfc6fd",
+        "title": "How to build your own Soccer Field",
+        "date": "2025-01-31T05:25:12",
+        "image": "/wp-content/uploads/2025/01/SoccerFieldDrawings.png",
+        "author": "RoboCup Admin",
+        "html": "<li><div class=\"wp-block-latest-posts__featured-image alignright\"><a href=\"/how-to-build-your-own-soccer-field/\" aria-label=\"How to build your own Soccer Field\"><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"212\" src=\"/wp-content/uploads/2025/01/SoccerFieldDrawings-300x212.png\" class=\"attachment-medium size-medium wp-post-image\" alt=\"\" style=\"\" srcset=\"/wp-content/uploads/2025/01/SoccerFieldDrawings-300x212.png 300w, /wp-content/uploads/2025/01/SoccerFieldDrawings-1024x724.png 1024w, /wp-content/uploads/2025/01/SoccerFieldDrawings-768x543.png 768w, /wp-content/uploads/2025/01/SoccerFieldDrawings-1536x1087.png 1536w, /wp-content/uploads/2025/01/SoccerFieldDrawings-2048x1449.png 2048w, /wp-content/uploads/2025/01/SoccerFieldDrawings-424x300.png 424w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></div><a class=\"wp-block-latest-posts__post-title\" href=\"/how-to-build-your-own-soccer-field/\">How to build your own Soccer Field</a><div class=\"wp-block-latest-posts__post-author\">by RoboCup Admin</div><time datetime=\"2025-01-31T05:25:12-05:00\" class=\"wp-block-latest-posts__post-date\">January 31, 2025</time><div class=\"wp-block-latest-posts__post-excerpt\">The Soccer Committee provides a helpful starting guide document to help build your own field.</div></li>"
+      }
+    }
+  },
+  "rescue": {
+    "limit": 5,
+    "excerpt_words": 40,
+    "classes": "wp-block-latest-posts__list has-dates has-author has-link-color wp-elements-1 wp-block-latest-posts has-text-color has-accent-1-color has-background has-sitebg-background-color has-normal-font-size is-layout-flow wp-block-latest-posts-is-layout-flow",
+    "items": {
+      "/rescue-fields/": {
+        "content_hash": "5b15b08c3c13d3ab8d4cdef43a3777c5",
+        "title": "Rescue Resources – Building your own Field",
+        "date": "2026-01-24T04:00:48",
+        "image": "/wp-content/uploads/2017/12/line.jpg",
+        "author": "RoboCup Admin",
+        "html": "<li><div class=\"wp-block-latest-posts__featured-image alignright\"><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"166\" src=\"/wp-content/uploads/2017/12/line-300x166.jpg\" class=\"attachment-medium size-medium wp-post-image\" alt=\"\" style=\"\" srcset=\"/wp-content/uploads/2017/12/line-300x166.jpg 300w, /wp-content/uploads/2017/12/line.jpg 302w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></div><a class=\"wp-block-latest-posts__post-title\" href=\"/rescue-fields/\">Rescue Resources &#8211; Building your own Field</a><div class=\"wp-block-latest-posts__post-author\">by RoboCup Admin</div><time datetime=\"2026-01-24T04:00:48-05:00\" class=\"wp-block-latest-posts__post-date\">January 24, 2026</time><div class=\"wp-block-latest-posts__post-excerpt\">Setting up a Rescue Line or Rescue Maze field does not need to be difficult or expensive. Around the world, RoboCupJunior communities have developed both ready-to-buy solutions and open-source DIY resources to help teams, schools, and organisers build high-quality practice &hellip;</div></li>"
+      }
+    }
+  },
+  "onstage": {
+    "limit": 5,
+    "excerpt_words": 40,
+    "classes": "wp-block-latest-posts__list has-dates has-author has-link-color wp-elements-2 wp-block-latest-posts has-text-color has-accent-1-color has-background has-sitebg-background-color has-normal-font-size is-layout-flow wp-block-latest-posts-is-layout-flow",
+    "items": {
+      "/onstage-robotic-features/": {
+        "content_hash": "9034f08297fe9d8626af6ca401920a9a",
+        "title": "How to Decide on Your OnStage Robotic Features",
+        "date": "2024-06-10T07:45:28",
+        "image": "/wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen-.webp",
+        "author": "RoboCup Admin",
+        "html": "<li><div class=\"wp-block-latest-posts__featured-image alignright\"><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"171\" src=\"/wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--300x171.webp\" class=\"attachment-medium size-medium wp-post-image\" alt=\"\" style=\"\" srcset=\"/wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--300x171.webp 300w, /wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--1024x585.webp 1024w, /wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--768x439.webp 768w, /wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--1536x878.webp 1536w, /wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--525x300.webp 525w, /wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen-.webp 1792w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></div><a class=\"wp-block-latest-posts__post-title\" href=\"/onstage-robotic-features/\">How to Decide on Your OnStage Robotic Features</a><div class=\"wp-block-latest-posts__post-author\">by RoboCup Admin</div><time datetime=\"2024-06-10T07:45:28-04:00\" class=\"wp-block-latest-posts__post-date\">June 10, 2024</time><div class=\"wp-block-latest-posts__post-excerpt\">Introduction Welcome to the world of OnStage robotic performances! This article demonstrates how to prepare for RoboCupJunior OnStage competition, specifically focusing on how to select the top features to highlight in your Poster and Technical demonstration video. Imagine you have &hellip;</div></li>"
+      },
+      "/tips-for-onstage-performance/": {
+        "content_hash": "7310c48c0edb85f957b95df6c07d4e6c",
+        "title": "Tips for a Great OnStage Performance",
+        "date": "2022-07-14T08:17:00",
+        "image": "/wp-content/uploads/2025/01/onstage_performance.png",
+        "author": "RoboCup Admin",
+        "html": "<li><div class=\"wp-block-latest-posts__featured-image alignright\"><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"246\" src=\"/wp-content/uploads/2025/01/onstage_performance-300x246.png\" class=\"attachment-medium size-medium wp-post-image\" alt=\"\" style=\"\" srcset=\"/wp-content/uploads/2025/01/onstage_performance-300x246.png 300w, /wp-content/uploads/2025/01/onstage_performance-366x300.png 366w, /wp-content/uploads/2025/01/onstage_performance.png 663w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></div><a class=\"wp-block-latest-posts__post-title\" href=\"/tips-for-onstage-performance/\">Tips for a Great OnStage Performance</a><div class=\"wp-block-latest-posts__post-author\">by RoboCup Admin</div><time datetime=\"2022-07-14T08:17:00-04:00\" class=\"wp-block-latest-posts__post-date\">July 14, 2022</time><div class=\"wp-block-latest-posts__post-excerpt\">Tips for creating a great OnStage performance from the 2022 OTC member Nicolas Doyon.</div></li>"
+      }
+    }
+  }
+}

@@ -1,7 +1,48 @@
 {{ define "main" }}
-  <article>
-    <h1>{{ .Title }}</h1>
-    {{ if eq .Section "posts" }}<p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>{{ end }}
-    {{ .Content }}
-  </article>
+{{ if eq .Section "posts" }}
+{{ $metadata := index hugo.Data "wordpress-posts" (printf "%v" .Params.wordpress_id) }}
+<style>
+.rcj-post-banner { position: relative; height: 220px; background: center top / 100% auto no-repeat; }
+.rcj-post-banner > div { height: 100%; display: flex; align-items: center; padding: 0 2em; background: rgba(0,18,66,.65); }
+.rcj-post-title-box { display: flow-root; width: 100%; max-width: calc(1440px - 4em); margin: 0 auto; padding: 2em; border-radius: 10px; background: rgba(0,0,0,.5); }
+.rcj-post-banner h1 { display: inline-block !important; float: left; max-width: 70%; margin: 0; padding: 3px 0 0; color: white; font-size: 1.6em; }
+.rcj-post-meta { margin-bottom: 2em; }
+.rcj-post-meta > span { display: inline-block; padding: 3px 10px; margin: 0 .5em .5em 0; background: #f1f1f1; border-radius: 4px; color: #000; text-transform: uppercase; font-size: 90%; }
+.rcj-post-meta a { color: inherit; }
+.rcj-post-meta i { margin-right: 4px; }
+@media (max-width: 800px) { .rcj-post-banner > div { padding: 0 1em; } .rcj-post-banner h1 { max-width: none; } }
+@media (max-width: 640px) { .rcj-post-banner h1 { font-size: 1.4em; } }
+</style>
+<div class="rcj-post-banner"{{ with .Params.featured_image }} style="background-image: url('{{ . }}')"{{ end }}><div><div class="rcj-post-title-box"><h1 class="entry-title">{{ .Title }}</h1></div></div></div>
+<div id="content" class="cryout"><div id="container" class="one-column">
+  <main id="main" class="main">
+    <article class="post type-post status-publish hentry">
+      <div class="article-inner">
+        <header><div class="entry-meta rcj-post-meta">
+          {{ with $metadata.author }}<span class="author vcard">{{ with $metadata.avatar }}<img class="avatar avatar-96 photo" src="{{ . }}" width="96" height="96" alt="">{{ else }}<i class="icon-author"></i>{{ end }} {{ . }}</span>{{ end }}
+          {{ with $metadata.terms }}<span><i class="icon-category"></i>{{ range $i, $term := . }}{{ if $i }}, {{ end }}<a href="{{ replace $term.link "https://junior.robocup.org" "" }}">{{ $term.name }}</a>{{ end }}</span>{{ end }}
+          <span><i class="icon-date"></i><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></span>
+        </div></header>
+        <div class="entry-content">{{ .Content }}{{ partial "jetpack-related.html" . }}</div>
+        <footer class="entry-meta entry-utility"><template></template></footer>
+      </div>
+    </article>
+    {{ partial "theme-related.html" . }}
+  </main>
+</div>{{ partial "colophon.html" . }}</div>
+{{ else }}
+{{ $pageMetadata := index (index hugo.Data "wordpress-pages") (printf "%v" .Params.wordpress_id) }}
+{{ $layout := "two-columns-right" }}
+{{ with $pageMetadata }}{{ $layout = .layout }}{{ end }}
+<div id="content" class="cryout"><div id="container" class="{{ $layout }}">
+  <main id="main" class="main">
+    <article class="page type-page status-publish hentry">
+      <div class="article-inner">
+        <div class="entry-content">{{ .Content }}</div>
+      </div>
+    </article>
+  </main>
+  {{ if eq $layout "two-columns-right" }}<aside id="secondary" class="widget-area sidey"><section class="widget-container widget_block widget_media_image"><div class="wp-block-image"><figure class="aligncenter size-full"><img src="/wp-content/uploads/2024/10/RCJ25Years.jpg" width="225" height="225" alt=""></figure></div></section></aside>{{ end }}
+</div>{{ partial "colophon.html" . }}</div>
+{{ end }}
 {{ end }}

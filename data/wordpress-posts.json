@@ -1,0 +1,396 @@
+{
+  "2135": {
+    "author": "Margaux Edwards",
+    "id": 2135,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/Imagem10-1219x300.png",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/Imagem10-800x300.png",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/Imagem10-512x300.png"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "2149": {
+    "author": "Margaux Edwards",
+    "id": 2149,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2024/10/cropped-RCJ25Years-405x250.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2024/10/cropped-RCJ25Years-512x250.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2024/10/cropped-RCJ25Years-512x250.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "2163": {
+    "author": "Margaux Edwards",
+    "id": 2163,
+    "images": {},
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "2168": {
+    "author": "Margaux Edwards",
+    "id": 2168,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/cropped-robocup-def-512x300.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/cropped-robocup-def-512x300.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/cropped-robocup-def-512x300.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "2212": {
+    "author": "RoboCup Admin",
+    "id": 2212,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--1570x300.webp",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--800x300.webp",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--512x300.webp"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/onstage/",
+        "name": "OnStage",
+        "slug": "onstage"
+      }
+    ],
+    "avatar": "/images/avatars/11.jpg"
+  },
+  "2222": {
+    "author": "RoboCup Admin",
+    "id": 2222,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/onstage_performance-663x300.png",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/onstage_performance-663x300.png",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/onstage_performance-512x300.png"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/onstage/",
+        "name": "OnStage",
+        "slug": "onstage"
+      }
+    ],
+    "avatar": "/images/avatars/11.jpg"
+  },
+  "2270": {
+    "author": "RoboCup Admin",
+    "id": 2270,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/SoccerFieldDrawings-1150x300.png",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/SoccerFieldDrawings-800x300.png",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/SoccerFieldDrawings-512x300.png"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/soccer/",
+        "name": "Soccer",
+        "slug": "soccer"
+      }
+    ],
+    "avatar": "/images/avatars/11.jpg"
+  },
+  "2278": {
+    "author": "RoboCup Admin",
+    "id": 2278,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/close-1150x300.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/close-800x300.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/close-512x300.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/soccer/",
+        "name": "Soccer",
+        "slug": "soccer"
+      }
+    ],
+    "avatar": "/images/avatars/11.jpg"
+  },
+  "2327": {
+    "author": "RoboCup Admin",
+    "id": 2327,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/rcjv3_dimensions-1440x300.png",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/rcjv3_dimensions-800x300.png",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/rcjv3_dimensions-512x300.png"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/soccer/",
+        "name": "Soccer",
+        "slug": "soccer"
+      }
+    ],
+    "avatar": "/images/avatars/11.jpg"
+  },
+  "2441": {
+    "author": "Margaux Edwards",
+    "id": 2441,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/04/cropped-RCAP2025_Logo-1-1440x300.webp",
+      "kahuna-featured-half": "/wp-content/uploads/2025/04/cropped-RCAP2025_Logo-1-800x300.webp",
+      "kahuna-featured-third": "/wp-content/uploads/2025/04/cropped-RCAP2025_Logo-1-512x300.webp"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "2468": {
+    "author": "Margaux Edwards",
+    "id": 2468,
+    "images": {},
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "2481": {
+    "author": "Margaux Edwards",
+    "id": 2481,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/08/RoboCupJunior-25-Years1-1440x300.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2025/08/RoboCupJunior-25-Years1-800x300.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2025/08/RoboCupJunior-25-Years1-512x300.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "2491": {
+    "author": "RoboCup Admin",
+    "id": 2491,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/53674413452_61f2824229_o-1150x300.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/53674413452_61f2824229_o-800x300.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/53674413452_61f2824229_o-512x300.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/soccer/",
+        "name": "Soccer",
+        "slug": "soccer"
+      }
+    ],
+    "avatar": "/images/avatars/11.jpg"
+  },
+  "2576": {
+    "author": "Margaux Edwards",
+    "id": 2576,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2026/03/RCJEC2026_Logo_Full_v3-1416x300.webp",
+      "kahuna-featured-half": "/wp-content/uploads/2026/03/RCJEC2026_Logo_Full_v3-800x300.webp",
+      "kahuna-featured-third": "/wp-content/uploads/2026/03/RCJEC2026_Logo_Full_v3-512x300.webp"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "2957": {
+    "author": "Margaux Edwards",
+    "id": 2957,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2026/01/53570158896_a14c83aa75_o-1440x300.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2026/01/53570158896_a14c83aa75_o-800x300.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2026/01/53570158896_a14c83aa75_o-512x300.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "3014": {
+    "author": "Margaux Edwards",
+    "id": 3014,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2025/01/53674413452_61f2824229_o-1-1150x300.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2025/01/53674413452_61f2824229_o-1-800x300.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2025/01/53674413452_61f2824229_o-1-512x300.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "3026": {
+    "author": "Marek Suppa",
+    "id": 3026,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2024/11/53863673616_19aea93f0d_z-405x250.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2024/11/53863673616_19aea93f0d_z-427x250.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2024/11/53863673616_19aea93f0d_z-427x250.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/13.jpg"
+  },
+  "3304": {
+    "author": "RoboCup Admin",
+    "id": 3304,
+    "images": {},
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/rescue/",
+        "name": "Rescue",
+        "slug": "rescue"
+      },
+      {
+        "link": "https://junior.robocup.org/category/rescue/rescue-line/",
+        "name": "Rescue Line",
+        "slug": "rescue-line"
+      },
+      {
+        "link": "https://junior.robocup.org/category/rescue/rescue-maze/",
+        "name": "Rescue Maze",
+        "slug": "rescue-maze"
+      },
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/11.jpg"
+  },
+  "4989": {
+    "author": "Margaux Edwards",
+    "id": 4989,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2026/03/RCJ2026-Call-for-Volunteers-1200x300.png",
+      "kahuna-featured-half": "/wp-content/uploads/2026/03/RCJ2026-Call-for-Volunteers-800x300.png",
+      "kahuna-featured-third": "/wp-content/uploads/2026/03/RCJ2026-Call-for-Volunteers-512x300.png"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "6715": {
+    "author": "Margaux Edwards",
+    "id": 6715,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2026/04/Screenshot-2026-04-10-at-00-47-19-IMG-20260407-WA0006-asr_flyer_1.pdf-1440x330.png",
+      "kahuna-featured-half": "/wp-content/uploads/2026/04/Screenshot-2026-04-10-at-00-47-19-IMG-20260407-WA0006-asr_flyer_1.pdf-800x330.png",
+      "kahuna-featured-third": "/wp-content/uploads/2026/04/Screenshot-2026-04-10-at-00-47-19-IMG-20260407-WA0006-asr_flyer_1.pdf-512x330.png"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "6884": {
+    "author": "Margaux Edwards",
+    "id": 6884,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2026/04/WEROB_2026-1440x330.png",
+      "kahuna-featured-half": "/wp-content/uploads/2026/04/WEROB_2026-800x330.png",
+      "kahuna-featured-third": "/wp-content/uploads/2026/04/WEROB_2026-512x330.png"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "7309": {
+    "author": "Margaux Edwards",
+    "id": 7309,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2026/04/1776278960733-1280x330.jpeg",
+      "kahuna-featured-half": "/wp-content/uploads/2026/04/1776278960733-800x330.jpeg",
+      "kahuna-featured-third": "/wp-content/uploads/2026/04/1776278960733-512x330.jpeg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/14.png"
+  },
+  "69380": {
+    "author": "RoboCup Admin",
+    "id": 69380,
+    "images": {
+      "kahuna-featured": "/wp-content/uploads/2026/10/robocup-2027-nuremberg-logo-1440x330.jpg",
+      "kahuna-featured-half": "/wp-content/uploads/2026/10/robocup-2027-nuremberg-logo-800x330.jpg",
+      "kahuna-featured-third": "/wp-content/uploads/2026/10/robocup-2027-nuremberg-logo-512x330.jpg"
+    },
+    "terms": [
+      {
+        "link": "https://junior.robocup.org/category/news/",
+        "name": "RoboCupJunior News",
+        "slug": "news"
+      }
+    ],
+    "avatar": "/images/avatars/11.jpg"
+  }
+}

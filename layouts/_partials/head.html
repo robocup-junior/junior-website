@@ -1,8 +1,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} – {{ site.Title }}{{ end }}</title>
+<link rel="icon" href="/wp-content/uploads/2024/10/cropped-RCJ25Years-32x32.jpg" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2024/10/cropped-RCJ25Years-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2024/10/cropped-RCJ25Years-180x180.jpg">
+<title>{{ .Title }}{{ if eq .Kind "term" }} Archives{{ end }} - {{ site.Title }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">
 {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">{{ end }}
-{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+{{ if eq .Section "posts" }}{{ $jetpack := resources.Get "css/jetpack-related.css" | fingerprint }}<link rel="stylesheet" href="{{ $jetpack.RelPermalink }}" integrity="{{ $jetpack.Data.Integrity }}">{{ end }}
+<link rel="stylesheet" href="/wp-content/plugins/wp-rss-aggregator/core/css/displays.css?ver=5.7.0">
+<link rel="stylesheet" href="/wp-content/themes/kahuna-plus/resources/fonts/fontfaces.css?ver=1.8.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700|Source+Sans+Pro:|Poppins:|Source+Sans+Pro:100,200,300,400,500,600,700,800,900|Poppins:800|Source+Sans+Pro:400|Poppins:700&amp;ver=1.8.0">
+<link rel="stylesheet" href="/wp-content/themes/kahuna-plus/style.css?ver=1.8.0">
+<link rel="stylesheet" href="/wp-includes/css/dist/block-library/style.min.css">
+{{ $css := resources.Get "css/reference-inline.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="stylesheet" href="/wp-content/themes/kahuna-plus/plus/schemes/verdant/style.css?ver=1.8.0">
+{{ $custom := resources.Get "css/reference-custom.css" | fingerprint }}
+<link rel="stylesheet" href="{{ $custom.RelPermalink }}" integrity="{{ $custom.Data.Integrity }}">
+<style>
+  :root { --wp--preset--font-size--normal: 17px; --wp--preset--font-size--small: 10px; --wp--preset--font-size--medium: 20px; --wp--preset--font-size--large: 27px; --wp--preset--font-size--x-large: 42px; --wp--preset--font-size--larger: 43px; }
+  img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 .07em !important; vertical-align: -.1em !important; background: none !important; padding: 0 !important; }
+  img:is([sizes=auto i],[sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px; }
+  body .is-layout-flex { display: flex; }
+  .is-layout-flex { flex-wrap: wrap; align-items: center; }
+  .is-layout-flex > :is(*, div) { margin: 0; }
+  .wp-container-core-group-is-layout-d05cb3ef { flex-wrap: nowrap; justify-content: center; }
+  .wp-container-core-buttons-is-layout-fe48e5de { justify-content: center; }
+  :where(.is-layout-flex) { gap: .5em; }
+  :where(.wp-block-columns.is-layout-flex) { gap: 2em; }
+  .kahuna-landing-page #main { padding: 0 !important; }
+  nav#mobile-menu.is-open { display: block; top: 0; opacity: 1; }
+  .archive-thumbnail { width: 100%; height: 330px; object-fit: cover; }
+</style>

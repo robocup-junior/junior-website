@@ -1,0 +1,46 @@
+{{- $feeds := dict
+  "gettingstarted" (dict "url" "https://junior.forum.robocup.org/c/general/1.rss" "id" 7)
+  "soccer" (dict "url" "https://junior.forum.robocup.org/c/robocupjunior-soccer/5.rss" "id" 1)
+  "onstage" (dict "url" "https://junior.forum.robocup.org/c/robocupjunior-onstage/7.rss" "id" 2)
+  "rcj-rescue-line" (dict "url" "https://junior.forum.robocup.org/c/robocupjunior-rescue/robocupjunior-rescue-line/10.rss" "id" 4)
+  "rcj-rescue-maze" (dict "url" "https://junior.forum.robocup.org/c/robocupjunior-rescue/robocupjunior-rescue-maze/11.rss" "id" 5)
+  "rcj-rescue-sim" (dict "url" "https://junior.forum.robocup.org/c/robocupjunior-rescue/rescue-simulation/47.rss" "id" 3)
+-}}
+{{- $key := .Get 0 -}}
+{{- $feed := index $feeds $key -}}
+{{- $items := slice -}}
+{{- $valid := false -}}
+{{- with $feed -}}
+  {{- with try (resources.GetRemote .url (dict "timeout" "2s")) -}}
+    {{- with .Value -}}
+      {{- with try (transform.Unmarshal .) -}}
+        {{- with .Value -}}
+          {{- if and (reflect.IsMap .) (isset . "channel") (reflect.IsMap .channel) -}}
+            {{- $valid = true -}}
+            {{- $entries := .channel.item | default (slice) -}}
+            {{- if reflect.IsMap $entries }}{{ $entries = slice $entries }}{{ end -}}
+            {{- range first 15 $entries -}}
+              {{- $item := . -}}
+              {{- if and (reflect.IsMap .) .title .link .pubDate -}}
+                {{- with try (time.AsTime .pubDate) -}}
+                  {{- with .Value -}}
+                    {{- $items = $items | append (dict "title" $item.title "link" $item.link "creator" (default "" $item.creator) "date" (time.In "America/New_York" .)) -}}
+                  {{- else }}{{ $valid = false }}{{ end -}}
+                {{- end -}}
+              {{- else }}{{ $valid = false }}{{ end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if $valid -}}
+  <div class="wpra-display align" data-display-id="{{ $feed.id }}" hx-target="this" hx-swap="outerHTML"><div class="wp-rss-aggregator wpra-list-template "><ul class="rss-aggregator wpra-item-list wpra-item-list--bullets wpra-item-list--default" start="1">
+  {{- range $items -}}
+    <li class="wpra-item feed-item "><a href="{{ .link }}" class="" target="_blank" rel="noopener noreferrer nofollow" style="">{{ .title }}</a><div class="wprss-feed-meta"><span class="feed-date">{{ if eq $key "rcj-rescue-sim" }} {{ .date.Format "January 2, 2006" }}{{ else }}Date:  {{ .date.Format "2006-01-02" }}{{ end }}</span>{{ with .creator }}<span class="feed-author">By {{ . }}</span>{{ end }}</div></li>
+  {{- end -}}
+  </ul></div></div>
+{{- else -}}
+  {{ .Inner | safeHTML }}
+{{- end -}}

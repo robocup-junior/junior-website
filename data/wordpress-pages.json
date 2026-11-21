@@ -1,0 +1,226 @@
+{
+  "74": {
+    "path": "/",
+    "banner_image": null,
+    "banner_title": null,
+    "layout": "kahuna-landing-page one-column",
+    "sidebar": false
+  },
+  "76": {
+    "path": "/gettingstarted/",
+    "banner_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
+    "banner_title": "How to Get Started",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "79": {
+    "path": "/soccer/",
+    "banner_image": "/wp-content/uploads/2017/12/DSC04977.jpg",
+    "banner_title": "Soccer",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "83": {
+    "path": "/onstage/",
+    "banner_image": "/wp-content/uploads/2017/12/DSC05001.jpg",
+    "banner_title": "OnStage",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "85": {
+    "path": "/resources/",
+    "banner_image": "/wp-content/uploads/2017/12/DSC04976.jpg",
+    "banner_title": "Resources",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "87": {
+    "path": "/community/",
+    "banner_image": "/wp-content/uploads/2025/08/IMG-20250719-WA0075-1.jpg",
+    "banner_title": "Community",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "89": {
+    "path": "/home-page/",
+    "banner_image": null,
+    "banner_title": null,
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "128": {
+    "path": "/robocupjunior-general-rules/",
+    "banner_image": null,
+    "banner_title": "RoboCupJunior General Rules",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "157": {
+    "path": "/werob-2012/",
+    "banner_image": null,
+    "banner_title": "WEROB 2012",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "166": {
+    "path": "/werob-2013/",
+    "banner_image": null,
+    "banner_title": "WEROB 2013",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "171": {
+    "path": "/werob-2014/",
+    "banner_image": null,
+    "banner_title": "WEROB 2014",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "178": {
+    "path": "/werob-2015/",
+    "banner_image": null,
+    "banner_title": "WEROB 2015",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "182": {
+    "path": "/werob-2016/",
+    "banner_image": null,
+    "banner_title": "WEROB 2016",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "188": {
+    "path": "/history/",
+    "banner_image": "/wp-content/uploads/2016/11/RCjr_high_L.jpg",
+    "banner_title": "History",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "190": {
+    "path": "/previous-rules/",
+    "banner_image": null,
+    "banner_title": "Previous League Rules",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "223": {
+    "path": "/rcj-rescue-line/",
+    "banner_image": null,
+    "banner_title": "RCJ Rescue Line",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "227": {
+    "path": "/rcj-rescue-maze/",
+    "banner_image": "/wp-content/uploads/2026/01/53667960461_ee7041312e_o-scaled.jpg",
+    "banner_title": "RCJ Rescue Maze",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "820": {
+    "path": "/workshop-on-educational-robotics-werob-2019/",
+    "banner_image": null,
+    "banner_title": "Workshop On Educational Robotics-WEROB 2019",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "1114": {
+    "path": "/rcj-rescue-sim/",
+    "banner_image": "/wp-content/uploads/2025/01/simulation.png",
+    "banner_title": "RCJ Rescue Simulation",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "1431": {
+    "path": "/rc2021/",
+    "banner_image": null,
+    "banner_title": "RoboCupJunior 2021 Worldwide",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "1800": {
+    "path": "/workshop-on-educational-robotics-werob-2023/",
+    "banner_image": null,
+    "banner_title": "Workshop On Educational Robotics – WEROB 2023",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "2084": {
+    "path": "/rcj-werob/",
+    "banner_image": null,
+    "banner_title": "Workshop on Educational Robotics",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "2117": {
+    "path": "/about/",
+    "banner_image": null,
+    "banner_title": "About RoboCupJunior",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "2299": {
+    "path": "/rescue/",
+    "banner_image": "/wp-content/uploads/2017/12/DSC05231.jpg",
+    "banner_title": "Rescue Leagues",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "2458": {
+    "path": "/external-resources/",
+    "banner_image": null,
+    "banner_title": "External Resources",
+    "layout": "two-columns-right",
+    "sidebar": true
+  },
+  "3030": {
+    "path": "/robocup-beginners-guide/",
+    "banner_image": "/wp-content/uploads/2026/01/Photo-25-6-21-1-40-50-pm-scaled.jpg",
+    "banner_title": "Starting a Team",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "3316": {
+    "path": "/events/",
+    "banner_image": null,
+    "banner_title": "Events",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "69259": {
+    "path": "/qualification/",
+    "banner_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
+    "banner_title": "Qualification and Competitions",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "69374": {
+    "path": "/for-educators/",
+    "banner_image": "/wp-content/uploads/2026/01/53570158896_a14c83aa75_o-scaled.jpg",
+    "banner_title": "For Educators",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "69442": {
+    "path": "/your-first-competition/",
+    "banner_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
+    "banner_title": "Your First Competition",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "69443": {
+    "path": "/robocupjunior-spirit/",
+    "banner_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
+    "banner_title": "The RoboCupJunior Spirit",
+    "layout": "one-column",
+    "sidebar": false
+  },
+  "82221": {
+    "path": "/werob/",
+    "banner_image": null,
+    "banner_title": "Workshop on Educational Robotics",
+    "layout": "one-column",
+    "sidebar": false
+  }
+}

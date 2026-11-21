@@ -1,5 +1,13 @@
-<article class="summary">
-  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-  <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
-  <p>{{ .Summary | plainify | truncate 240 }}</p>
+<article class="hentry post type-post status-publish">
+  <div class="article-inner">
+    <header class="entry-header">
+      <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ $details := index (index hugo.Data "wordpress-posts") (printf "%v" .Params.wordpress_id) }}
+      {{ $image := .Params.featured_image }}
+      {{ with $details }}{{ with index .images "kahuna-featured" }}{{ $image = . }}{{ end }}{{ end }}
+      {{ with $image }}<div class="post-thumbnail-container"><a href="{{ $.RelPermalink }}"><img class="archive-thumbnail" src="{{ . }}" alt=""></a></div>{{ end }}
+    </header>
+    <div class="entry-summary">{{ with .Params.wordpress_excerpt }}{{ . | safeHTML }}{{ else }}<p>{{ $.Summary | plainify | truncate 240 }}</p>{{ end }}</div>
+    <footer class="post-continue-container"><a class="continue-reading-link" href="{{ .RelPermalink }}"><span>Read more <i class="icon-continue-reading"></i></span></a></footer>
+  </div>
 </article>

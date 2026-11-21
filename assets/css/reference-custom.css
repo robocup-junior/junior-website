@@ -1,0 +1,85 @@
+
+// Fix iframe containers - mainly for WEROB pages
+.iframe-container {
+    width: 100%;
+    height: 100vh; /* Or a fixed height like 600px */
+    max-width: 100%;
+    border: none;
+    display: block;
+    box-sizing: border-box;
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100vh; /* Or a fixed height like 600px */
+    max-width: 100%;
+    border: none;
+    display: block;
+    box-sizing: border-box;
+}
+
+// Fix and standardise all buttons
+button,
+.wp-block-button__link {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover,
+button:focus,
+button:active,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus,
+.wp-block-button__link:active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: inherit !important;
+    background-color: inherit !important;
+}
+
+/* Base styles for all staticslider buttons */
+.staticslider-button {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* First button: white background, dark text */
+.staticslider-button:nth-of-type(1) {
+    background-color: #ffffff;
+    color: #001242;
+    border-color: #001242;
+}
+
+/* First button hover: invert colors */
+.staticslider-button:nth-of-type(1):hover,
+.staticslider-button:nth-of-type(1):focus,
+.staticslider-button:nth-of-type(1):active {
+    background-color: #001242;
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Second button: dark background, white text */
+.staticslider-button:nth-of-type(2) {
+    background-color: #001242;
+    color: #ffffff;
+    border-color: #001242;
+}
+
+/* Second button hover: invert colors */
+.staticslider-button:nth-of-type(2):hover,
+.staticslider-button:nth-of-type(2):focus,
+.staticslider-button:nth-of-type(2):active {
+    background-color: #ffffff;
+    color: #001242;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+

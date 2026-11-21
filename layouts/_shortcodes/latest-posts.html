@@ -1,0 +1,29 @@
+{{- $category := .Get "category" -}}
+{{- $config := index (index hugo.Data "latest-posts") $category -}}
+{{- $categories := slice $category -}}
+{{- if eq $category "rescue" -}}
+  {{- $categories = slice "rescue" "rescue-line" "rescue-maze" "rescue-sim" -}}
+{{- end -}}
+{{- $posts := where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" $categories -}}
+<ul class="{{ $config.classes }}">
+{{- range first $config.limit $posts }}
+  {{- $post := . -}}
+  {{- $original := index $config.items (lower .RelPermalink) -}}
+  {{- $metadata := index (index hugo.Data "wordpress-posts") (printf "%v" .Params.wordpress_id) -}}
+  {{- $author := .Params.author | default "" -}}
+  {{- with $metadata }}{{ with .author }}{{ $author = . }}{{ end }}{{ end -}}
+  {{- $image := .Params.featured_image | default "" -}}
+  {{- if and $original (eq $original.content_hash (md5 .RawContent)) (eq $original.title .Title) (eq $original.date (.Date.Format "2006-01-02T15:04:05")) (eq $original.author $author) (eq $original.image $image) -}}
+    {{- $original.html | safeHTML -}}
+  {{- else -}}
+    <li>
+      {{- with $image }}<div class="wp-block-latest-posts__featured-image alignright"><a href="{{ $post.RelPermalink }}" aria-label="{{ $post.Title }}"><img loading="lazy" src="{{ . }}" class="attachment-medium size-medium wp-post-image" alt=""></a></div>{{ end -}}
+      <a class="wp-block-latest-posts__post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{- with $author }}<div class="wp-block-latest-posts__post-author">by {{ . }}</div>{{ end -}}
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" class="wp-block-latest-posts__post-date">{{ .Date.Format "January 2, 2006" }}</time>
+      {{- $words := findRE `\S+` (.Plain | htmlUnescape) -}}
+      <div class="wp-block-latest-posts__post-excerpt">{{ delimit (first $config.excerpt_words $words) " " }}{{ if gt (len $words) $config.excerpt_words }} …{{ end }}</div>
+    </li>
+  {{- end }}
+{{- end }}
+</ul>

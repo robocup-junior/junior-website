@@ -174,3 +174,11 @@ enableRobotsTXT = true
     name = "OnStage News & Resources"
     url = "/category/onstage/"
     weight = 72
+
+[security]
+  # WordPress exports are trusted HTML with embedded styling and scripts.
+  allowContent = ['! ^text/org$']
+
+[caches.getresource]
+  # Forum lists must be fetched again on each build.
+  maxAge = '0s'

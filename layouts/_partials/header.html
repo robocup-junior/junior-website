@@ -1,0 +1,8 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-title" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+    <nav class="site-nav" aria-label="Main">
+      {{ partial "menu.html" (dict "entries" site.Menus.main "page" .) }}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,176 @@
+baseURL = "https://junior.robocup.org/"
+locale = "en-US"
+title = "RoboCupJunior"
+enableRobotsTXT = true
+
+[params]
+  description = "RoboCupJunior: a project-oriented educational initiative that supports local, regional and international robotic events for young students."
+
+# Keep WordPress URLs: pages and posts both live at /<slug>/,
+# categories at /category/<slug>/.
+[permalinks]
+  [permalinks.page]
+    posts = "/:slugorcontentbasename/"
+  [permalinks.term]
+    categories = "/category/:slug/"
+
+[taxonomies]
+  category = "categories"
+
+[markup.goldmark.renderer]
+  # Content imported from WordPress contains raw HTML.
+  unsafe = true
+
+# Main navigation, mirrored from the live site.
+[menus]
+  [[menus.main]]
+    identifier = "about"
+    name = "About Us"
+    url = "/about/"
+    weight = 10
+  [[menus.main]]
+    parent = "about"
+    name = "RCJ Organisation"
+    url = "/community/"
+    weight = 11
+  [[menus.main]]
+    parent = "about"
+    name = "RCJ History"
+    url = "/history/"
+    weight = 12
+  [[menus.main]]
+    parent = "about"
+    name = "RCJ Events"
+    url = "/events/"
+    weight = 13
+  [[menus.main]]
+    parent = "about"
+    name = "RoboCupJunior News"
+    url = "/category/news/"
+    weight = 14
+
+  [[menus.main]]
+    identifier = "gettingstarted"
+    name = "Getting Started"
+    url = "/gettingstarted/"
+    weight = 20
+  [[menus.main]]
+    parent = "gettingstarted"
+    name = "How to Get Started"
+    url = "/gettingstarted/"
+    weight = 21
+  [[menus.main]]
+    parent = "gettingstarted"
+    name = "Starting a Team"
+    url = "/robocup-beginners-guide/"
+    weight = 22
+  [[menus.main]]
+    parent = "gettingstarted"
+    name = "Qualification and Competitions"
+    url = "/qualification/"
+    weight = 23
+  [[menus.main]]
+    parent = "gettingstarted"
+    name = "Your First Competition"
+    url = "/your-first-competition/"
+    weight = 24
+  [[menus.main]]
+    parent = "gettingstarted"
+    name = "For Educators"
+    url = "/for-educators/"
+    weight = 25
+  [[menus.main]]
+    parent = "gettingstarted"
+    name = "The RoboCupJunior Spirit"
+    url = "/robocupjunior-spirit/"
+    weight = 26
+
+  [[menus.main]]
+    identifier = "resources"
+    name = "Resources"
+    url = "/resources/"
+    weight = 30
+  [[menus.main]]
+    parent = "resources"
+    name = "Resources Library"
+    url = "/resources/"
+    weight = 31
+  [[menus.main]]
+    parent = "resources"
+    name = "External Resources"
+    url = "/external-resources/"
+    weight = 32
+  [[menus.main]]
+    parent = "resources"
+    name = "Workshop on Educational Robotics"
+    url = "/rcj-werob/"
+    weight = 33
+
+  [[menus.main]]
+    name = "General Rules"
+    url = "/robocupjunior-general-rules/"
+    weight = 40
+
+  [[menus.main]]
+    identifier = "soccer"
+    name = "Soccer"
+    url = "/soccer/"
+    weight = 50
+  [[menus.main]]
+    parent = "soccer"
+    name = "Soccer Leagues"
+    url = "/soccer/"
+    weight = 51
+  [[menus.main]]
+    parent = "soccer"
+    name = "Soccer News & Resources"
+    url = "/category/soccer/"
+    weight = 52
+
+  [[menus.main]]
+    identifier = "rescue"
+    name = "Rescue"
+    url = "/rescue/"
+    weight = 60
+  [[menus.main]]
+    identifier = "rescue-leagues"
+    parent = "rescue"
+    name = "Rescue Leagues"
+    url = "/rescue/"
+    weight = 61
+  [[menus.main]]
+    parent = "rescue-leagues"
+    name = "Rescue Line"
+    url = "/rcj-rescue-line/"
+    weight = 62
+  [[menus.main]]
+    parent = "rescue-leagues"
+    name = "Rescue Maze"
+    url = "/rcj-rescue-maze/"
+    weight = 63
+  [[menus.main]]
+    parent = "rescue-leagues"
+    name = "Rescue Simulation"
+    url = "/rcj-rescue-sim/"
+    weight = 64
+  [[menus.main]]
+    parent = "rescue"
+    name = "Rescue News & Resources"
+    url = "/category/rescue/"
+    weight = 65
+
+  [[menus.main]]
+    identifier = "onstage"
+    name = "OnStage"
+    url = "/onstage/"
+    weight = 70
+  [[menus.main]]
+    parent = "onstage"
+    name = "OnStage"
+    url = "/onstage/"
+    weight = 71
+  [[menus.main]]
+    parent = "onstage"
+    name = "OnStage News & Resources"
+    url = "/category/onstage/"
+    weight = 72

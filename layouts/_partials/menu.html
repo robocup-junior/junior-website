@@ -1,0 +1,8 @@
+<ul>
+  {{ range .entries }}
+    <li{{ if .HasChildren }} class="has-children"{{ end }}>
+      <a href="{{ .URL }}"{{ if $.page.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ with .Children }}{{ partial "menu.html" (dict "entries" . "page" $.page) }}{{ end }}
+    </li>
+  {{ end }}
+</ul>

@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ with first 5 (where site.RegularPages "Section" "posts") }}
+    <section class="latest-news">
+      <h2>Latest news</h2>
+      {{ range . }}{{ partial "summary.html" . }}{{ end }}
+    </section>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,57 @@
+/* RoboCupJunior General Rules (content/robocupjunior-general-rules.md).
+   The rules-embed shortcode: a framed iframe with a bar that offers the
+   same document in a new tab. Tokens and rules: rcj-site.css, STYLEGUIDE.md. */
+
+.entry-content > p.has-large-font-size:first-child { line-height: 1.4; max-width: 62ch; }
+.entry-content .wp-block-buttons { gap: 12px; margin: 24px 0 40px; }
+
+.rules-embed {
+  margin: 16px 0 32px;
+  border: 1px solid var(--rcj-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--rcj-white);
+}
+.rules-embed__bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 8px 16px;
+  padding: 8px 8px 8px 20px;
+  background: var(--rcj-navy);
+  color: var(--rcj-white);
+}
+.rules-embed__label {
+  font-family: Poppins, "Source Sans Pro", sans-serif;
+  font-weight: 700; font-size: 1rem; line-height: 1.3;
+}
+.entry-content a.rules-embed__open,
+.entry-content a.rules-embed__open:visited {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--rcj-white);
+  color: var(--rcj-navy) !important;
+  font-weight: 700; font-size: 1rem; line-height: 1.2;
+  text-decoration: none;
+}
+.entry-content a.rules-embed__open:hover,
+.entry-content a.rules-embed__open:focus-visible {
+  background: var(--rcj-pink-dark);
+  color: var(--rcj-white) !important;
+}
+.entry-content a.rules-embed__open:focus-visible { outline: 3px solid var(--rcj-white); outline-offset: 2px; }
+
+.rules-embed__frame { background: var(--rcj-white); }
+.rules-embed__frame iframe {
+  display: block; width: 100%; border: 0;
+  height: min(85vh, 960px);
+  min-height: 520px;
+}
+@media (max-width: 600px) {
+  .rules-embed__bar { padding: 12px 16px; }
+  .entry-content a.rules-embed__open { width: 100%; justify-content: center; }
+  .rules-embed__frame iframe { height: 70vh; min-height: 420px; }
+}
+
+/* Accent (pink) buttons: the theme gives them a white border, which makes
+   them look smaller than the charcoal buttons beside them */
+.entry-content .wp-block-button__link.has-accent-1-background-color { border-color: var(--rcj-pink); }

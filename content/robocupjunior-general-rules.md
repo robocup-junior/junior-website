@@ -5,25 +5,25 @@
   "wordpress_id": 128
 }
 
+{{< wp-intro >}}*The rules that apply across all leagues at the international RoboCupJunior competition*{{< /wp-intro >}}
+
 {{< wp-prose >}}
 ## RoboCupJunior 2027 General Rules
+
+These rules apply to the international RoboCupJunior competition. Regional, super-regional and local tournaments may vary or adapt them to suit their needs, so check with the organizers of each tournament you enter which rules they will use.
+
+**Questions about the rules?** If anything in the General Rules or a league's rules is unclear, ask on the official [RoboCupJunior Forum](https://junior.forum.robocup.org/).
 {{< /wp-prose >}}
 
-{{< wp-group >}}
+{{< wp-unjustified-buttons >}}
+{{< wp-button-item url="https://robocup-junior.github.io/general-rules/main/general-rules.pdf" text="General Rules (PDF)" accent="true" >}}
+{{< wp-button-item url="https://robocup-junior.github.io/general-rules/main/general-rules.html" text="General Rules (web page)" >}}
+{{< /wp-unjustified-buttons >}}
+
 {{< wp-prose >}}
-These rules apply to the international RoboCupJunior competition. However, regional, super-regional, and local tournaments may have variations or adaptations to these rules to suit their specific competition needs. It is important to check with the organizers of the tournaments you are participating in to confirm which exact rules will be in use.
+## Read the rules on this page
 
-**If teams are unsure about any aspects of the General Rules or specific League Rules, they are encouraged to inquire via the official RoboCupJunior Forum for clarification: [https://junior.forum.robocup.or](https://junior.forum.robocup.org/)**[**g/**](https://junior.forum.robocup.org/)
+The current version is shown below. On a phone, it is easier to read in its own tab.
 {{< /wp-prose >}}
 
-{{< wp-buttons >}}
-{{< wp-button-item url="https://robocup-junior.github.io/general-rules/main/general-rules.pdf" text="RoboCup General Rules [PDF]" >}}
-{{< wp-button-item url="https://robocup-junior.github.io/general-rules/main/general-rules.html" text="RoboCup General Rules [HTML]" >}}
-{{< /wp-buttons >}}
-
-{{< wp-spacer height="33" >}}
-
-{{< wp-iframe title="RoboCupJunior General Rules" src="https://robocup-junior.github.io/general-rules/main/general-rules.html" width="100%" height="800px" >}}
-{{< /wp-group >}}
-
-{{< wp-empty-paragraph >}}
+{{< rules-embed src="https://robocup-junior.github.io/general-rules/main/general-rules.html" title="RoboCupJunior General Rules" label="RoboCupJunior General Rules" open="Open the rules in a new tab" >}}

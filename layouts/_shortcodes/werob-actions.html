@@ -1,0 +1,3 @@
+{{- /* Row of dark uppercase buttons. Write ordinary Markdown links inside,
+     separated by spaces; legacy-links titles such as "newtab" still work. */ -}}
+<p class="werob-actions">{{ .Page.RenderString (strings.TrimSpace .Inner) }}</p>

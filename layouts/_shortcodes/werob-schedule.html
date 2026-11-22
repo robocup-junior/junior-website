@@ -1,4 +1,40 @@
+{{- /* WEROB schedule. Cells are separated by " | ", {empty} is an empty cell
+     and {colspan=3} at the start of a cell spans three columns.
+     head="true": the first line holds the column headings (th scope="col"),
+     the first cell of every other line is the row heading (th scope="row"),
+     and on phones each row stacks. Optional: caption="...", labels="true"
+     (show the column heading before each cell on phones). */ -}}
 {{- $page := .Page -}}
+{{- if eq (.Get "head") "true" -}}
+{{- $rows := slice -}}
+{{- range split (strings.TrimSpace .Inner) "\n" }}{{ with strings.TrimSpace . }}{{ $rows = $rows | append . }}{{ end }}{{ end -}}
+{{- $labels := slice -}}
+{{- with index $rows 0 }}{{ range split . " | " }}{{ $labels = $labels | append (strings.TrimSpace .) }}{{ end }}{{ end -}}
+{{- $caption := .Get "caption" -}}
+<div class="werob-schedule-wrap" role="region"{{ with $caption }} aria-label="{{ . }}"{{ end }} tabindex="0">
+<table class="werob-schedule{{ if eq (.Get "labels") "true" }} werob-schedule--labels{{ end }}">
+{{- with $caption }}<caption>{{ . }}</caption>{{ end -}}
+<thead><tr>{{ range $labels }}<th scope="col">{{ if ne . "{empty}" }}{{ $page.RenderString . }}{{ end }}</th>{{ end }}</tr></thead>
+<tbody>
+{{- range after 1 $rows -}}
+<tr>
+  {{- range $i, $cell := split . " | " -}}
+    {{- $cell = strings.TrimSpace $cell -}}
+    {{- $span := hasPrefix $cell "{colspan=3}" -}}
+    {{- if $span }}{{ $cell = strings.TrimPrefix "{colspan=3}" $cell }}{{ end -}}
+    {{- if eq $cell "{empty}" }}{{ $cell = "" }}{{ end -}}
+    {{- if eq $i 0 -}}
+      <th scope="row">{{ $page.RenderString $cell }}</th>
+    {{- else -}}
+      {{- $label := "" }}{{ if and (not $span) (lt $i (len $labels)) }}{{ $label = index $labels $i | plainify }}{{ end -}}
+      <td{{ if $span }} colspan="3" class="werob-break"{{ end }}{{ with $label }} data-label="{{ . }}"{{ end }}>{{ with $cell }}{{ $page.RenderString . }}{{ end }}</td>
+    {{- end -}}
+  {{- end -}}
+</tr>
+{{- end -}}
+</tbody></table>
+</div>
+{{- else -}}
 {{- if eq (.Get "striped") "true" }}<figure class="wp-block-table is-style-stripes has-normal-font-size">{{ end -}}
 <table{{ if ne (.Get "striped") "true" }} class="wp-block-table"{{ end }}><tbody>
 {{- range split (strings.TrimSpace .Inner) "\n" -}}
@@ -12,3 +48,4 @@
   </tr>{{- end -}}
 {{- end -}}
 </tbody></table>{{ if eq (.Get "striped") "true" }}</figure>{{ end }}
+{{- end -}}

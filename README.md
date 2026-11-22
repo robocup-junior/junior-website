@@ -66,6 +66,16 @@ In Workshop on Educational Robotics (WEROB) schedules, such as
 ` | `. Use `{empty}` for an empty cell and `{colspan=3}` at the start of a
 cell that spans three columns. For example, `12:00 | {colspan=3}Lunch` is a
 row with a time cell and a lunch cell spanning three columns.
+With `head="true"`, the first line holds the column headings and the first
+cell of each row is the time; add `caption="…"` for a table caption and
+`labels="true"` to show the column headings before each cell on phones.
+The other WEROB pages use the same ` | ` style: `werob-talks` takes one talk
+per line (`Title | Authors and affiliation | links`) and `werob-index` on
+`content/rcj-werob.md` takes one workshop per line (`Year | Place | links`,
+or `{none}` when nothing was published). Each WEROB page starts with
+`werob-intro`, which also loads the shared WEROB styles
+(`assets/css/werob.css`), and `werob-actions` turns the Markdown links inside
+it into a row of buttons.
 
 Pages and posts use `/<slug>/`, based on their filename unless their front
 matter sets a different `url` or `slug`. Categories use `/category/<slug>/`.

@@ -1,0 +1,71 @@
+/* Workshop on Educational Robotics (content/rcj-werob.md). Shared WEROB
+   components are in assets/css/werob.css. */
+
+/* Call for participation beside the latest workshop poster */
+.werob-cfp {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 400px);
+  gap: 32px 48px;
+  align-items: start;
+  margin: 48px 0;
+}
+.main .werob-cfp ul { margin: 0 0 24px; padding-left: 1.25em; }
+.main .werob-cfp li { margin: 0 0 6px; line-height: 1.5; }
+.main .entry-content .werob-cfp h3 { margin-top: 24px; }
+.werob-cfp__main { max-width: 75ch; }
+.werob-cfp__aside .werob-actions { margin: 16px 0 0; }
+
+.werob-poster,
+.werob-poster:visited {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--rcj-border);
+  border-radius: 12px;
+  background: var(--rcj-white);
+  color: var(--rcj-navy);
+  text-decoration: none;
+  transition: box-shadow .2s ease;
+}
+.werob-poster img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+.werob-poster__text { display: block; padding: 16px 20px 20px; }
+.werob-poster__title {
+  display: block;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: var(--rcj-navy);
+}
+.werob-poster__url { display: block; margin-top: 4px; color: var(--rcj-pink); text-decoration: underline; }
+.werob-poster:hover,
+.werob-poster:focus-visible { box-shadow: 0 8px 24px rgba(0, 18, 66, .12); }
+.werob-poster:hover .werob-poster__title,
+.werob-poster:focus-visible .werob-poster__title { color: var(--rcj-pink); }
+.werob-poster:hover .werob-poster__url { color: var(--rcj-lavender-text); }
+.werob-poster:focus-visible { outline: var(--rcj-focus); outline-offset: 3px; }
+
+/* Embedded 2026 programme */
+.werob-sheet {
+  margin: 0 0 16px;
+  overflow: hidden;
+  border: 1px solid var(--rcj-border);
+  border-radius: 12px;
+  background: var(--rcj-white);
+}
+.werob-sheet iframe { display: block; width: 100%; height: 900px; border: 0; }
+
+.main .entry-content h2#past-workshops { scroll-margin-top: 96px; }
+
+@media (max-width: 800px) {
+  .werob-cfp { grid-template-columns: 1fr; }
+  .werob-cfp__aside { max-width: 400px; }
+}
+@media (max-width: 600px) {
+  .werob-sheet iframe { height: 600px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .werob-poster { transition: none; }
+}
+
+/* The introduction runs wider here than on the year pages */
+.main .werob-intro { max-width: 75ch; }

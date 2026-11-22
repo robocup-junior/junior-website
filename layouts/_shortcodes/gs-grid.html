@@ -1,0 +1,3 @@
+{{- /* Grid of gs-card shortcodes (Getting Started section). Optional "cols"
+  ("2" or "3") sets the desktop column count (default 2). */ -}}
+<div class="gs-grid gs-grid-{{ .Get "cols" | default "2" }}">{{ .Inner }}</div>

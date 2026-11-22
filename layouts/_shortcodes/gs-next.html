@@ -1,0 +1,4 @@
+{{- /* "Where to next?" link cards (Getting Started section). Inner: a
+  Markdown bullet list of "**[Title](/url/)** – description" items. The
+  whole card is clickable through the title link. */ -}}
+<nav class="gs-next" aria-label="{{ .Get "label" | default "Where to next" }}">{{ partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) | safeHTML }}</nav>

@@ -1,0 +1,3 @@
+{{- /* Compact list with bold lead-ins, two columns on wide screens
+  (Getting Started section). Inner: a Markdown bullet list. */ -}}
+<div class="gs-checklist">{{ partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) | safeHTML }}</div>

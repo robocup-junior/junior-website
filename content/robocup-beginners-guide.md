@@ -9,58 +9,74 @@
 
 {{< wp-intro >}}*Everything you need to build your first RoboCupJunior team*{{< /wp-intro >}}
 
-{{< wp-padded-prose >}}
+{{< wp-prose >}}
 Starting a team is easier than it looks. You don’t need expensive equipment or an expert teacher: just a few curious students, a mentor, and a robot you can program. This page covers forming a team, choosing a platform and costs, then points you to guides, tutorials, code and practice fields for your league.
 
 New to RoboCupJunior? Read [How to Get Started](/gettingstarted/) first.
 
 ## Forming a Team
+{{< /wp-prose >}}
 
-- **Teams have 2 to 4 students** (up to 5 in OnStage). Schools, clubs and community groups can enter several teams, in the same league or different ones.
-- **Every team needs a mentor** – a teacher, parent or volunteer who supports the team and looks after them at events. Mentors guide; the students design, build and program the robot themselves.
+{{< gs-cards cols="3" >}}
+- **Teams have 2 to 4 students.** Up to 5 in OnStage. Schools, clubs and community groups can enter several teams, in the same league or different ones.
+- **Every team needs a mentor.** A teacher, parent or volunteer supports the team and looks after them at events. Mentors guide; the students design, build and program the robot themselves.
 - **Give everyone a technical role.** Each student should be able to explain the part of the robot they worked on, for example mechanics, electronics or programming.
-{{< /wp-padded-prose >}}
+{{< /gs-cards >}}
 
 {{< wp-anchored-heading id="competing-beyond-your-region" text="Competing Beyond Your Region" >}}
 
-{{< wp-padded-prose >}}
+{{< wp-prose >}}
 Places at SuperRegional and International competitions are **not given to individual schools, clubs or organisations**. Instead, they are allocated to **RoboCup regions**, and each region decides which of its teams fill them.
+{{< /wp-prose >}}
 
+{{< gs-steps >}}
 1.  **Join your region.** Take part in the events run by your Regional Representative or regional committee.
 2.  **Qualify at your regional tournament.** Your region uses its own qualifying events to choose its teams.
 3.  **Receive a slot from your region.** Your Regional Representative assigns the region’s slots, and confirmed teams are invited to register.
+{{< /gs-steps >}}
 
+{{< wp-prose >}}
 RoboCup regional committees are accredited by the RoboCup Federation and manage qualification for their region when places are limited. Read about their role and the official procedures on the [RoboCup Regional Committees](https://robocup.org/organization/regional_committees) page, and see [Qualification and Competitions](/qualification/) for how the season works.
+{{< /wp-prose >}}
 
-**No regional committee in your region yet?** Your pathway towards the International Competition starts by competing at other regions’ events (Regional Opens) and at SuperRegional events, or by [developing a regional committee](/qualification/#bringing-robocupjunior-to-a-new-region) for your region.
-{{< /wp-padded-prose >}}
+{{< gs-callout title="No regional committee in your region yet?" >}}
+Your pathway towards the International Competition starts by competing at other regions’ events (Regional Opens) and at SuperRegional events, or by [developing a regional committee](/qualification/#bringing-robocupjunior-to-a-new-region) for your region.
+{{< /gs-callout >}}
 
 {{< wp-image image="/wp-content/uploads/2026/10/robocupjunior-team-testing-robot.jpg" figure-class="wp-block-image size-full" alt="Three students lean over the edge of a soccer field to test their robot, which is connected to a laptop." caption="RoboCup 2025, Salvador, Brazil" >}}
 
-{{< wp-padded-prose >}}
+{{< wp-prose >}}
 ## Choosing a Robot
 
 RoboCupJunior is **platform-agnostic**: you can use any kit, controller or programming language that fits the rules of your division. Teams commonly use:
+{{< /wp-prose >}}
 
-- **Classroom kits** such as LEGO SPIKE, VEX or mBot – a great place to start.
-- **Microcontrollers** such as Arduino, Raspberry Pi or ESP32, with your own sensors and motors.
-- **Custom designs** that are 3D-printed or laser-cut.
+{{< gs-cards cols="3" >}}
+- **Classroom kits.** LEGO SPIKE, VEX, mBot and similar kits are a great place to start.
+- **Microcontrollers.** Arduino, Raspberry Pi, ESP32 and similar boards, with your own sensors and motors.
+- **Custom designs.** Robots with 3D-printed or laser-cut parts.
+{{< /gs-cards >}}
 
+{{< wp-prose >}}
 Start with what your school or club already has. Beginners can be competitive with simple hardware and good logic, and you can extend or redesign your robot as your skills grow. Read more in [RoboCupJunior: Open-Source Robotics for Any Platform](/robocupjunior-open-source-robotics-for-any-platform/).
 
 ## Costs
+{{< /wp-prose >}}
 
+{{< gs-cards cols="2" >}}
 - **Equipment is a one-off investment.** The challenges change very little from year to year, so robots, sensors and fields can be reused for many seasons.
 - **Software is usually free.** Most kits and microcontrollers have free programming tools, and the simulation challenges need no robot hardware at all.
 - **You don’t need a competition field.** Many teams practise on printed tiles, cardboard or a classroom floor. Browse [fields and equipment](/resources/#rf-field) in the resource library to build your own.
 - **Entry fees vary by region.** Ask your Regional Representative what local events cost.
+{{< /gs-cards >}}
 
+{{< wp-prose >}}
 Need funding? [How to raise funds for a school robotics project](https://web.archive.org/web/2020id_/http://rcj.robocup.org/werob/werob2016/paper4.pdf) (WEROB) has practical advice on approaching sponsors.
-{{< /wp-padded-prose >}}
+{{< /wp-prose >}}
 
 {{< wp-anchored-heading id="tips" text="Tips for New Teams" >}}
 
-{{< wp-padded-prose >}}
+{{< gs-checklist >}}
 - **Start small, think big.** Your first robot doesn’t need to be perfect. Build something simple, test it often and improve it step by step.
 - **Let students lead.** Mentors guide and ask questions; students make the design decisions and write the code.
 - **Mix your skills.** Builders, coders, designers and presenters all have something to offer. Diverse teams solve problems better.
@@ -68,7 +84,7 @@ Need funding? [How to raise funds for a school robotics project](https://web.arc
 - **Reflect after every session.** Take five minutes to talk about what worked and what to try next.
 - **Ask the community.** Mentors and teams on the Forum and Discord are happy to help. You are never the first team to get stuck.
 - **Celebrate progress.** Every working sensor, bug fix and test run counts. RoboCupJunior is about growth, not just trophies.
-{{< /wp-padded-prose >}}
+{{< /gs-checklist >}}
 
 {{< wp-anchored-heading id="resources" text="Find Resources for Your League" >}}
 

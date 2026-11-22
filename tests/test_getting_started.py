@@ -19,12 +19,10 @@ ANCHORS = {
 
 
 class GettingStartedStylesTest(unittest.TestCase):
-    def test_section_stylesheets_are_identical(self):
-        css = ROOT / "assets/css/pages"
-        source = (css / "gettingstarted.css").read_text()
-        for page in PAGES[1:]:
-            self.assertEqual((css / f"{page}.css").read_text(), source,
-                             f"{page}.css must be a copy of gettingstarted.css")
+    def test_pages_share_one_section_stylesheet(self):
+        self.assertTrue((ROOT / "assets/css/sections/getting-started.css").exists())
+        for page in PAGES:
+            self.assertIn('"section_css": "getting-started"', (ROOT / f"content/{page}.md").read_text(), page)
 
     def test_no_inline_style_blocks_in_section_shortcodes(self):
         for name in ["league-cards", "league-card", "educator-resources"]:
@@ -51,7 +49,7 @@ class GettingStartedBuildTest(unittest.TestCase):
         for page in PAGES:
             html = self.html(page)
             self.assertEqual(len(re.findall(r"<h1[\s>]", html)), 1, page)
-            self.assertRegex(html, rf'css/pages/{re.escape(page)}\.min\.[0-9a-f]+\.css', page)
+            self.assertRegex(html, r'css/sections/getting-started\.min\.[0-9a-f]+\.css', page)
 
     def test_linked_anchors_exist(self):
         for page, ids in ANCHORS.items():

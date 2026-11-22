@@ -3,6 +3,7 @@
   "date": "2017-12-15T14:57:19",
   "url": "/gettingstarted/",
   "wordpress_id": 76,
+  "section_css": "getting-started",
   "featured_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
   "description": "Your Journey in Robotics Begins Here\nWhat is RoboCupJunior? No joysticks. No remote control. RoboCupJunior is an international educational robotics program for …"
 }

@@ -3,6 +3,7 @@
   "date": "2026-10-20T04:01:18",
   "url": "/your-first-competition/",
   "wordpress_id": 69442,
+  "section_css": "getting-started",
   "featured_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
   "description": "What to expect, from registration to the closing ceremony\nYour first RoboCupJunior competition is exciting, busy and sometimes a little nerve-wracking. Knowing …"
 }

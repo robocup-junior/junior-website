@@ -3,6 +3,7 @@
   "date": "2026-10-20T03:50:38",
   "url": "/for-educators/",
   "wordpress_id": 69374,
+  "section_css": "getting-started",
   "featured_image": "/wp-content/uploads/2026/01/53570158896_a14c83aa75_o-scaled.jpg",
   "description": "Bringing RoboCupJunior to your school or club\nRobotics is one of the most effective ways to engage students in hands-on, meaningful learning. RoboCupJunior …"
 }

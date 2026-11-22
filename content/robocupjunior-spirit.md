@@ -3,6 +3,7 @@
   "date": "2026-10-20T03:55:15",
   "url": "/robocupjunior-spirit/",
   "wordpress_id": 69443,
+  "section_css": "getting-started",
   "featured_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
   "description": "Compete hard, help each other, and learn together\nRoboCupJunior is a competition, but the people who take part will tell you that what they remember most is the …"
 }

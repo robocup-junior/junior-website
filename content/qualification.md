@@ -3,6 +3,7 @@
   "date": "2026-10-20T03:53:02",
   "url": "/qualification/",
   "wordpress_id": 69259,
+  "section_css": "getting-started",
   "featured_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
   "description": "From Your Region to the World Stage\nEvery RoboCupJunior team starts in its own region. Your Regional Representative is your guide from your first local event …"
 }

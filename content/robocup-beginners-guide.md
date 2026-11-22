@@ -3,6 +3,7 @@
   "date": "2026-01-13T09:17:32",
   "url": "/robocup-beginners-guide/",
   "wordpress_id": 3030,
+  "section_css": "getting-started",
   "featured_image": "/wp-content/uploads/2026/01/Photo-25-6-21-1-40-50-pm-scaled.jpg",
   "description": "Everything you need to build your first RoboCupJunior team\nStarting a team is easier than it looks. You don’t need expensive equipment or an expert teacher: …"
 }

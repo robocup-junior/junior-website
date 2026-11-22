@@ -92,9 +92,8 @@
   },
   "188": {
     "path": "/history/",
-    "banner_image": "/wp-content/uploads/2016/11/RCjr_high_L.jpg",
     "banner_title": "History",
-    "layout": "two-columns-right",
+    "layout": "one-column",
     "sidebar": true
   },
   "190": {
@@ -157,7 +156,7 @@
     "path": "/about/",
     "banner_image": null,
     "banner_title": "About RoboCupJunior",
-    "layout": "two-columns-right",
+    "layout": "one-column",
     "sidebar": true
   },
   "2299": {

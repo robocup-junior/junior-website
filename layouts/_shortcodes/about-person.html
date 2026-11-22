@@ -1,0 +1,5 @@
+{{- /* One person: square photo, name, optional term and profile link.
+       Without an image, shows the person's initials instead of a blank photo. */ -}}
+{{- $name := .Get "name" -}}
+{{- $profile := .Get "profile-url" -}}
+<li class="about-person">{{ with .Get "image" }}<img class="about-person__photo" src="{{ . }}" alt="" width="200" height="200" loading="lazy" decoding="async"{{ with $.Get "position" }} style="object-position:{{ . | safeCSS }}"{{ end }}>{{ else }}<span class="about-person__photo about-person__initials" aria-hidden="true">{{ range first 2 (split $name " ") }}{{ substr . 0 1 }}{{ end }}</span>{{ end }}<span class="about-person__name">{{ with $profile }}<a href="{{ . }}" target="_blank" rel="noreferrer noopener">{{ $name }}<span class="screen-reader-text"> on LinkedIn (opens in a new tab)</span></a>{{ else }}{{ $name }}{{ end }}</span>{{ with .Get "term" }}<span class="about-person__term">{{ . }}</span>{{ end }}</li>

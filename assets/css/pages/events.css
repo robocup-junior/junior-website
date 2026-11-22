@@ -1,0 +1,69 @@
+/* Page styles for content/events.md (loaded only on /events/). Uses the --rcj-* tokens; see STYLEGUIDE.md. */
+/* ---- Shared About-section components (about-* shortcodes). The same block
+   is repeated in about.css, community.css, history.css and events.css,
+   because page CSS only loads on its own page. Keep the copies in sync. ---- */
+.entry-content .about-lead { max-width: 62ch; margin: 0 0 40px; }
+.entry-content .about-tagline { font-style: italic; font-size: clamp(1.125rem, 1.8vw, 1.3rem); line-height: 1.45; color: var(--rcj-navy); margin: 0 0 12px; padding-left: 16px; border-left: 4px solid var(--rcj-pink); }
+.entry-content .about-lead p:not(.about-tagline) { color: var(--rcj-muted); font-size: 1.1em; }
+.entry-content .about-lead > :last-child { margin-bottom: 0; }
+
+.entry-content h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.2; font-weight: 800; margin: 56px 0 16px; }
+.entry-content h3 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); line-height: 1.25; font-weight: 700; margin: 40px 0 16px; }
+.entry-content > h2:first-child, .entry-content > .about-lead + h2 { margin-top: 0; }
+
+.about-grid-wrap { container-type: inline-size; margin: 24px 0 8px; }
+.entry-content ul.about-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); }
+@container (min-width: 560px) { .entry-content ul.about-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Three cards: one column until there is room for all three (no 2 + 1 orphan);
+   photo cards sit image-left in the middle range */
+@container (min-width: 560px) and (max-width: 819px) {
+  .entry-content ul.about-grid--3 .about-card--media { flex-direction: row; }
+  .about-grid--3 .about-card--media .about-card__img { flex: none; width: 40%; height: auto; aspect-ratio: 1; object-fit: cover; }
+}
+@container (min-width: 820px) { .entry-content ul.about-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.entry-content .about-card { display: flex; flex-direction: column; margin: 0; background: var(--rcj-white); border: 1px solid var(--rcj-border); border-radius: 12px; overflow: hidden; }
+.entry-content .about-card:not(.about-card--media) { border-top: 4px solid var(--rcj-pink); }
+.about-card__img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.about-card__body { display: flex; flex-direction: column; flex: 1; padding: 20px 24px 24px; }
+.entry-content .about-card__title { font-size: 1.25rem; line-height: 1.25; font-weight: 800; margin: 0 0 8px; }
+.entry-content .about-card__body p { line-height: 1.6; margin: 0 0 12px; }
+.entry-content .about-card__action { margin: auto 0 0; padding-top: 8px; }
+
+/* Block-style button (styleguide: charcoal, white uppercase text; navy on hover/focus) */
+.entry-content a.about-btn, .entry-content a.about-btn:visited { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 20px; background: var(--rcj-ink); color: var(--rcj-white) !important; font-weight: 700; font-size: 1rem; line-height: 1.25; text-transform: uppercase; text-decoration: none; text-align: center; border-radius: 0; transition: background-color .2s ease; }
+.entry-content a.about-btn--accent, .entry-content a.about-btn--accent:visited { background: var(--rcj-pink); }
+.entry-content a.about-btn:hover, .entry-content a.about-btn:focus-visible { background: var(--rcj-navy); color: var(--rcj-white) !important; }
+.entry-content a:focus-visible { outline: var(--rcj-focus); outline-offset: 3px; }
+@media (max-width: 600px) {
+  .entry-content a.about-btn { display: flex; width: 100%; }
+  .entry-content .about-lead { margin-bottom: 32px; }
+  .entry-content h2 { margin-top: 48px; }
+  .about-card__body { padding: 16px 16px 20px; }
+}
+/* ---- end shared block ---- */
+
+/* ---- Events page (robocup-events shortcode) ---- */
+.rcj-robocup-events { margin: 0; }
+.entry-content .rcj-robocup-events__section-title { margin: 48px 0 24px; }
+.entry-content .rcj-robocup-events > .rcj-robocup-events__section-title:first-child { margin-top: 0; }
+.rcj-robocup-events__grid { display: grid; gap: 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 700px) { .rcj-robocup-events__grid { grid-template-columns: minmax(0, 1fr); } }
+/* Whole card is one link (the title); text sits on a white card */
+.rcj-robocup-events__card { position: relative; display: flex; flex-direction: column; background: var(--rcj-white); border: 1px solid var(--rcj-border); border-radius: 12px; overflow: hidden; transition: box-shadow .2s ease, border-color .2s ease; }
+.rcj-robocup-events__card:hover { box-shadow: 0 8px 24px rgba(0, 18, 66, .12); border-color: var(--rcj-lavender); }
+.rcj-robocup-events__media { aspect-ratio: 750 / 120; background: var(--rcj-surface-2); overflow: hidden; border-bottom: 1px solid var(--rcj-border); }
+.rcj-robocup-events__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rcj-robocup-events__body { display: flex; flex-direction: column; flex: 1; padding: 20px 24px 24px; }
+.entry-content .rcj-robocup-events__title { margin: 0 0 6px; font-size: 1.1875rem; line-height: 1.3; font-weight: 700; }
+.entry-content .rcj-robocup-events__title a { color: var(--rcj-navy); text-decoration: none; }
+.entry-content .rcj-robocup-events__title a::after { content: ""; position: absolute; inset: 0; }
+.entry-content .rcj-robocup-events__card:hover .rcj-robocup-events__title a { color: var(--rcj-pink); }
+.entry-content .rcj-robocup-events__title a:focus-visible { outline: none; }
+.rcj-robocup-events__card:focus-within { outline: var(--rcj-focus); outline-offset: 3px; }
+.entry-content .rcj-robocup-events__meta { margin: 0 0 8px; font-size: .9375rem; font-weight: 600; color: var(--rcj-muted); }
+.entry-content .rcj-robocup-events__excerpt { margin: 0 0 12px; font-size: 1rem; line-height: 1.55; color: var(--rcj-navy); }
+.rcj-robocup-events__more { margin-top: auto; font-weight: 700; color: var(--rcj-pink); }
+.rcj-robocup-events__more::after { content: " \2192"; }
+.entry-content .rcj-robocup-events__source { margin-top: 24px; font-size: .9375rem; color: var(--rcj-muted); }
+@media (max-width: 600px) { .rcj-robocup-events__body { padding: 16px 16px 20px; } }

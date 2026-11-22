@@ -1,7 +1,0 @@
-/*
- * Intentionally empty. The old Jetpack "Related" list has been merged into
- * the related-post cards (layouts/_partials/theme-related.html, styled in
- * assets/css/posts.css). This file stays only because
- * layouts/_partials/head.html still loads it for posts; remove that line and
- * this file together.
- */

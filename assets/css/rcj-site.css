@@ -148,8 +148,6 @@ a:focus-visible:hover { outline: var(--rcj-focus); }
 /* ---------------------------------------------------------------------------
  * 6. Archives, posts and related content
  * ------------------------------------------------------------------------- */
-#content-masonry .entry-title { display: block !important; }
-.archive-thumbnail { height: auto; aspect-ratio: 16 / 9; }
 .related-posts .related-meta { opacity: 1; color: var(--rcj-muted); }
 .wp-block-latest-posts__featured-image img { contain-intrinsic-size: 300px 200px; }
 
@@ -191,16 +189,3 @@ a:focus-visible:hover { outline: var(--rcj-focus); }
   #header-page-title #breadcrumbs-nav, .header-image, .lp-block .lp-block-text { opacity: 1 !important; }
 }
 
-/* ---------------------------------------------------------------------------
- * 9. Archive lists (/category/...): compact rows, small thumbnails
- * ------------------------------------------------------------------------- */
-@media (min-width: 640px) {
-  #content-masonry article.hentry .article-inner { display: grid; grid-template-columns: 240px minmax(0, 1fr); column-gap: 24px; align-items: start; }
-  #content-masonry article.hentry .entry-header { display: contents; }
-  #content-masonry article.hentry .entry-title { grid-column: 2; grid-row: 1; margin-top: 0; }
-  #content-masonry article.hentry .post-thumbnail-container { grid-column: 1; grid-row: 1 / span 3; margin: 0; }
-  #content-masonry article.hentry .entry-summary,
-  #content-masonry article.hentry .post-continue-container { grid-column: 2; }
-}
-#content-masonry .archive-thumbnail { aspect-ratio: 16 / 10; height: auto; border-radius: 8px; }
-#content-masonry article.hentry { padding-bottom: 1.5em; margin-bottom: 1.5em; border-bottom: 1px solid var(--rcj-border); }

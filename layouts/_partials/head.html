@@ -32,7 +32,6 @@
 {{- if .IsHome }}
 <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "Organization" "name" site.Title "url" (site.Params.canonicalBaseURL | default site.BaseURL) "logo" (printf "%swp-content/uploads/2024/10/RCjr_high_L.jpg" (site.Params.canonicalBaseURL | default site.BaseURL)) "parentOrganization" (dict "@type" "Organization" "name" "RoboCup Federation" "url" "https://www.robocup.org") | jsonify | safeJS }}</script>
 {{- end }}
-{{ if eq .Section "posts" }}{{ $jetpack := resources.Get "css/jetpack-related.css" | fingerprint }}<link rel="stylesheet" href="{{ $jetpack.RelPermalink }}" integrity="{{ $jetpack.Data.Integrity }}">{{ end }}
 <link rel="stylesheet" href="/wp-content/plugins/wp-rss-aggregator/core/css/displays.css?ver=5.7.0">
 <link rel="stylesheet" href="/wp-content/themes/kahuna-plus/resources/fonts/fontfaces.css?ver=1.8.0">
 {{ $fonts := resources.Get "css/fonts.css" | minify | fingerprint }}
@@ -65,5 +64,4 @@
   :where(.wp-block-columns.is-layout-flex) { gap: 2em; }
   .kahuna-landing-page #main { padding: 0 !important; }
   nav#mobile-menu.is-open { display: block; top: 0; opacity: 1; }
-  .archive-thumbnail { width: 100%; object-fit: cover; }
 </style>

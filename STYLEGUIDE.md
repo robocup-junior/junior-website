@@ -190,8 +190,14 @@ Avoid:
 
 - Homepage: the six newest **news** posts as compact cards (thumbnail 16:7,
   date, title). Below 800px they become a list with 96px square thumbnails.
-- Archive pages (`/category/…`): a 240px thumbnail beside the title and
-  excerpt.
+- Archive pages (`/category/…`): one card per row with a 240px thumbnail,
+  date, title and excerpt in a 960px column; below 800px the same 96px list.
+- **Single posts:** the featured photo as a banner with the title on a solid
+  navy panel (pink left edge); posts without a photo get a plain navy banner.
+  Under it, a meta row (author, date, category chips: navy on
+  `--rcj-surface-2`, white on navy on hover). Post text sits in a 40rem
+  reading column. "Related posts" shows 3 compact cards, like homepage news.
+- **Pagination:** dark "Newer posts" / "Older posts" buttons with "Page x of y".
 
 Avoid:
 

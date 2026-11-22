@@ -5,4 +5,8 @@
   "wordpress_id": 3316
 }
 
+{{< about-lead tagline="RoboCup and RoboCupJunior events around the world." >}}
+This list comes from the [RoboCup Federation events page](https://www.robocup.org/events/upcoming_events) and is updated automatically.
+{{< /about-lead >}}
+
 {{< robocup-events >}}

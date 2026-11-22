@@ -1,0 +1,2 @@
+{{- /* A responsive grid of about-card items. cols: 2 or 3 (default 3). */ -}}
+<div class="about-grid-wrap"><ul class="about-grid about-grid--{{ .Get "cols" | default "3" }}" role="list">{{ .Inner }}</ul></div>

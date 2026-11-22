@@ -1,0 +1,2 @@
+{{- /* Page intro: italic tagline plus a short lead paragraph (Markdown inside). */ -}}
+<div class="about-lead">{{ with .Get "tagline" }}<p class="about-tagline">{{ . }}</p>{{ end }}{{ partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) | safeHTML }}</div>

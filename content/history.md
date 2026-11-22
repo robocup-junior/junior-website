@@ -85,6 +85,7 @@ Teams from the USA, Australia, Germany and the UK entered soccer, rescue, and On
 {{< about-year year="2023" place="Bordeaux, France" date="July 2023" teams="About 140" regions="29" url="https://2023.robocup.org" >}}{{< /about-year >}}
 {{< about-year year="2024" place="Eindhoven, Netherlands" date="17–21 July 2024" url="https://2024.robocup.org/" >}}{{< /about-year >}}
 {{< about-year year="2025" place="Salvador, Brazil" date="15–21 July 2025" url="https://2025.robocup.org/" >}}{{< /about-year >}}
-{{< about-year year="2026" place="Incheon, South Korea" date="30 June – 6 July 2026" >}}{{< /about-year >}}
-{{< about-year year="2027" place="Nuremberg, Germany" date="15–21 June 2027" note="Upcoming" >}}{{< /about-year >}}
+{{< about-year year="2026" place="Incheon, South Korea" date="30 June – 6 July 2026" url="https://2026.robocup.org/" >}}{{< /about-year >}}
+{{< about-year year="2027" place="Nuremberg, Germany" date="15–21 June 2027" note="Upcoming" url="https://2027.robocup.org/" >}}{{< /about-year >}}
+{{< about-year year="2028" place="Melbourne, Australia" note="Upcoming" >}}{{< /about-year >}}
 {{< /about-timeline >}}

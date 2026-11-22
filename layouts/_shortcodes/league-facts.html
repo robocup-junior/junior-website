@@ -1,0 +1,2 @@
+{{- /* Key facts row. Inner: league-fact shortcodes. Param: label (accessible name). */ -}}
+<div class="lg-facts-wrap"><dl class="lg-facts" aria-label="{{ .Get "label" | default "Key facts" }}">{{ replaceRE `>\s*\n\s*<` "><" .Inner | safeHTML }}</dl></div>

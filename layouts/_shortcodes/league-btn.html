@@ -1,0 +1,2 @@
+{{- /* Block button. Params: url, text, accent ("true" = pink), newtab ("true"). */ -}}
+<a class="lg-btn{{ if eq (.Get "accent") "true" }} lg-btn--accent{{ end }}" href="{{ .Get "url" }}"{{ if eq (.Get "newtab") "true" }} target="_blank" rel="noreferrer noopener"{{ end }}>{{ .Get "text" }}{{ if eq (.Get "newtab") "true" }}<span class="lg-sr"> (opens in a new tab)</span>{{ end }}</a>

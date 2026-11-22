@@ -1,0 +1,2 @@
+{{- /* Collapsible secondary text. Param: summary. Inner: Markdown. */ -}}
+<details class="lg-more"><summary>{{ .Get "summary" }}</summary><div class="lg-more-body">{{ .Page.RenderString (dict "display" "block") .Inner }}</div></details>

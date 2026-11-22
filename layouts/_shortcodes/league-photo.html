@@ -1,0 +1,4 @@
+{{- /* One photo in a league-gallery. Params: image, alt. */ -}}
+{{- $img := .Get "image" -}}
+{{- $w := 0 -}}{{- $h := 0 -}}{{- with try (images.Config (printf "static%s" $img)) -}}{{- with .Value -}}{{- $w = .Width -}}{{- $h = .Height -}}{{- end -}}{{- end -}}
+<li><img loading="lazy" decoding="async" src="{{ $img }}"{{ with $w }} width="{{ . }}"{{ end }}{{ with $h }} height="{{ . }}"{{ end }} alt="{{ .Get "alt" }}"></li>

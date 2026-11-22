@@ -7,60 +7,60 @@
   "description": "RoboCupJunior Rescue Line The Rescue Line challenge involves a search and rescue challenge where an autonomous robot has to follow a black line while overcoming …"
 }
 
-{{< wp-prose >}}
-## RoboCupJunior Rescue Line
+{{< league-intro tagline="Come prepared to be the most successful rescue team." >}}
+In **RoboCupJunior Rescue Line**, an autonomous robot follows a black line through a modular arena of tiles with different patterns, overcoming obstacles, debris and a range of different lines. The final challenge is to rescue victims, sorted by colour, and navigate to an end zone for extraction.
+{{< /league-intro >}}
 
-The Rescue Line challenge involves a search and rescue challenge where an autonomous robot has to follow a black line while overcoming different obstacles, debris and a range of different lines in a modular arena formed by tiles with different patterns. The final challenge is to rescue victims, sorted by colour and successfully navigate to an end zone for final extraction.
-{{< /wp-prose >}}
+{{< league-facts label="Rescue Line at a glance" >}}
+{{< league-fact label="Robot" >}}Fully autonomous, with no human assistance{{< /league-fact >}}
+{{< league-fact label="Course" >}}Modular tiles with lines, obstacles, debris, hills and rubble{{< /league-fact >}}
+{{< league-fact label="Mission" >}}Rescue victims, sorted by colour, then reach the end zone{{< /league-fact >}}
+{{< league-fact label="Participation limit" >}}**Twice** per team member (2 international events){{< /league-fact >}}
+{{< /league-facts >}}
 
-{{< media-text image="/wp-content/uploads/2026/01/Robocup-361-1024x683.jpg" columns="44% auto" fill="true" >}}
-<em>The land is too dangerous for humans to reach the victims. Your team has been given a difficult task. The robot must be able to carry out a rescue mission in a fully autonomous mode with no human assistance. The robot must be durable and intelligent enough to navigate treacherous terrain with hills, uneven land, and rubble without getting stuck. When the robot reaches the victims, it has to gently and carefully transport each one to the safe evacuation point where humans can take over the rescue. The robot should exit the evacuation zone after a successful rescue to continue its mission throughout the disaster scene until it leaves the site. Time and technical skills are essential! </em>
+{{< league-section title="The mission" >}}
+{{< league-media image="/wp-content/uploads/2026/01/Robocup-361-1024x683.jpg" alt="Spectators watching a Rescue Line run on a white tiled course" >}}
+<p class="lg-quote">The land is too dangerous for humans to reach the victims. Your team has been given a difficult task. The robot must carry out a rescue mission in a fully autonomous mode with no human assistance.</p>
 
-*Come prepared to be the most successful rescue team.*
-{{< /media-text >}}
+{{< league-more summary="Read the full scenario" >}}
+*The robot must be durable and intelligent enough to navigate treacherous terrain with hills, uneven land and rubble without getting stuck. When the robot reaches the victims, it has to gently and carefully transport each one to the safe evacuation point where humans can take over the rescue. The robot should exit the evacuation zone after a successful rescue to continue its mission throughout the disaster scene until it leaves the site. Time and technical skills are essential!*
+{{< /league-more >}}
+{{< /league-media >}}
+{{< /league-section >}}
 
-{{< wp-prose >}}
-Team members may compete in Rescue Line twice (2 international events). After a team participated twice, they must move to another RoboCupJunior Sub-League (Simulation or Maze), or League. This can also include the <a href="/rescue/" type="page" id="2299">Rapidly Manufactured Robot Challenge</a>.
+{{< league-gallery >}}
+{{< league-photo image="/wp-content/uploads/2026/01/Robocup-365-683x1024.jpg" alt="Student placing a Rescue Line robot on the course" >}}
+{{< league-photo image="/wp-content/uploads/2026/01/Robocup-373-683x1024.jpg" alt="Rescue Line robot on a black line" >}}
+{{< league-photo image="/wp-content/uploads/2026/01/Robocup-591-1024x683.jpg" alt="Rescue Line robot reaching the green evacuation corner" >}}
+{{< /league-gallery >}}
 
-To learn more about the RoboCupJunior Rescue Line Challenge, read through the Rescue Line Rules.
-{{< /wp-prose >}}
+{{< league-section title="Rules and documentation" >}}
+Team members may compete in Rescue Line **twice** (2 international events). After that, they must move to another RoboCupJunior sub-league (Simulation or Maze) or league. This can also include the [Rapidly Manufactured Robot Challenge](/rescue/).
 
-{{< wp-buttons >}}
-{{< wp-button-item url="/wp-content/uploads/2026/11/RCJRescueLine2027-final.pdf" text="Rescue Line 2027 FINAL Rules PDF" new-tab="true" >}}
-{{< /wp-buttons >}}
+To learn more about the Rescue Line challenge, read the Rescue Line rules.
 
-{{< wp-spacer height="58" >}}
+{{< league-actions >}}
+{{< league-btn url="/wp-content/uploads/2026/11/RCJRescueLine2027-final.pdf" text="Rescue Line 2027 final rules (PDF)" accent="true" newtab="true" >}}
+{{< /league-actions >}}
 
-{{< wp-group constrained="true" >}}
-{{< wp-gallery number="5" >}}
-{{< wp-image image="/wp-content/uploads/2026/01/Robocup-365-683x1024.jpg" >}}
-{{< wp-image image="/wp-content/uploads/2026/01/Robocup-373-683x1024.jpg" >}}
-{{< wp-image image="/wp-content/uploads/2026/01/Robocup-591-1024x683.jpg" >}}
-{{< /wp-gallery >}}
-{{< /wp-group >}}
+<h3 class="lg-h3">Rescue Line documentation</h3>
 
-{{< wp-prose >}}
-### Rescue Line Documentation
+For the International competition, teams must prepare the following documentation, including the Technical Video, new in 2025.
 
-As part of the International competition, teams have to prepare the following documentation, including a new addition the Technical Video in 2025!
-{{< /wp-prose >}}
+{{< league-actions >}}
+{{< league-btn url="https://rescue.rcj.cloud/documents" text="Rescue Line documentation and rubrics" >}}
+{{< /league-actions >}}
+{{< /league-section >}}
 
-{{< wp-buttons >}}
-{{< wp-button-item url="https://rescue.rcj.cloud/documents" text="Rescue Line Documentation + Rubrics" text-align="center" >}}
-{{< /wp-buttons >}}
+{{< league-section title="Community and support" tone="navy" >}}
+To learn more about the RoboCupJunior Rescue leagues, including past courses, results and the scoring system, visit the RoboCupJunior Rescue community website. Bring all your questions to the RoboCupJunior Forum!
 
-{{< wp-prose >}}
-To learn more about the RoboCupJunior Rescue Leagues, as well as past courses, results and the scoring system, make sure you look at the RoboCupJunior Rescue Community Website and RoboCupJunior Forum for all your questions!
-{{< /wp-prose >}}
+{{< league-actions >}}
+{{< league-btn url="https://rescue.rcj.cloud" text="Community website" accent="true" >}}
+{{< league-btn url="https://junior.forum.robocup.org/" text="RoboCupJunior Forum" accent="true" >}}
+{{< /league-actions >}}
+{{< /league-section >}}
 
-{{< wp-buttons >}}
-{{< wp-button-item url="https://rescue.rcj.cloud" text="Community Website" >}}
-
-{{< wp-button-item url="https://junior.forum.robocup.org/" text="RoboCupJunior Forum" >}}
-{{< /wp-buttons >}}
-
-{{< wp-prose >}}
-## Latest Forum Posts
-{{< /wp-prose >}}
-
+{{< league-section title="Latest forum posts" class="lg-forum" raw="true" >}}
 {{< forum-feed "rcj-rescue-line" >}}
+{{< /league-section >}}

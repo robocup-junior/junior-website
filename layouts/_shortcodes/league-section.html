@@ -1,0 +1,6 @@
+{{- /* A titled section (h2). Params: title, id, lead, tone (panel|navy),
+     class, raw ("true" = insert inner HTML as-is, e.g. feeds). */ -}}
+{{- $title := .Get "title" -}}
+{{- $id := .Get "id" | default (anchorize $title) -}}
+<section class="lg-section{{ with .Get "tone" }} lg-section--{{ . }}{{ end }}{{ with .Get "class" }} {{ . }}{{ end }}" aria-labelledby="{{ $id }}"><h2 id="{{ $id }}" class="lg-h2">{{ $title }}</h2>{{ with .Get "lead" }}<p class="lg-lead">{{ . | markdownify }}</p>{{ end }}
+{{ if eq (.Get "raw") "true" }}{{ .Inner }}{{ else }}{{ .Page.RenderString (dict "display" "block") .Inner }}{{ end }}</section>

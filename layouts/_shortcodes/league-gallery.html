@@ -1,0 +1,3 @@
+{{- /* Photo strip with one crop ratio. Param: wide ("true" = square crops).
+     Inner: league-photo shortcodes. */ -}}
+<ul class="lg-gallery{{ if eq (.Get "wide") "true" }} lg-gallery--wide{{ end }}" role="list">{{ replaceRE `>\s*\n\s*<` "><" .Inner | safeHTML }}</ul>

@@ -1,0 +1,2 @@
+{{- /* Card grid. Param: cols (2, 3 or 4). Inner: league-item shortcodes. */ -}}
+<ul class="lg-grid lg-grid--{{ .Get "cols" | default "2" }}" role="list">{{ replaceRE `>\s*\n\s*<` "><" .Inner | safeHTML }}</ul>

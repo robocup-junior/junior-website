@@ -73,6 +73,7 @@ class ForumFeedsTest(unittest.TestCase):
         )
         (self.root / "hugo.toml").write_text(
             "baseURL = 'https://example.org/'\n"
+            "[params]\nremote_timeout = '2s'\n"
             "[security]\nallowContent = ['! ^text/org$']\n"
             "[security.http]\nurls = ['^http://127\\.0\\.0\\.1:[0-9]+']\n"
             "[caches.getresource]\nmaxAge = '0s'\n"

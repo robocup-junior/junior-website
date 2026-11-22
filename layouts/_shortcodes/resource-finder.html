@@ -58,7 +58,7 @@
 (function(){
 var root=document.getElementById('resource-finder'); if(!root) return;
 var siteRoot={{ "" | absURL }};
-function siteURL(url){return url.charAt(0)==='/'&&url.charAt(1)!=='/'?siteRoot+url.slice(1):url;}
+function siteURL(url){url=String(url||'');if(url.charAt(0)==='/'&&url.charAt(1)!=='/')return siteRoot+url.slice(1);if(/^(https?:|#)/i.test(url))return url;return '#';} /* only http(s), site-relative and #anchors: the list can come from a remote JSON file */
 var AU='https://www.robocupjunior.org.au', GH='https://github.com/robocup-junior', OS='https://robocup-junior.github.io/onstage/resources/teams/';
 var LEAGUES=[['all','All leagues'],['soccer','Soccer'],['line','Rescue Line'],['maze','Rescue Maze'],['sim','Rescue Simulation'],['onstage','OnStage'],['general','Any league']];
 var LEAGUE_PAGES={soccer:['/soccer/','Soccer'],line:['/rcj-rescue-line/','Rescue Line'],maze:['/rcj-rescue-maze/','Rescue Maze'],sim:['/rcj-rescue-sim/','Rescue Simulation'],onstage:['/onstage/','OnStage'],general:['/robocupjunior-general-rules/','General Rules']};

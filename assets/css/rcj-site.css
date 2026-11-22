@@ -1,0 +1,200 @@
+/*
+ * RoboCupJunior site styles: design tokens + fixes on top of the Kahuna theme.
+ * Loaded LAST (see layouts/_partials/head.html), so rules here win ties.
+ * The rules behind these choices are in STYLEGUIDE.md. Only use slash-star
+ * comments: a double-slash comment is not valid CSS and silently drops the
+ * rule after it.
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. Design tokens
+ * ------------------------------------------------------------------------- */
+:root {
+  --rcj-navy: #001242;          /* text, headings, header/footer surfaces   */
+  --rcj-navy-deep: #000d3d;     /* footer bottom bar only                    */
+  --rcj-ink: #32373c;           /* dark buttons, chips, card accents         */
+  --rcj-pink: #d40560;          /* links, primary buttons, focus ring        */
+  --rcj-pink-dark: #bb0047;     /* pink hover / pressed                      */
+  --rcj-lavender: #5d71b3;      /* borders, large text, decoration only      */
+  --rcj-lavender-text: #3b4f91; /* link hover, current menu item             */
+  --rcj-muted: #4f5968;         /* secondary text: dates, sources, captions  */
+  --rcj-surface: #f3f7f5;       /* page background                           */
+  --rcj-surface-2: #eef0f2;     /* chips, meta tags, table stripes           */
+  --rcj-border: #dcdfe3;
+  --rcj-white: #ffffff;
+  --rcj-focus: 3px solid var(--rcj-pink);
+}
+
+/* ---------------------------------------------------------------------------
+ * 2. Buttons
+ * WordPress global styles gave buttons a charcoal fill and white text. They
+ * were not migrated, so labels inherited the pink link colour (invisible on
+ * pink buttons). :not() keeps .has-*-color classes in charge where present.
+ * ------------------------------------------------------------------------- */
+.wp-block-button__link:not(.has-background),
+.wp-element-button:not(.has-background) {
+  background-color: var(--rcj-ink);
+  border-color: var(--rcj-ink);
+}
+.wp-block-button__link:not(.has-text-color),
+.wp-element-button:not(.has-text-color),
+.wp-block-button__link:not(.has-text-color):visited {
+  color: var(--rcj-white);
+}
+/* Buttons that name a white text colour (has-sitebg-color) keep it */
+.wp-block-button__link.has-sitebg-color,
+.wp-block-button__link.has-sitebg-color:visited { color: var(--rcj-white); }
+
+/* One hover/focus state for every block button: navy fill, white text.
+ * Text colour is locked because the theme recolours links on hover. */
+.wp-block-button__link:hover,
+.wp-block-button__link:focus-visible,
+.wp-block-button__link:active,
+.wp-element-button:hover,
+.wp-element-button:focus-visible {
+  background-color: var(--rcj-navy) !important;
+  border-color: var(--rcj-navy) !important;
+  color: var(--rcj-white) !important;
+  opacity: 1;
+}
+
+/* File block "Download" button */
+.wp-block-file__button,
+.wp-block-file__button:visited,
+.wp-block-file__button:hover,
+.wp-block-file__button:focus {
+  background: var(--rcj-ink);
+  color: var(--rcj-white) !important;
+  opacity: 1;
+  text-decoration: none;
+}
+.wp-block-file__button:hover,
+.wp-block-file__button:focus { background: var(--rcj-navy); }
+
+/* ---------------------------------------------------------------------------
+ * 3. Links and focus
+ * ------------------------------------------------------------------------- */
+a:hover,
+.entry-meta span a:hover,
+.comments-link a:hover { color: var(--rcj-lavender-text); }
+/* ...except links styled as filled buttons */
+a.continue-reading-link:hover, a.continue-reading-link:hover span,
+a.continue-reading-link:focus-visible span { color: var(--rcj-white) !important; }
+
+:focus-visible { outline: var(--rcj-focus); outline-offset: 2px; }
+a:focus-visible:hover { outline: var(--rcj-focus); }
+.post-thumbnail-container > a:focus-visible { outline: var(--rcj-focus) !important; outline-offset: 3px; }
+
+/* ---------------------------------------------------------------------------
+ * 4. Header and navigation
+ * ------------------------------------------------------------------------- */
+#access > div > ul > li.current_page_item > a,
+#access > div > ul > li.current-menu-item > a,
+#access > div > ul > li.current_page_ancestor > a,
+#access > div > ul > li.current-menu-ancestor > a { color: var(--rcj-lavender-text); }
+
+/* The full menu needs ~1440px. Use the mobile menu up to 1100px and
+ * tighten item padding between 1101 and 1439px so it stays on one row. */
+@media (min-width: 801px) and (max-width: 1100px) {
+  .cryout #nav-toggle { display: block; }
+  #masthead.cryout #access { display: none; }
+}
+@media (min-width: 1101px) and (max-width: 1439px) {
+  #access ul li { padding: 0 .4em; }
+  #access a { padding: 0 .4em; }
+}
+/* Open the last two menus' dropdowns leftwards so they stay on screen */
+#prime_nav > li:nth-last-child(-n+2) > ul { left: auto; right: 0; }
+#prime_nav > li:nth-last-child(-n+2) ul ul { left: auto; right: 100%; }
+
+/* Mobile menu: navy items like the desktop menu, pink for the current page */
+#mobile-nav a { color: var(--rcj-navy); }
+#mobile-nav li.current-menu-item > a,
+#mobile-nav a:hover { color: var(--rcj-pink); }
+
+/* Pages without a banner image: a plain navy banner so the title shows */
+.rcj-banner-plain #header-image-main-inside { height: 140px; max-height: none; display: flex; align-items: center; background: var(--rcj-navy); }
+.rcj-banner-plain #header-page-title { position: static; transform: none; padding: 0 2em; }
+.rcj-banner-plain #header-page-title-inside { background: transparent; padding: 0; overflow: visible; }
+.rcj-banner-plain #header-page-title .entry-title { float: none; max-width: none; margin: 0; }
+@media (max-width: 800px) { .rcj-banner-plain #header-image-main-inside { height: 100px; } .rcj-banner-plain #header-page-title { padding: 0 16px; } }
+
+/* ---------------------------------------------------------------------------
+ * 5. Homepage
+ * ------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .lp-staticslider .staticslider-caption-title { font-size: 2em; }
+  .staticslider-caption-buttons { display: flex; flex-wrap: wrap; gap: .75em; }
+  a.staticslider-button + a.staticslider-button { margin-left: 0; }
+  a.staticslider-button { margin-top: 1em; }
+}
+@media (max-width: 760px) {
+  .rcjhp-hero-text h2 span { font-size: clamp(1.9rem, 9.5vw, 3.4rem); }
+  .rcjhp-head h2 { overflow-wrap: anywhere; }
+}
+/* Hero photo fills its card instead of setting the card's height */
+.rcjhp-hero-image img { position: absolute; inset: 0; min-height: 0; }
+
+/* News boxes: crop rather than stretch; no justified text */
+.lp-box .lp-box-image > img { object-fit: cover; }
+.lp-boxes-static2 .lp-box-text-inside { text-align: left; }
+
+/* ---------------------------------------------------------------------------
+ * 6. Archives, posts and related content
+ * ------------------------------------------------------------------------- */
+#content-masonry .entry-title { display: block !important; }
+.archive-thumbnail { height: auto; aspect-ratio: 16 / 9; }
+.related-posts .related-meta { opacity: 1; color: var(--rcj-muted); }
+.wp-block-latest-posts__featured-image img { contain-intrinsic-size: 300px 200px; }
+
+/* ---------------------------------------------------------------------------
+ * 7. Content blocks on small screens
+ * ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  #secondary { display: none; }
+}
+@media (max-width: 600px) {
+  .wp-block-media-text .wp-block-media-text__content { padding: 0; }
+  p.has-sitebg-background-color.has-background { padding-left: 0; padding-right: 0; }
+  .wp-block-buttons > .wp-block-button { flex: 1 1 100%; }
+  .wp-block-buttons .wp-block-button__link { width: 100%; }
+}
+
+/* People grids (/community/) */
+/* (Two classes: beats the one-class inline rule in head.html.) */
+.wp-block-group.wp-container-core-group-is-layout-d05cb3ef { align-items: flex-start; }
+@media (max-width: 600px) {
+  .wp-block-group.wp-container-core-group-is-layout-d05cb3ef { flex-wrap: wrap; gap: 1em; }
+  .wp-block-group.wp-container-core-group-is-layout-d05cb3ef > figure { flex: 0 0 calc(50% - .5em); width: auto !important; max-width: calc(50% - .5em); }
+  .wp-block-group.wp-container-core-group-is-layout-d05cb3ef img { width: 100% !important; height: auto !important; aspect-ratio: 1; object-fit: cover; }
+}
+
+/* Tables: keep time columns on one line */
+.wp-block-table td:first-child { white-space: nowrap; }
+
+/* ---------------------------------------------------------------------------
+ * 8. Tinted backgrounds: keep link text readable
+ * ------------------------------------------------------------------------- */
+.rcj-post-meta > span { background: var(--rcj-surface-2); color: var(--rcj-navy); }
+.rcj-robocup-events__source { opacity: 1; color: var(--rcj-muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  /* The theme fades these in from opacity 0; without the animation, show them. */
+  #header-page-title, #header-page-title .entry-title, #header-page-title .byline,
+  #header-page-title #breadcrumbs-nav, .header-image, .lp-block .lp-block-text { opacity: 1 !important; }
+}
+
+/* ---------------------------------------------------------------------------
+ * 9. Archive lists (/category/...): compact rows, small thumbnails
+ * ------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+  #content-masonry article.hentry .article-inner { display: grid; grid-template-columns: 240px minmax(0, 1fr); column-gap: 24px; align-items: start; }
+  #content-masonry article.hentry .entry-header { display: contents; }
+  #content-masonry article.hentry .entry-title { grid-column: 2; grid-row: 1; margin-top: 0; }
+  #content-masonry article.hentry .post-thumbnail-container { grid-column: 1; grid-row: 1 / span 3; margin: 0; }
+  #content-masonry article.hentry .entry-summary,
+  #content-masonry article.hentry .post-continue-container { grid-column: 2; }
+}
+#content-masonry .archive-thumbnail { aspect-ratio: 16 / 10; height: auto; border-radius: 8px; }
+#content-masonry article.hentry { padding-bottom: 1.5em; margin-bottom: 1.5em; border-bottom: 1px solid var(--rcj-border); }

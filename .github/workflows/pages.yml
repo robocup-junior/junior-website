@@ -3,7 +3,11 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
+  # Rebuild every 6 hours so events, forum topics and scheduled posts stay current.
+  schedule:
+    - cron: '17 */6 * * *'
 
 permissions:
   contents: read
@@ -15,8 +19,23 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.169.0'
+          extended: true
+      - name: Run tests
+        run: python3 -m unittest discover -s tests
+
+  build:
+    needs: test
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: peaceiris/actions-hugo@v3
@@ -35,7 +54,9 @@ jobs:
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

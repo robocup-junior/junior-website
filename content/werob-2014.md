@@ -7,18 +7,18 @@
   "description": " RoboCupJunior Annual Workshop 2014 schedule  \nReverse Engineering to Teach Scientific Concepts: Biomimetic Robot Systems – Vivek Kumar\nPresentation …"
 }
 
-- <b>[RoboCupJunior Annual Workshop 2014 schedule](http://rcj.robocup.org/werob/werob2014/WEROB2014Schedule.pdf "newtab-noopener")</b>
+- <b>[RoboCupJunior Annual Workshop 2014 schedule](https://web.archive.org/web/20160626013634/http://rcj.robocup.org:80/werob/werob2014/WEROB2014Schedule.pdf "newtab-noopener")</b>
 
  
 
 {{< legacy-werob-list >}}
 - Reverse Engineering to Teach Scientific Concepts: Biomimetic Robot Systems – Vivek Kumar\
-  [Presentation](http://rcj.robocup.org/werob/werob2014/ppt1.pdf "newtab-noopener-break")[Paper](http://rcj.robocup.org/werob/werob2014/paper1.pdf)
+  [Presentation](https://web.archive.org/web/20160804135440/http://rcj.robocup.org:80/werob/werob2014/ppt1.pdf "newtab-noopener-break")[Paper](https://web.archive.org/web/20160615110550/http://rcj.robocup.org:80/werob/werob2014/paper1.pdf)
 - Teaching Programming through Open Source Robotics – Carlos J. Costa, Manuela Aparicio & Tiago Caldeira\
-  [Paper](http://rcj.robocup.org/werob/werob2014/paper2.pdf "newtab-noopener-indent")
+  [Paper](https://web.archive.org/web/20150923094138/http://rcj.robocup.org/werob/werob2014/paper2.pdf "newtab-noopener-indent")
 - An Event Aware Robot (SAI) for the Open Soccer Competition – Jordan Haddrick, Nathan Potter and Alexander Cavalli
 - Let’s Become a Lifelong Researcher: Proposal of the implementation of Open Autonomous Education System in RoboCupJunior – Tairo Nomura\
-  [Paper](http://rcj.robocup.org/werob/werob2014/paper4.pdf "newtab-noopener")
+  [Paper](https://web.archive.org/web/20160615112217/http://rcj.robocup.org:80/werob/werob2014/paper4.pdf "newtab-noopener")
 - Connecting the blocks: Curriculum, Robotics Classroom and RoboCupJunior Australia – Gerard Elias\
-  [Paper](http://rcj.robocup.org/werob/werob2014/paper5.pdf "newtab-noopener")
+  [Paper](https://web.archive.org/web/20160804151246/http://rcj.robocup.org:80/werob/werob2014/paper5.pdf "newtab-noopener")
 {{< /legacy-werob-list >}}

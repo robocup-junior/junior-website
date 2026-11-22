@@ -18,13 +18,13 @@ RoboCupJunior aims at bringing together many of these ideas, promoting project-o
 
 **History**
 
-RoboCupJunior began in 1998, with a demonstration at RoboCup-98 in Paris. The following year, RoboCup-99 in Stockholm exhibited the first interactive [RoboCupJunior workshops](http://www.daimi.au.dk/~hhl/RoboCupJr/RoboCupJr_report.html "newtab"). At [RCJ 2000](http://rcj.sci.brooklyn.cuny.edu/rcj2k/ "newtab") in Melbourne, over 100 children participated from 25 schools around Australia, as well as from Germany and the USA. Students entered one of three challenges: soccer, line-following sumo, and dance. In addition, over 500 local school children toured the RoboCup venue and learned about the initiative.
+RoboCupJunior began in 1998, with a demonstration at RoboCup-98 in Paris. The following year, RoboCup-99 in Stockholm exhibited the first interactive [RoboCupJunior workshops](https://web.archive.org/web/20041227163300/http://www.daimi.au.dk:80/~hhl/RoboCupJr/RoboCupJr_report.html "newtab"). At [RCJ 2000](http://rcj.sci.brooklyn.cuny.edu/rcj2k/ "newtab") in Melbourne, over 100 children participated from 25 schools around Australia, as well as from Germany and the USA. Students entered one of three challenges: soccer, line-following sumo, and dance. In addition, over 500 local school children toured the RoboCup venue and learned about the initiative.
 
 [RCJ 2001](http://rcj.sci.brooklyn.cuny.edu/rcj2001/ "newtab") was held in Seattle, USA, where 25 teams from four countries (USA, Australia, Germany, UK) entered soccer, rescue, and OnStage challenges. A workshop was held following the tournament, where researchers shared their ideas and progress in educational robotics.
 
 [RCJ 2002](http://rcj.sci.brooklyn.cuny.edu/rcj2002/ "newtab") was held in Fukuoka, Japan, where 59 teams from 12 countries participated.
 
-[RCJ 2003](http://rcj.sci.brooklyn.cuny.edu/rcj2003/ "newtab") was held in Padova, Italy in July 2003, where 57 teams from 15 countries participated.
+[RCJ 2003](https://web.archive.org/web/20100124114153/http://rcj.sci.brooklyn.cuny.edu:80/rcj2003/ "newtab") was held in Padova, Italy in July 2003, where 57 teams from 15 countries participated.
 
 [RCJ 2004](http://www.robocup2004.pt/robocupJunior "newtab") was held in Lisbon, Portugal in July 2004, where 162 teams from 18 countries participated.
 
@@ -32,9 +32,9 @@ RoboCupJunior began in 1998, with a demonstration at RoboCup-98 in Paris. The fo
 
 [RCJ 2006](http://www.robocup2006.org/ "newtab") was held in Bremen, Germany, in June 2006, where 240 teams from 22 countries participated.
 
-[RCJ 2007](http://rcj.sci.brooklyn.cuny.edu/rcj2007/ "newtab") was held in Atlanta, USA, in July 2007, where 154 teams from 23 countries participated.
+[RCJ 2007](https://web.archive.org/web/20081208113656/http://rcj.sci.brooklyn.cuny.edu:80/rcj2007/ "newtab") was held in Atlanta, USA, in July 2007, where 154 teams from 23 countries participated.
 
-[RCJ 2008](http://www.robocup-cn.org/ "newtab") was held in Suzhou, China, in July 2008, where 201 teams from 20 countries participated.
+[RCJ 2008](https://web.archive.org/web/20260503125509/https://www.robocup-cn.org/ "newtab") was held in Suzhou, China, in July 2008, where 201 teams from 20 countries participated.
 
 [RCJ 2009](http://www.robocup2009.org/ "newtab") was held in Graz, Austria, in June-July 2009, where over 200 teams from 25 countries participated.
 
@@ -52,7 +52,7 @@ RoboCupJunior began in 1998, with a demonstration at RoboCup-98 in Paris. The fo
 
 [RCJ 2016](https://www.robocup.org/events/5 "newtab") was held in Leipzig, Germany, in July 2016, where about 209 teams from 35 regions participated.
 
-[RCJ 2017](https://robocup2017.org "newtab") was held in Nagoya, Japan, in July 2017, where about 194  teams from 37 regions participated.
+[RCJ 2017](https://web.archive.org/web/20241106234136/https://www.robocup2017.org/ "newtab") was held in Nagoya, Japan, in July 2017, where about 194  teams from 37 regions participated.
 
 [RCJ 2018](http://robocup2018.org "newtab") was held in Montréal, Canada, in June 2018, where about 188 teams from 41 regions participated.
 

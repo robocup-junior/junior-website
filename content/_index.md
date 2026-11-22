@@ -7,7 +7,6 @@
   "home": {
     "slider": {
       "image": "/wp-content/uploads/2025/08/WhatsApp-Image-2025-07-28-at-11.15.08_3ae6818e-2048x1152-1.jpg",
-      "image_alt": "RoboCupJunior",
       "title": "RoboCupJunior",
       "tagline": "Creating a learning environment for today, fostering technological advancement for tomorrow",
       "buttons": [
@@ -22,8 +21,6 @@
       ]
     },
     "hero": {
-      "heading": "What is",
-      "heading_highlight": "RoboCupJunior?",
       "paragraphs": [
         "RoboCupJunior is a global robotics challenge for school students up to age 19. Teams design, build and program fully autonomous robots, exploring robotics, coding, engineering, teamwork and innovation through hands-on competition.",
         "Students can compete with any robot, any software and any level of experience, from first-time builders to advanced teams preparing for international competition."
@@ -38,12 +35,6 @@
           "url": "/events/"
         }
       ],
-      "image": {
-        "src": "/wp-content/uploads/2026/06/Robocup-889.jpg",
-        "width": 3265,
-        "height": 4898,
-        "alt": "Students and robots at a RoboCupJunior competition"
-      },
       "image_lines": [
         "Any robot.",
         "Any software.",
@@ -136,12 +127,6 @@
       ]
     },
     "pathway": {
-      "image": {
-        "src": "/wp-content/uploads/2024/10/RCjr_high_L.jpg",
-        "width": 1189,
-        "height": 683,
-        "alt": "RoboCupJunior logo"
-      },
       "heading": "A pathway for every student",
       "paragraphs": [
         "For over 25 years, RoboCupJunior has guided students from their first steps in robotics to sophisticated projects at local, regional and international events.",
@@ -182,9 +167,10 @@
         }
       ]
     },
-    "news_heading": "RoboCupJunior News",
-    "feature_label": "About RoboCupJunior"
+    "news_heading": "Latest news",
+    "video": {
+      "id": "uGqeEIyGCcI",
+      "title": "RoboCupJunior - short version"
+    }
   }
 }
-
-{{< wp-youtube id="uGqeEIyGCcI" title="RoboCupJunior - short version" >}}

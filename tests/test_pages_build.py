@@ -52,7 +52,10 @@ class PagesBuildTest(unittest.TestCase):
             self.assertIn(BASE_URL + "wp-content/uploads/2017/12/DSC04977.jpg", soccer)
             self.assertIn('var siteRoot="' + BASE_URL + '"', resource)
             self.assertIn('m.href="' + BASE_URL + 'resources/"', educators)
-            self.assertIn('location.replace("' + BASE_URL + 'rcj-werob/"', redirect)
+            self.assertIn('url=' + BASE_URL + 'rcj-werob/', redirect)
+            # Staging copy stays out of search results and points at the real site.
+            self.assertIn('<meta name="robots" content="noindex, nofollow">', soccer)
+            self.assertIn('rel="canonical" href="https://junior.robocup.org/soccer/"', soccer)
             self.assertIn('href="/junior-website/history/"', embed)
             self.assertIn('srcset="/junior-website/wp-content/', embed)
             self.assertIn('data="/junior-website/wp-content/', post)

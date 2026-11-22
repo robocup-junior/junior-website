@@ -97,7 +97,7 @@ the RCJ greyscale mat, which was used at events between 2000-2008 to cover the f
 2022 Rules
 
 - [Rescue Line rules (2022)](/wp-content/uploads/2022Rules/2022_RescueLine_Rules_final01.pdf "newtab-opener-first")
-- [Rescue Line rubrics (2022)](//junior.robocup.org/wp-content/uploads/2021Rules/2021_RescueLineMaze_Rubrics_final01.pdf "newtab-opener-first")
+- [Rescue Line rubrics (2022)](/wp-content/uploads/2021Rules/2021_RescueLineMaze_Rubrics_final01.pdf "newtab-opener-first")
 - [Rescue Maze rules (2022)](/wp-content/uploads/2022Rules/2022_RescueMaze_Rules_final01.pdf "newtab-opener-first-styled")
 - [Rescue Maze rubrics (2022)](/wp-content/uploads/2021Rules/2021_RescueLineMaze_Rubrics_final01.pdf "newtab-opener-first-styled")
 - [Rescue Simulation rules (2022)](/wp-content/uploads/2022Rules/2022_RescueSimulation_Rules_final02.pdf)
@@ -108,7 +108,6 @@ the RCJ greyscale mat, which was used at events between 2000-2008 to cover the f
 - [Rescue Maze rules (2021)](/wp-content/uploads/2023/02/RCJRescueMaze2021RulesFinal.pdf)
 - [Rescue Simulation rules (2021)](/wp-content/uploads/2023/03/2021_RescueSimulation_Rules_final02.pdf)
 
-{{< legacy-rules-empty-list >}}
 
 2020 Rules
 
@@ -173,8 +172,8 @@ the RCJ greyscale mat, which was used at events between 2000-2008 to cover the f
 - [Rescue A SuperTeam rules(2014)](/wp-content/uploads/2014Rules/rescueA_superteam_2014.pdf "newtab-opener-first")
 - [Rescue B rules(2014)](/wp-content/uploads/2014Rules/rescueB_2014.pdf "newtab-opener-first")
 - [Rescue B SuperTeam rules(2014)](/wp-content/uploads/2014Rules/rescueB_superteam_2014.pdf "newtab-opener-first")
-- [Rescue A & B Description of Materials Template (2014)](//junior.robocup.org/wp-content/uploads/2014Rules/rescueA&B_DescriptionMaterials_2014.pdf "newtab-opener-first")
-- [Rescue A & B Engineering Journal Template (2014)](//junior.robocup.org/wp-content/uploads/2014Rules/rescueA&B_engjournal_2014.pdf "newtab-opener-first")
+- [Rescue A & B Description of Materials Template (2014)](https://web.archive.org/web/20160519002314/http://rcj.robocup.org/rcj2014/rescueA&B_DescriptionMaterials_2014.pdf "newtab-opener-first")
+- [Rescue A & B Engineering Journal Template (2014)](https://web.archive.org/web/20180220004027/http://rcj.robocup.org/rcj2014/rescueA&B_engjournal_2014.pdf "newtab-opener-first")
 - [CoSpace rescue rules(2014)](/wp-content/uploads/2014Rules/rescue_cospace_2014.pdf "newtab-opener-first")\
   [CoSpace rescue interview sheet(2014)](/wp-content/uploads/2014Rules/rescue_cospace_interview_2014.pdf "newtab-opener-first")
 
@@ -201,7 +200,7 @@ the RCJ greyscale mat, which was used at events between 2000-2008 to cover the f
   [rescue B rules (2011)](/wp-content/uploads/2011Rules/rescueB_2011.pdf "newtab-opener-first")[Rescue Arena suggested building instruction](/wp-content/uploads/2011Rules/rescueA_building_instructions2011.pdf "newtab-opener-first") (updated 28-jan-2011)\
   [FAQ](http://www.rcjrescue.com/p/faq.html "newtab-opener-first")
 - [rescue CoSpace rules (2011)](/wp-content/uploads/2011Rules/rescue_cospace_2011.pdf "newtab-opener-first")\
-  [rescue CoSpace resource download(2011)](http://robocupsingapore.org/cospace/ "newtab-opener-first")
+  [rescue CoSpace resource download(2011)](https://web.archive.org/web/20101015143804/http://www.robocupsingapore.org:80/cospace/ "newtab-opener-first")
 
 Rules from 2010 and before
 
@@ -293,7 +292,7 @@ Rules from 2010 and before
 - [dance superteam rules (2011)](/wp-content/uploads/2011Rules/dance_superteam_2011.pdf "newtab-opener-first")
 - [dance superteam score sheet (2011)](/wp-content/uploads/2011Rules/dance_superteam_scoresheet_2011.pdf "newtab-opener-first")
 - [dance CoSpace rules (2011)](/wp-content/uploads/2011Rules/dance_cospace_2011.pdf "newtab-opener-first")
-- [dance CoSpace resource download(2011)](http://robocupsingapore.org/cospace/ "newtab-opener-first")
+- [dance CoSpace resource download(2011)](https://web.archive.org/web/20101015143804/http://www.robocupsingapore.org:80/cospace/ "newtab-opener-first")
 - [dance CoSpace interview score sheet (2011)](/wp-content/uploads/2011Rules/dance_cospace_interview_scoresheet_2011.pdf "newtab-opener-first")
 - [dance CoSpace performance score sheet (2011)](/wp-content/uploads/2011Rules/dance_cospace_performance_scoresheet_2011.pdf "newtab-opener-first")
 
@@ -316,4 +315,4 @@ Rules from 2010 and before
 - [dance rules (2009)](/wp-content/uploads/2009Rules/dance-rules-2009.pdf "newtab-opener-first")
 - [dance rules, appendix 1 (2009)](/wp-content/uploads/2009Rules/dance-appendix1-2009.pdf "newtab-opener-first")
 - [dance superteam rules (2009)](/wp-content/uploads/2009Rules/dance-superteam-2009.pdf "newtab-opener-first")
-- [dance rules (2008)](http://www.robocup-cn.org/en/league_sub.php?subleague=Junior%20Dance#article91 "newtab-opener-first")
+- [dance rules (2008)](https://web.archive.org/web/20090305102512/http://www.robocup-cn.org.:80/en/league_sub.php?subleague=Junior%20Dance "newtab-opener-first")

@@ -19,8 +19,8 @@
     <article class="post type-post status-publish hentry">
       <div class="article-inner">
         <header><div class="entry-meta rcj-post-meta">
-          {{ with $metadata.author }}<span class="author vcard">{{ with $metadata.avatar }}<img class="avatar avatar-96 photo" src="{{ . }}" width="96" height="96" alt="">{{ else }}<i class="icon-author"></i>{{ end }} {{ . }}</span>{{ end }}
-          {{ with $metadata.terms }}<span><i class="icon-category"></i>{{ range $i, $term := . }}{{ if $i }}, {{ end }}<a href="{{ replace $term.link "https://junior.robocup.org" "" }}">{{ $term.name }}</a>{{ end }}</span>{{ end }}
+          {{ $author := .Params.author | default $metadata.author }}{{ with $author }}<span class="author vcard">{{ with $metadata.avatar }}<img class="avatar avatar-96 photo" src="{{ . }}" width="96" height="96" alt="">{{ else }}<i class="icon-author"></i>{{ end }} {{ . }}</span>{{ end }}
+          {{ with $metadata.terms }}<span><i class="icon-category" aria-hidden="true"></i>{{ range $i, $term := . }}{{ if $i }}, {{ end }}<a href="{{ replace $term.link "https://junior.robocup.org" "" | relURL }}">{{ $term.name }}</a>{{ end }}</span>{{ else }}{{ with $.GetTerms "categories" }}<span><i class="icon-category" aria-hidden="true"></i>{{ range $i, $term := . }}{{ if $i }}, {{ end }}<a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>{{ end }}</span>{{ end }}{{ end }}
           <span><i class="icon-date"></i><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></span>
         </div></header>
         <div class="entry-content">{{ .Content }}{{ partial "jetpack-related.html" . }}</div>

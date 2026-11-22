@@ -18,7 +18,7 @@
   <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
     {{ range $index, $item := . }}
     <p class="jp-relatedposts-post jp-relatedposts-post{{ $index }}">
-      <span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="{{ replace $item.url "https://junior.robocup.org" "" }}">{{ $item.title | htmlUnescape }}</a></span><time class="jp-relatedposts-post-date" datetime="{{ $item.date }}" style="display: block;">{{ $item.date }}</time><span class="jp-relatedposts-post-context">{{ $item.context | htmlUnescape }}</span>
+      <span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="{{ replace $item.url "https://junior.robocup.org" "" }}">{{ $item.title | htmlUnescape }}</a></span><time class="jp-relatedposts-post-date" {{ with try (time.AsTime $item.date) }}{{ with .Value }}datetime="{{ .Format "2006-01-02" }}"{{ end }}{{ end }} style="display: block;">{{ $item.date }}</time><span class="jp-relatedposts-post-context">{{ $item.context | htmlUnescape }}</span>
     </p>
     {{ end }}
   </div>

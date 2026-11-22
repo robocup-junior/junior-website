@@ -1,0 +1,151 @@
+/* Homepage (layouts/_partials/home.html). Uses the tokens in rcj-site.css.
+   Rules: STYLEGUIDE.md. Every section is a full-width band; content sits in
+   a 1200px column with 16px (mobile) to 24px gutters. */
+
+.rcjh { font-size: 1.0625rem; line-height: 1.6; color: var(--rcj-navy); }
+.rcjh *, .rcjh *::before, .rcjh *::after { box-sizing: border-box; }
+.rcjh-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.rcjh-plain { list-style: none; margin: 0; padding: 0; }
+.rcjh h1, .rcjh h2, .rcjh h3 { font-family: Poppins, "Source Sans Pro", sans-serif; letter-spacing: -0.01em; }
+.rcjh p { margin: 0 0 1em; }
+.rcjh a:focus-visible { outline: var(--rcj-focus); outline-offset: 3px; }
+
+/* Bands */
+.rcjh-band { padding: 64px 0; }
+.rcjh-band-white { background: var(--rcj-white); }
+.rcjh-band-light { background: var(--rcj-surface); }
+.rcjh-band-navy { background: var(--rcj-navy); color: var(--rcj-white); }
+.rcjh-head { max-width: 760px; margin: 0 0 32px; }
+.rcjh-head h2 { font-size: clamp(1.75rem, 3.2vw, 2.4rem); line-height: 1.15; margin: 0 0 12px; color: inherit; font-weight: 800; }
+.rcjh-head p { color: var(--rcj-muted); font-size: 1.125rem; margin: 0; }
+.rcjh-band-navy .rcjh-head p { color: rgba(255, 255, 255, .88); }
+.rcjh-head-row { max-width: none; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+
+/* Buttons: pill shape, 44px+ tap target, colours locked in every state */
+.rcjh-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.rcjh-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border-radius: 999px; border: 2px solid transparent; font-weight: 700; font-size: 1rem; line-height: 1.2; text-decoration: none; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.rcjh a.rcjh-btn-primary, .rcjh a.rcjh-btn-primary:visited { background: var(--rcj-pink); color: var(--rcj-white) !important; }
+.rcjh a.rcjh-btn-primary:hover, .rcjh a.rcjh-btn-primary:focus-visible { background: var(--rcj-pink-dark); color: var(--rcj-white) !important; }
+.rcjh a.rcjh-btn-ghost, .rcjh a.rcjh-btn-ghost:visited { border-color: var(--rcj-white); color: var(--rcj-white) !important; background: transparent; }
+.rcjh a.rcjh-btn-ghost:hover, .rcjh a.rcjh-btn-ghost:focus-visible { background: var(--rcj-white); color: var(--rcj-navy) !important; }
+.rcjh a.rcjh-btn-dark, .rcjh a.rcjh-btn-dark:visited { background: var(--rcj-navy); color: var(--rcj-white) !important; }
+.rcjh a.rcjh-btn-dark:hover, .rcjh a.rcjh-btn-dark:focus-visible { background: var(--rcj-ink); color: var(--rcj-white) !important; }
+.rcjh a.rcjh-btn-outline, .rcjh a.rcjh-btn-outline:visited { border-color: var(--rcj-navy); color: var(--rcj-navy) !important; background: var(--rcj-white); }
+.rcjh a.rcjh-btn-outline:hover, .rcjh a.rcjh-btn-outline:focus-visible { background: var(--rcj-navy); color: var(--rcj-white) !important; }
+.rcjh-band-navy a:focus-visible, .rcjh-hero a:focus-visible { outline-color: var(--rcj-white); }
+
+/* Hero: photo under a solid navy wash so text always meets contrast */
+.rcjh-hero { position: relative; color: var(--rcj-white); background: var(--rcj-navy) var(--rcjh-hero-image, none) center / cover no-repeat; }
+.rcjh-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 18, 66, .94) 0%, rgba(0, 18, 66, .86) 55%, rgba(0, 18, 66, .6) 100%); }
+.rcjh-hero-inner { position: relative; padding-top: 96px; padding-bottom: 80px; }
+.rcjh-hero h1 { color: var(--rcj-white); font-size: clamp(2.25rem, 6vw, 3.75rem); line-height: 1.05; font-weight: 800; margin: 0 0 12px; }
+.rcjh-tagline { font-style: italic; font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--rcj-white); max-width: 40ch; }
+.rcjh-lead { font-size: 1.125rem; max-width: 62ch; color: rgba(255, 255, 255, .92); }
+
+/* Strip under the hero */
+.rcjh-strip { background: var(--rcj-white); border-bottom: 1px solid var(--rcj-border); padding: 24px 0; }
+.rcjh-strip .rcjh-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; }
+.rcjh-strip-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.rcjh-strip-list li { font-family: Poppins, "Source Sans Pro", sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--rcj-navy); padding-left: 16px; border-left: 4px solid var(--rcj-pink); line-height: 1.2; }
+.rcjh-strip p { margin: 0; color: var(--rcj-muted); flex: 1 1 320px; }
+
+/* Grids */
+.rcjh-grid { display: grid; gap: 24px; }
+.rcjh-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.rcjh-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.rcjh-grid > li { display: flex; }
+.rcjh-grid > li > * { flex: 1; }
+
+/* Cards (shared) */
+.rcjh-card-title { display: block; font-family: Poppins, "Source Sans Pro", sans-serif; font-weight: 800; font-size: 1.25rem; line-height: 1.25; color: var(--rcj-navy); margin-bottom: 8px; }
+.rcjh-card-text { display: block; color: var(--rcj-muted); font-size: 1rem; }
+.rcjh-more { display: block; margin-top: auto; padding-top: 16px; font-weight: 700; color: var(--rcj-pink); }
+
+/* League cards: image on top, text on a solid background */
+.rcjh a.rcjh-league { display: flex; flex-direction: column; text-decoration: none; background: var(--rcj-white); border: 1px solid var(--rcj-border); border-radius: 12px; overflow: hidden; transition: box-shadow .2s ease, border-color .2s ease; }
+.rcjh-league img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+.rcjh-league-body { display: flex; flex-direction: column; flex: 1; padding: 20px; }
+.rcjh a.rcjh-league:hover { border-color: var(--rcj-lavender); box-shadow: 0 8px 24px rgba(0, 18, 66, .12); }
+.rcjh a.rcjh-league:hover .rcjh-card-title { color: var(--rcj-pink); }
+
+/* Journey steps */
+.rcjh a.rcjh-step { display: flex; flex-direction: column; text-decoration: none; background: var(--rcj-white); border: 1px solid var(--rcj-border); border-top: 4px solid var(--rcj-pink); border-radius: 12px; padding: 24px; transition: box-shadow .2s ease; }
+.rcjh a.rcjh-step:hover { box-shadow: 0 8px 24px rgba(0, 18, 66, .12); }
+.rcjh a.rcjh-step:hover .rcjh-card-title { color: var(--rcj-pink); }
+.rcjh-step-num { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--rcj-navy); color: var(--rcj-white); font-weight: 800; margin-bottom: 16px; }
+
+/* News: compact cards with small thumbnails */
+.rcjh-all { font-weight: 700; color: var(--rcj-pink); }
+.rcjh-news-item { position: relative; display: flex; flex-direction: column; border: 1px solid var(--rcj-border); border-radius: 12px; overflow: hidden; background: var(--rcj-white); transition: box-shadow .2s ease; }
+.rcjh-news-item:hover { box-shadow: 0 8px 24px rgba(0, 18, 66, .12); }
+.rcjh-news-thumb { aspect-ratio: 16 / 7; background: var(--rcj-surface-2); }
+.rcjh-news-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rcjh-news-body { padding: 16px 20px 20px; }
+.rcjh-news-body time { display: block; font-size: .9375rem; color: var(--rcj-muted); margin-bottom: 4px; }
+.rcjh-news-body h3 { font-size: 1.0625rem; line-height: 1.35; margin: 0; font-weight: 700; }
+.rcjh-news-body h3 a { color: var(--rcj-navy); text-decoration: none; }
+.rcjh-news-body h3 a::after { content: ""; position: absolute; inset: 0; } /* whole card is clickable */
+.rcjh-news-body h3 a:hover { color: var(--rcj-pink); text-decoration: underline; }
+.rcjh-news-item:focus-within { outline: var(--rcj-focus); outline-offset: 3px; }
+.rcjh-news-body h3 a:focus-visible { outline: none; }
+
+/* Why cards (on navy) */
+.rcjh-grid > li.rcjh-why { display: block; }
+.rcjh-why { background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2); border-radius: 12px; padding: 24px; }
+.rcjh-why h3 { color: var(--rcj-white); font-size: 1.25rem; margin: 0 0 8px; font-weight: 800; }
+.rcjh-why p { color: rgba(255, 255, 255, .88); margin: 0; }
+
+/* Pathway + video */
+.rcjh-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.rcjh-split h2 { font-size: clamp(1.75rem, 3.2vw, 2.4rem); line-height: 1.15; margin: 0 0 16px; font-weight: 800; color: var(--rcj-navy); }
+.rcjh-split p { color: var(--rcj-muted); }
+.rcjh-video { margin: 0; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--rcj-navy); }
+.rcjh-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+.rcjh-objective { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: center; margin-top: 48px; padding: 32px; background: var(--rcj-white); border: 1px solid var(--rcj-border); border-radius: 12px; }
+.rcjh-objective img { width: 100%; height: auto; display: block; }
+.rcjh-objective h3 { font-size: 1.5rem; margin: 0 0 8px; color: var(--rcj-navy); font-weight: 800; }
+.rcjh-objective p { color: var(--rcj-muted); margin: 0; }
+
+/* Closing */
+.rcjh-closing { text-align: center; }
+.rcjh-closing h2 { color: var(--rcj-white); font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; max-width: 28ch; margin: 0 auto 12px; font-weight: 800; }
+.rcjh-closing p { color: rgba(255, 255, 255, .88); max-width: 62ch; margin: 0 auto; }
+.rcjh-closing .rcjh-actions { justify-content: center; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .rcjh-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rcjh-split { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 800px) {
+  .rcjh-grid-3 { grid-template-columns: 1fr; }
+  .rcjh-band { padding: 48px 0; }
+  /* News becomes a list: small square thumbnail beside the title */
+  .rcjh-news { gap: 12px; }
+  .rcjh-news-item { flex-direction: row; align-items: center; }
+  .rcjh-news-thumb { flex: 0 0 96px; width: 96px; height: 96px; aspect-ratio: auto; }
+  .rcjh-news-body { padding: 12px 16px; }
+  .rcjh-league img { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 600px) {
+  .rcjh-inner { padding: 0 16px; }
+  .rcjh-grid-4 { grid-template-columns: 1fr; }
+  .rcjh-hero-inner { padding-top: 48px; padding-bottom: 48px; }
+  .rcjh-btn { width: 100%; }
+  .rcjh-objective { grid-template-columns: 1fr; padding: 24px; gap: 16px; }
+  .rcjh-objective img { max-width: 200px; }
+  .rcjh-strip-list li { font-size: 1.125rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rcjh * { transition: none !important; }
+}
+
+/* The theme fixes the 75px menu bar above 1152px and offsets inner-page
+   banners by the same amount; do the same for the hero. */
+@media (min-width: 1153px) {
+  .kahuna-fixed-menu .rcjh-hero { margin-top: 75px; }
+  .rcjh-hero-inner { padding-top: 72px; }
+}
+@media (max-width: 1152px) {
+  .rcjh-hero-inner { padding-top: 56px; }
+}

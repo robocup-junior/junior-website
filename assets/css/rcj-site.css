@@ -58,6 +58,9 @@
   opacity: 1;
 }
 
+/* Pink buttons: match the border to the fill (the theme adds a white one) */
+.wp-block-button__link.has-accent-1-background-color { border-color: var(--rcj-pink); }
+
 /* File block "Download" button */
 .wp-block-file__button,
 .wp-block-file__button:visited,
@@ -70,6 +73,9 @@
 }
 .wp-block-file__button:hover,
 .wp-block-file__button:focus { background: var(--rcj-navy); }
+
+/* Italic page taglines (wp-intro): tighter when they wrap */
+.entry-content p.has-large-font-size { line-height: 1.4; }
 
 /* ---------------------------------------------------------------------------
  * 3. Links and focus

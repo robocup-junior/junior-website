@@ -251,11 +251,21 @@ Before publishing a page or template change, check:
 
 ## 8. Writing CSS and templates
 
-- Put site-wide rules in `rcj-site.css` under the matching numbered section,
-  homepage rules in `home.css`, and rules for one page in
-  `assets/css/pages/<content file name>.css` (loaded automatically, e.g.
-  `pages/soccer.css` for `content/soccer.md`). Don't add inline `<style>`
-  blocks to content.
+- Where styles go:
+  - site-wide: `rcj-site.css`, under the matching numbered section
+  - homepage: `home.css`
+  - a group of pages: `assets/css/sections/<name>.css`, loaded by front
+    matter `"section_css": "<name>"` (e.g. the six Getting Started pages use
+    `getting-started`)
+  - one page: `assets/css/pages/<content file name>.css`, loaded
+    automatically (e.g. `pages/history.css` for `content/history.md`)
+  - a component used across sections: keep its CSS with the shortcode that
+    uses it (`league-intro` loads `league.css`; `werob-intro` loads
+    `werob.css`)
+  Don't add inline `<style>` blocks to content.
+- `hugo server` only notices a newly created stylesheet after a restart.
+- Section shortcodes are prefixed by section: `about-`, `league-`, `gs-`,
+  `rules-`, `werob-`. Reuse them before writing new ones.
 - Use **slash-star comments only**. A `//` comment silently drops the next
   rule, and a `*/` inside a comment ends it early (both happened here).
 - When overriding the theme, prefer `:not()` and an extra class over

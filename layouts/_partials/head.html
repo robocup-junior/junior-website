@@ -47,6 +47,8 @@
 <link rel="stylesheet" href="{{ $custom.RelPermalink }}" integrity="{{ $custom.Data.Integrity }}">
 {{ $site := resources.Get "css/rcj-site.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $site.RelPermalink }}" integrity="{{ $site.Data.Integrity }}">
+{{- /* Styles shared by a group of pages: front matter "section_css": "<name>" loads assets/css/sections/<name>.css */ -}}
+{{ with .Params.section_css }}{{ with resources.Get (printf "css/sections/%s.css" .) }}{{ $s := . | minify | fingerprint }}<link rel="stylesheet" href="{{ $s.RelPermalink }}" integrity="{{ $s.Data.Integrity }}">{{ end }}{{ end }}
 {{- /* Page-specific styles: assets/css/pages/<content file name>.css, if present */ -}}
 {{ with .File }}{{ with resources.Get (printf "css/pages/%s.css" .ContentBaseName) }}{{ $p := . | minify | fingerprint }}<link rel="stylesheet" href="{{ $p.RelPermalink }}" integrity="{{ $p.Data.Integrity }}">{{ end }}{{ end }}
 {{ if .IsHome }}{{ $home := resources.Get "css/home.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $home.RelPermalink }}" integrity="{{ $home.Data.Integrity }}">{{ end }}

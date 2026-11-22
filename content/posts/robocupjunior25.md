@@ -11,7 +11,8 @@
 }
 
 {{< wp-prose >}}
-This year marks a major milestone – **25 years of RoboCupJunior**!\
+This year marks a major milestone – **25 years of RoboCupJunior**!
+
 Since its beginnings in the late 1990s, RoboCupJunior has grown from a handful of pioneering teams to a **global movement**, empowering tens of thousands of students every year to explore robotics, AI, and STEM through hands-on challenges.
 
 We are proud to share our **25-Year Anniversary Video**, highlighting the incredible journey of RoboCupJunior – from the earliest competitions to today’s worldwide community of young innovators.
@@ -19,12 +20,10 @@ We are proud to share our **25-Year Anniversary Video**, highlighting the incred
 
 {{< wp-youtube id="hkRiH85ADfc" title="A Celebration of 25 Years of RoboCupJunior" >}}
 
-{{< wp-spacer height="21" >}}
-
 {{< wp-prose >}}
-A huge thank you to our **volunteers, mentors, organisers, and alumni** who make RoboCupJunior possible. Here’s to the next 25 years of building future robotists and shaping the world of autonomous robotics!
+A huge thank you to our **volunteers, mentors, organisers, and alumni** who make RoboCupJunior possible. Here’s to the next 25 years of building future roboticists and shaping the world of autonomous robotics!
 
-### Learn more about 25 years of RoboCupJunior:
+## Learn more about 25 years of RoboCupJunior
 {{< /wp-prose >}}
 
 {{< wp-columns >}}

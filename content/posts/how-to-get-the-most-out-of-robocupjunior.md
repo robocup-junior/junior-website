@@ -11,13 +11,13 @@
 }
 
 {{< wp-prose >}}
-**Note**: *I originally wrote this quick post during the setup days of RoboCup 2016 in Leipzig. It was intend for the (especially first time) participants of RoboCupJunior. In retrospect, it seems that it may be beneficial to the general public, so I am publicly releasing it on my blog.*
+**Note**: *I originally wrote this quick post during the setup days of RoboCup 2016 in Leipzig. It was intended for the (especially first time) participants of RoboCupJunior. In retrospect, it seems that it may be beneficial to the general public, so I am publicly releasing it on my blog.*
 
 *Should you have any question or feedback, feel free to contact me — you can find the details at the bottom.*
 
 *Enjoy!*
 
-The original article can be found here: https&#58;//mareksuppa.com/blog/notes/how-to-get-most-out-of-rcj/#content
+Read the [original article on mareksuppa.com](https://mareksuppa.com/blog/notes/how-to-get-most-out-of-rcj/#content).
 {{< /wp-prose >}}
 
 <hr class="wp-block-separator has-alpha-channel-opacity">
@@ -100,7 +100,7 @@ So if you should not care about the trophies what should you care about? A caref
 
 <hr class="wp-block-separator has-alpha-channel-opacity">
 
-{{< media-text image="/wp-content/uploads/2025/08/marek.jpg" columns="30% auto" >}}
+{{< media-text image="/wp-content/uploads/2025/08/marek.jpg" alt="Marek Šuppa, the author" columns="30% auto" >}}
 ## Have Fun!
 
 That is what this RoboCup thing is all about anyway.

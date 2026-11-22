@@ -10,8 +10,10 @@
   "wordpress_excerpt": "<p>Join us from June 30 to July 6 at Songdo Convensia, South Korea, for a week of &hellip;</p>\n"
 }
 
-{{< media-text image="/wp-content/uploads/2026/04/1776278960733-820x1024.jpeg" columns="26% auto" >}}
+{{< media-text image="/wp-content/uploads/2026/04/1776278960733-820x1024.jpeg" alt="RoboCup 2026 Incheon poster: June 30 to July 6, 2026, Songdo Convensia, South Korea" columns="26% auto" >}}
 Join us from June 30 to July 6 at Songdo Convensia, South Korea, for a week of innovation, competition, and the future of robotics.
 
-All details can be found here: [2026.robocup.org](http://2026.robocup.org)<br><br>See you there!&#32;
+All details are at [2026.robocup.org](http://2026.robocup.org).
+
+See you there!
 {{< /media-text >}}

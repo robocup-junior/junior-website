@@ -11,12 +11,12 @@
 }
 
 {{< wp-prose >}}
-The Soccer Committee provides a helpful starting guide document to help build your own field.
+The Soccer Committee provides a starting guide to help you build your own field.
 {{< /wp-prose >}}
 
 {{< wp-buttons >}}
-{{< wp-button-item url="https://robocup-junior.github.io/soccer-rules/master/field_specification.pdf" text="Field Specifications [PDF]" >}}
-{{< wp-button-item url="https://robocup-junior.github.io/soccer-rules/master/field_specification.html" text="Field Specifications [HTML]" >}}
+{{< wp-button-item url="https://robocup-junior.github.io/soccer-rules/master/field_specification.pdf" text="Field Specifications (PDF)" >}}
+{{< wp-button-item url="https://robocup-junior.github.io/soccer-rules/master/field_specification.html" text="Field Specifications (HTML)" >}}
 {{< /wp-buttons >}}
 
-{{< wp-image image="/wp-content/uploads/2025/01/SoccerFieldDrawings-1024x724.png" figure-class="aligncenter size-large is-resized" wrapper-class="wp-block-image" >}}
+{{< wp-image image="/wp-content/uploads/2025/01/SoccerFieldDrawings-1024x724.png" alt="Technical drawings of the Soccer field: the field plan with dimensions, a 3D view of the field and goal, and wall details" figure-class="aligncenter size-large is-resized" wrapper-class="wp-block-image" >}}

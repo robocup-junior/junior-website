@@ -16,7 +16,7 @@
 Welcome to the world of OnStage robotic performances! This article demonstrates how to prepare for RoboCupJunior OnStage competition, specifically focusing on how to select the top features to highlight in your Poster and Technical demonstration video. Imagine you have a performance with a robotic dog (like the yellow robotic dog from Boston Dynamics) that interacts with humans. Here’s a guide on how to choose the top robotic features to amaze the judges and the audience alike.
 {{< /wp-prose >}}
 
-{{< wp-image image="/wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--1024x585.webp" figure-class="aligncenter size-large is-resized" wrapper-class="wp-block-image" caption="With some help from DALL-E: *A futuristic stage performance featuring two robotic dogs dancing in sync on a clean, minimalist 4×5 white stage. The stage has a single large screen and black curtains*" >}}
+{{< wp-image image="/wp-content/uploads/2025/01/DALL%C2%B7E-2025-01-29-22.51.55-A-futuristic-stage-performance-featuring-two-robotic-dogs-dancing-in-sync-on-a-clean-minimalist-4x5-white-stage.-The-stage-has-a-single-large-screen--1024x585.webp" alt="AI-generated image of two robotic dogs dancing on a white stage in front of a large screen" figure-class="aligncenter size-large is-resized" wrapper-class="wp-block-image" caption="With some help from DALL-E: *A futuristic stage performance featuring two robotic dogs dancing in sync on a clean, minimalist 4×5 white stage. The stage has a single large screen and black curtains*" >}}
 
 {{< wp-prose >}}
 ## Understanding Robotic Features

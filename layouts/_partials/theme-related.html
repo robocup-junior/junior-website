@@ -1,32 +1,30 @@
-{{ $id := printf "%v" .Params.wordpress_id }}
-{{ $data := index hugo.Data "theme-related" }}
-{{ $items := slice }}
-{{ if isset $data $id }}
-  {{ $items = index $data $id }}
-{{ else }}
-  {{ $related := first 3 (where (where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" .Params.categories) "RelPermalink" "ne" .RelPermalink) }}
-  {{ range $related }}
-    {{ $metadata := index (index hugo.Data "wordpress-posts") (printf "%v" .Params.wordpress_id) }}
-    {{ $image := .Params.featured_image | default "" }}
-    {{ with $metadata }}{{ with index .images "kahuna-featured-third" }}{{ $image = . }}{{ end }}{{ end }}
-    {{ $items = $items | append (dict "url" .RelPermalink "title" .Title "date" (.Date.Format "January 2, 2006") "image" $image) }}
-  {{ end }}
-{{ end }}
-{{ with $items }}
-<aside class="related-posts">
-  <h2 class="related-main-title"><span>Related Posts</span></h2><ul>
-  {{ range . }}
-    {{ $item := . }}
-    {{ $url := replace .url "https://junior.robocup.org" "" }}
-    {{ $image := replace .image "https://junior.robocup.org" "" }}
-    {{ $title := .title | htmlEscape }}
-    {{ $title = replace $title "🤖" `<img draggable="false" role="img" class="emoji" alt="🤖" src="/images/core/emoji/17.0.2/svg/1f916.svg">` }}
-    {{ $title = replace $title "🌏" `<img draggable="false" role="img" class="emoji" alt="🌏" src="/images/core/emoji/17.0.2/svg/1f30f.svg">` }}
-    <li class="related-item"><article>
-      <div class="related-thumbnail">{{ with $image }}<a href="{{ $url }}" title="{{ $item.title }}"><img{{ with $item.width }} width="{{ . }}"{{ end }}{{ with $item.height }} height="{{ . }}"{{ end }} src="{{ . }}" class="attachment-kahuna-featured-third size-kahuna-featured-third wp-post-image" alt="" decoding="async"></a>{{ end }}</div>
-      <div class="related-inside"><h3 class="related-title"><a href="{{ $url }}" rel="bookmark" title="{{ .title }}">{{ $title | safeHTML }}</a></h3><div class="related-meta"><p class="related-date">{{ .date }}</p></div></div>
-    </article></li>
-  {{ end }}
+{{- /* Related posts as compact cards (up to 3), below a single post.
+     Picks come from the imported WordPress data (theme-related.json, then
+     jetpack-related.json, keyed by wordpress_id). Posts without imported
+     picks (any new post) show the newest posts that share a category. */ -}}
+{{- $page := . -}}
+{{- $id := printf "%v" .Params.wordpress_id -}}
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $picks := slice -}}
+{{- range slice "theme-related" "jetpack-related" -}}
+  {{- with index (index hugo.Data .) $id -}}
+    {{- range . -}}
+      {{- $url := replace .url "https://junior.robocup.org" "" -}}
+      {{- range first 1 (where $posts "Params.url" $url) }}{{ $picks = $picks | append . }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $picks -}}
+  {{- $picks = where (where $posts "Params.categories" "intersect" (.Params.categories | default slice)) "RelPermalink" "ne" .RelPermalink -}}
+{{- end -}}
+{{- $picks = where ($picks | uniq) "RelPermalink" "ne" .RelPermalink -}}
+{{- with first 3 $picks }}
+<aside class="rcjp-related" aria-labelledby="rcjp-related-title">
+  <h2 id="rcjp-related-title">Related posts</h2>
+  <ul class="rcjp-cards">
+    {{- range . }}
+    <li>{{ partial "post-card.html" (dict "page" .) }}</li>
+    {{- end }}
   </ul>
 </aside>
-{{ end }}
+{{- end }}

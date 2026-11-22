@@ -11,30 +11,30 @@
 }
 
 {{< wp-prose >}}
-# Entry League Community Resources
+## Entry League Community Resources
 
-## RoboCup Junior Australia Tutorial for Soccer Omni-Drive
+### RoboCup Junior Australia Tutorial for Soccer Omni-Drive
 
-Omnidrive robots use four motors, to allow the robot to respond in any direction to the Soccer ball. This significantly decreases the time it takes for the robot to get to the ball, giving a great game day advantage.
+Omnidrive robots use four motors, so the robot can move towards the Soccer ball in any direction. This significantly decreases the time it takes for the robot to get to the ball, giving a great game day advantage.
 
 To help you get started with Omnidrive robots, RoboCup Junior Australia has put together some great resources.
 {{< /wp-prose >}}
 
 {{< wp-buttons >}}
-{{< wp-button-item url="https://www.robocupjunior.org.au/wp-content/uploads/2023/06/Omnidrive-4-Large-motors-HR.pdf" text="Omni-Drive LEGO Robot Design" accent="true" new-tab="true" >}}
-{{< wp-button-item url="https://youtu.be/FuL5uEr-7f4" text="Beginner Explanation " accent="true" new-tab="true" >}}
-{{< wp-button-item url="https://youtu.be/3rp7s8MfiOI" text="Intermediate Explanation " accent="true" new-tab="true" >}}
+{{< wp-button-item url="https://www.robocupjunior.org.au/wp-content/uploads/2023/06/Omnidrive-4-Large-motors-HR.pdf" text="Omni-Drive LEGO Robot Design (PDF)" new-tab="true" >}}
+{{< wp-button-item url="https://youtu.be/FuL5uEr-7f4" text="Beginner Explanation (video)" new-tab="true" >}}
+{{< wp-button-item url="https://youtu.be/3rp7s8MfiOI" text="Intermediate Explanation (video)" new-tab="true" >}}
 {{< /wp-buttons >}}
 
 {{< wp-prose >}}
-## IR Seeker Sensors for Robots
+### IR Seeker Sensors for Robots
 
-We are aware that many entry teams are using LEGO SPIKE robots for the development. If there are additional Entry league resources, please get in touch with the RoboCupJunior Soccer committee to have them added here.
+Many Entry teams build their robots with LEGO SPIKE. These IR sensors work with it. If there are additional Entry league resources, please get in touch with the RoboCupJunior Soccer committee to have them added here.
 {{< /wp-prose >}}
 
 {{< wp-columns >}}
 {{< wp-column >}}
-<figure class="wp-block-image size-large"><img decoding="async" src="https://d2j6dbq0eux0bg.cloudfront.net/images/99274001/4130501537.jpg" alt=""/></figure>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://d2j6dbq0eux0bg.cloudfront.net/images/99274001/4130501537.jpg" alt="Advanced Bot Works IR sensor ring on a LEGO SPIKE hub"/></figure>
 
 {{< wp-buttons >}}
 {{< wp-button-item url="https://advancedbotworks.com/products/Spike-IR-Sensor-Ring-p630192260" text="LEGO SPIKE IR Ring – Advanced Bot Works" >}}
@@ -42,7 +42,7 @@ We are aware that many entry teams are using LEGO SPIKE robots for the developme
 {{< /wp-column >}}
 
 {{< wp-column >}}
-<figure class="wp-block-image size-large"><img decoding="async" src="https://www.mindsensors.com/223-large_default/irtracker.jpg" alt=""/></figure>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://www.mindsensors.com/223-large_default/irtracker.jpg" alt="Mindsensors IR tracker board with cable"/></figure>
 
 <div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-fe48e5de wp-block-buttons-is-layout-flex">
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button">LEGO SPIKE IR Tracker – Mindsensors</a></div>
@@ -50,9 +50,7 @@ We are aware that many entry teams are using LEGO SPIKE robots for the developme
 {{< /wp-column >}}
 
 {{< wp-column >}}
-<figure class="wp-block-image size-large"><img decoding="async" src="https://c4.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fit,g_center,q_auto,f_auto,w_695/fzu6lbrwodkctoo2ldvr.jpg" alt=""/></figure>
-
-{{< wp-spacer height="143" >}}
+<figure class="wp-block-image size-large"><img decoding="async" src="https://c4.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fit,g_center,q_auto,f_auto,w_695/fzu6lbrwodkctoo2ldvr.jpg" alt="QikEasy IR seeker fitted to a Spike Prime robot and a non-LEGO robot"/></figure>
 
 {{< wp-buttons >}}
 {{< wp-button-item url="https://www.qikeasy.com/facebook-ad-funnel/landing-page/" text="LEGO SPIKE QikEasy IR Ring" >}}
@@ -61,7 +59,7 @@ We are aware that many entry teams are using LEGO SPIKE robots for the developme
 {{< /wp-columns >}}
 
 {{< wp-prose >}}
-## Open Source Entry Projects
+### Open Source Entry Projects
 
 Apart from the ongoing resources from RoboCup Soccer available on the [Awesome Soccer Repo](https://github.com/robocup-junior/awesome-rcj-soccer), there are other open source projects that our RoboCup Soccer community has created. If there are additional resources that you would like to share, please get in touch with the RoboCupJunior Soccer committee.
 {{< /wp-prose >}}

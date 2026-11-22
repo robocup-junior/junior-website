@@ -1,11 +1,12 @@
 {{ define "main" }}
-<div id="content" class="cryout"><div id="container" class="two-columns-right">
-  <main id="main" class="main">
-    <div id="content-masonry" class="content-masonry">
+{{- /* Category archives (/category/…/). The page title (h1) is the banner in
+     header.html. Styles: assets/css/posts.css. */ -}}
+<div id="content" class="cryout rcjp"><div id="container" class="one-column">
+  <main id="main" class="main rcjp-archive">
+    <ul class="rcjp-cards rcjp-cards-archive">
       {{ range .Paginator.Pages }}{{ partial "summary.html" . }}{{ end }}
-    </div>
+    </ul>
     {{ partial "pagination.html" . }}
   </main>
-  <aside id="secondary" class="widget-area sidey"><section class="widget-container widget_block widget_media_image"><div class="wp-block-image"><figure class="aligncenter size-full"><img src="/wp-content/uploads/2024/10/RCJ25Years.jpg" width="225" height="225" alt=""></figure></div></section></aside>
 </div>{{ partial "colophon.html" . }}</div>
 {{ end }}

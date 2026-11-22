@@ -10,9 +10,9 @@
   "wordpress_excerpt": "<p>One of the defining strengths of RoboCupJunior is its open-source, platform-agnostic approach to robotics. Students are not &hellip;</p>\n"
 }
 
-<p class="wp-block-paragraph"><p data-start="423" data-end="753">One of the defining strengths of RoboCupJunior is its <strong data-start="477" data-end="520">open-source, platform-agnostic approach</strong> to robotics. Students are not locked into a single kit, brand, or programming environment. Instead, RoboCupJunior challenges teams to focus on what truly matters in robotics: <strong data-start="696" data-end="752">autonomy, problem solving, and intelligent behavior</strong>. This philosophy allows students to bring <strong data-start="796" data-end="821">any robotics platform</strong> to the competition and still be competitive.</p></p>
-
 {{< wp-prose >}}
+One of the defining strengths of RoboCupJunior is its **open-source, platform-agnostic approach** to robotics. Students are not locked into a single kit, brand, or programming environment. Instead, RoboCupJunior challenges teams to focus on what truly matters in robotics: **autonomy, problem solving, and intelligent behavior**. This philosophy allows students to bring **any robotics platform** to the competition and still be competitive.
+
 ## Any Platform. Consistent Challenge.
 
 RoboCupJunior does not prescribe how a robot must be built. Teams commonly use:
@@ -22,7 +22,9 @@ RoboCupJunior does not prescribe how a robot must be built. Teams commonly use:
 - Microcontroller platforms such as Arduino, Raspberry Pi, or ESP-based systems
 - A wide range of sensors, actuators, and software stacks
 
-What matters is not the brand, but how well students design, program, and refine their robot to operate **autonomously** within the rules of the challenge. The challenge does not change year on year: students grow with the challenges. This flexibility means RoboCupJunior fits naturally alongside existing school investments. Students can start with familiar classroom kits and progressively modify, extend, or completely redesign their robots as their skills grow.
+What matters is not the brand, but how well students design, program, and refine their robot to operate **autonomously** within the rules of the challenge. The challenge does not change year on year: students grow with the challenges.
+
+This flexibility means RoboCupJunior fits naturally alongside existing school investments. Students can start with familiar classroom kits and progressively modify, extend, or completely redesign their robots as their skills grow.
 
 Because RoboCupJunior is platform-agnostic:
 
@@ -74,7 +76,7 @@ This shifts the focus from simply “making it work” to understanding *why* it
 {{< /wp-prose >}}
 
 {{< wp-buttons >}}
-{{< wp-button-item url="https://github.com/robocup-junior/awesome-rcj-soccer" text="Github Repository with Soccer Examples" >}}
+{{< wp-button-item url="https://github.com/robocup-junior/awesome-rcj-soccer" text="GitHub Repository with Soccer Examples" >}}
 {{< wp-button-item url="https://www.youtube.com/@rcjonstage" text="OnStage YouTube" >}}
 {{< /wp-buttons >}}
 

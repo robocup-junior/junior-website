@@ -1,31 +1,28 @@
 {{ define "main" }}
 {{ if eq .Section "posts" }}
+{{- /* Single news post. Styles: assets/css/posts.css. Works without WordPress
+     data: author, avatar and related picks come from data/ when present. */ -}}
 {{ $metadata := index hugo.Data "wordpress-posts" (printf "%v" .Params.wordpress_id) }}
-<style>
-.rcj-post-banner { position: relative; height: 220px; background: center top / 100% auto no-repeat; }
-.rcj-post-banner > div { height: 100%; display: flex; align-items: center; padding: 0 2em; background: rgba(0,18,66,.65); }
-.rcj-post-title-box { display: flow-root; width: 100%; max-width: calc(1440px - 4em); margin: 0 auto; padding: 2em; border-radius: 10px; background: rgba(0,0,0,.5); }
-.rcj-post-banner h1 { display: inline-block !important; float: left; max-width: 70%; margin: 0; padding: 3px 0 0; color: white; font-size: 1.6em; }
-.rcj-post-meta { margin-bottom: 2em; }
-.rcj-post-meta > span { display: inline-block; padding: 3px 10px; margin: 0 .5em .5em 0; background: #f1f1f1; border-radius: 4px; color: #000; text-transform: uppercase; font-size: 90%; }
-.rcj-post-meta a { color: inherit; }
-.rcj-post-meta i { margin-right: 4px; }
-@media (max-width: 800px) { .rcj-post-banner > div { padding: 0 1em; } .rcj-post-banner h1 { max-width: none; } }
-@media (max-width: 640px) { .rcj-post-banner h1 { font-size: 1.4em; } }
-</style>
-<div class="rcj-post-banner"{{ with .Params.featured_image }} style="background-image: url('{{ . | strings.TrimPrefix "/" | absURL }}')"{{ end }}><div><div class="rcj-post-title-box"><h1 class="entry-title">{{ .Title }}</h1></div></div></div>
-<div id="content" class="cryout"><div id="container" class="one-column">
+{{ $author := .Params.author | default $metadata.author }}
+<div class="rcjp-banner{{ if not .Params.featured_image }} rcjp-banner-plain{{ end }}">
+  {{ with .Params.featured_image }}<img class="rcjp-banner-photo" src="{{ . | relURL }}" alt="" fetchpriority="high" decoding="async">{{ end }}
+  <div class="rcjp-banner-inner"><div class="rcjp-banner-panel"><h1 class="entry-title">{{ .Title }}</h1></div></div>
+</div>
+<div id="content" class="cryout rcjp"><div id="container" class="one-column">
   <main id="main" class="main">
-    <article class="post type-post status-publish hentry">
-      <div class="article-inner">
-        <header><div class="entry-meta rcj-post-meta">
-          {{ $author := .Params.author | default $metadata.author }}{{ with $author }}<span class="author vcard">{{ with $metadata.avatar }}<img class="avatar avatar-96 photo" src="{{ . }}" width="96" height="96" alt="">{{ else }}<i class="icon-author"></i>{{ end }} {{ . }}</span>{{ end }}
-          {{ with $metadata.terms }}<span><i class="icon-category" aria-hidden="true"></i>{{ range $i, $term := . }}{{ if $i }}, {{ end }}<a href="{{ replace $term.link "https://junior.robocup.org" "" | relURL }}">{{ $term.name }}</a>{{ end }}</span>{{ else }}{{ with $.GetTerms "categories" }}<span><i class="icon-category" aria-hidden="true"></i>{{ range $i, $term := . }}{{ if $i }}, {{ end }}<a href="{{ $term.RelPermalink }}">{{ $term.LinkTitle }}</a>{{ end }}</span>{{ end }}{{ end }}
-          <span><i class="icon-date"></i><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></span>
-        </div></header>
-        <div class="entry-content">{{ .Content }}{{ partial "jetpack-related.html" . }}</div>
-        <footer class="entry-meta entry-utility"><template></template></footer>
-      </div>
+    <article class="post type-post status-publish rcjp-post">
+      <header class="rcjp-meta">
+        <p class="rcjp-meta-line">
+          {{ with $author }}<span class="rcjp-author">{{ with $metadata.avatar }}<img src="{{ . | relURL }}" width="32" height="32" alt="">{{ end }}By {{ . }}</span>{{ end }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+        </p>
+        {{ with .GetTerms "categories" }}
+        <ul class="rcjp-chips" aria-label="Categories">
+          {{ range . }}<li><a class="rcjp-chip" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}
+        </ul>
+        {{ end }}
+      </header>
+      <div class="entry-content rcjp-content">{{ .Content }}</div>
     </article>
     {{ partial "theme-related.html" . }}
   </main>

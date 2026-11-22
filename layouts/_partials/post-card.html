@@ -1,0 +1,21 @@
+{{- /* A compact news card: small thumbnail, date, title and (optionally) a
+     short excerpt. The whole card is one link; the title is the link text.
+     Used by archives (summary.html) and related posts (theme-related.html).
+     Args: page, level (heading level, default 3), excerpt (bool).
+     Styles: assets/css/posts.css (.rcjp-card). */ -}}
+{{- $page := .page -}}
+{{- $level := .level | default 3 -}}
+{{- $meta := index (index hugo.Data "wordpress-posts") (printf "%v" $page.Params.wordpress_id) -}}
+{{- $thumb := $page.Params.featured_image -}}
+{{- with $meta }}{{ with index .images "kahuna-featured-third" }}{{ $thumb = . }}{{ end }}{{ end -}}
+<article class="rcjp-card">
+  <div class="rcjp-card-thumb">{{ with $thumb }}<img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async">{{ end }}</div>
+  <div class="rcjp-card-body">
+    <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2 January 2006" }}</time>
+    <h{{ $level }} class="rcjp-card-title"><a href="{{ $page.RelPermalink }}">{{ $page.LinkTitle }}</a></h{{ $level }}>
+    {{- if .excerpt }}
+    {{- $text := $page.Description | default $page.Params.wordpress_excerpt | default $page.Summary | plainify | htmlUnescape | strings.TrimSpace }}
+    {{- with $text }}<p class="rcjp-card-excerpt">{{ . | truncate 170 }}</p>{{ end }}
+    {{- end }}
+  </div>
+</article>

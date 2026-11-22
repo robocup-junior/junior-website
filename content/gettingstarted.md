@@ -80,6 +80,10 @@ Creative design, robot interaction and sensing, choreography, storytelling and c
 {{< /league-cards >}}
 
 {{< wp-prose >}}
+Weighing up RoboCupJunior against other programs such as FIRST, VEX or the World Robot Olympiad? Read [Comparing Robotics Competitions](/comparing-competitions/).
+{{< /wp-prose >}}
+
+{{< wp-prose >}}
 ## Your First Steps
 {{< /wp-prose >}}
 

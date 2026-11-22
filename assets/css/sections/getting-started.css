@@ -192,3 +192,16 @@
 @media (prefers-reduced-motion: reduce) {
   .gs-next > ul > li { transition: none; }
 }
+
+/* Comparison tables (/comparing-competitions/): wrap row labels, keep the
+   label column narrow and give programme columns equal widths. Below 800px
+   the table keeps a readable width and scrolls inside its figure. */
+.gs-compare .wp-block-table td:first-child { white-space: normal; }
+.gs-compare table { table-layout: fixed; width: 100%; }
+.gs-compare th:first-child, .gs-compare td:first-child { width: 16%; }
+.gs-compare thead th { background: var(--rcj-surface-2); color: var(--rcj-navy); text-align: left; }
+.gs-compare td, .gs-compare th { vertical-align: top; }
+.gs-compare .wp-block-table { overflow-x: auto; }
+@media (max-width: 800px) {
+  .gs-compare table { min-width: 720px; }
+}

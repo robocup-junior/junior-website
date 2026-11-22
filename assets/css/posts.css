@@ -30,6 +30,21 @@
 .rcjp #container.one-column { max-width: 1200px; margin: 0 auto; }
 .rcjp #main { padding: 40px var(--rcjp-gutter) 64px; }
 .rcjp-post { max-width: var(--rcjp-measure); margin: 0 auto; font-size: 1.0625rem; }
+/* Single posts: a wider column at 18px (about 85 characters a line), and the
+   white sheet hugs the column instead of leaving wide empty margins. Wide
+   content (tables, card grids) gets room without breaking out of the column.
+   The banner panel uses the same width, so its edge lines up with the text. */
+.rcjp-single, .rcjp-banner { --rcjp-measure: 52rem; }
+.rcjp-single #container.one-column { max-width: calc(var(--rcjp-measure) + 2 * 64px); }
+.rcjp-single #main { padding-left: 64px; padding-right: 64px; }
+.rcjp-single .rcjp-post { font-size: 1.125rem; }
+.rcjp-single .rcjp-related { max-width: none; }
+.rcjp-banner-inner { max-width: calc(var(--rcjp-measure) + 2 * 64px); padding: 0 32px; }
+@media (max-width: 1024px) { .rcjp-single #main { padding-left: 40px; padding-right: 40px; } }
+@media (max-width: 600px) {
+  .rcjp-single #main { padding-left: var(--rcjp-gutter); padding-right: var(--rcjp-gutter); }
+  .rcjp-banner-inner { padding: 0; }
+}
 
 /* ---------------------------------------------------------------------------
  * 3. Meta row: author, date and category chips

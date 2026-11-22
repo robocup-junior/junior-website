@@ -4,10 +4,16 @@ Static [Hugo](https://gohugo.io/) site for [RoboCupJunior](https://junior.robocu
 
 ## Local development
 
+Install Hugo **0.169.0 extended** (the version CI uses; see
+https://github.com/gohugoio/hugo/releases/tag/v0.169.0), then:
+
 ```sh
-brew install hugo   # or see https://gohugo.io/installation/
-hugo server         # http://localhost:1313, rebuilds on save
+hugo server                              # http://localhost:1313, rebuilds on save
+python3 -m unittest discover -s tests    # tests (CI runs them on every push and pull request)
 ```
+
+Design rules (colours, type, layout, components, images, accessibility) are in
+[STYLEGUIDE.md](STYLEGUIDE.md). Read it before changing styles or templates.
 
 ## Where things live
 
@@ -16,9 +22,9 @@ hugo server         # http://localhost:1313, rebuilds on save
 | `content/*.md` | Pages |
 | `content/posts/*.md` | News posts |
 | `data/` | Page layout choices, post metadata and related-post selections |
-| `hugo.toml` | Site settings and the main menu |
+| `hugo.toml` | Site settings and the main menu (desktop and mobile menus are both built from `[[menus.main]]`) |
 | `layouts/` | Hugo templates |
-| `assets/css/` | Site styles, including styles copied from WordPress |
+| `assets/css/` | Site styles: `rcj-site.css` (colours and site-wide rules), `home.css` (homepage), plus styles copied from WordPress |
 | `static/` | Images, PDFs, theme files and scripts |
 
 New post: `hugo new content posts/my-post.md`, then set `draft: false` in
@@ -31,7 +37,14 @@ the top control the title, date, URL and other page settings. Add a
 up to date when changing a page that already has one.
 The homepage text, links and image descriptions are in the `home` fields in
 `content/_index.md`. Its front matter uses JSON, so keep the quotation marks
-and commas when editing it. News cards are generated from posts.
+and commas when editing it. Lists such as `buttons` and `cards` can have any
+number of items. The news section shows the six newest posts in the `news`
+category. The page layout is `layouts/_partials/home.html`.
+
+Pages get their banner title from `banner_title` in front matter (or the page
+title). Add `banner_image` for a photo banner; without one the page gets a
+plain navy banner. Imported pages also read these from
+`data/wordpress-pages.json`.
 
 Some imported pages use Hugo shortcodes for images, columns, buttons and
 other WordPress layouts. Edit the text between their opening and closing tags
@@ -82,5 +95,15 @@ refresh the page layout, homepage card or related-post snapshots.
 Forum lists fetch recent topics during each build. If a feed cannot be
 reached or parsed, the site uses the saved list in `data/forum_fallbacks.json`.
 
-When configuring hosting, redirect `/feed/` to `/index.xml` so existing
-WordPress RSS subscribers can follow the feed.
+The news feed is `/index.xml` (posts only). GitHub Pages cannot redirect, so
+before junior.robocup.org moves here, hosting must redirect `/feed/` to
+`/index.xml` (for example with Cloudflare or Netlify). Old `/?p=<id>` and
+`/?page_id=<id>` links are redirected by a script on the homepage.
+
+The GitHub Pages copy is a staging site: `config/github-pages/hugo.toml` sets
+`noindex` and points canonical links at junior.robocup.org. Remove those two
+settings when the domain moves.
+
+Forum lists and RoboCup events are fetched at build time (timeout set by
+`remote_timeout`, default 15s). If a fetch fails, the build log shows a `WARN`
+and the page uses the saved copy. CI rebuilds every 6 hours.

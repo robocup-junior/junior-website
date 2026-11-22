@@ -9,17 +9,25 @@
 
 <div class="rcjh">
 
-<!-- Hero -->
-<section class="rcjh-hero" aria-labelledby="rcjh-title"{{ with $slider.image }} style="--rcjh-hero-image: url('{{ . | relURL }}')"{{ end }}>
-  <div class="rcjh-inner rcjh-hero-inner">
-    <h1 id="rcjh-title">{{ $slider.title | default site.Title }}</h1>
-    {{ with $slider.tagline }}<p class="rcjh-tagline">{{ . }}</p>{{ end }}
-    {{ with index ($hero.paragraphs | default slice) 0 }}<p class="rcjh-lead">{{ . }}</p>{{ end }}
-    {{ with $hero.buttons }}
-    <div class="rcjh-actions">
-      {{ range $i, $b := . }}<a class="rcjh-btn {{ if eq $i 0 }}rcjh-btn-primary{{ else }}rcjh-btn-ghost{{ end }}" href="{{ $b.url | relURL }}">{{ $b.label }}</a>{{ end }}
+<!-- Hero: the whole-of-RoboCup photo, full width. Text sits on a solid
+     navy panel over the sky (desktop) or below the photo (phones). -->
+<section class="rcjh-hero" aria-labelledby="rcjh-title">
+  {{ with $slider.image }}
+  <figure class="rcjh-hero-photo">
+    <img src="{{ . | relURL }}" alt="{{ $slider.image_alt }}" fetchpriority="high" decoding="async">
+  </figure>
+  {{ end }}
+  <div class="rcjh-inner rcjh-hero-wrap">
+    <div class="rcjh-hero-panel">
+      <h1 id="rcjh-title">{{ $slider.title | default site.Title }}</h1>
+      {{ with $slider.tagline }}<p class="rcjh-tagline">{{ . }}</p>{{ end }}
+      {{ with index ($hero.paragraphs | default slice) 0 }}<p class="rcjh-lead">{{ . }}</p>{{ end }}
+      {{ with $hero.buttons }}
+      <div class="rcjh-actions">
+        {{ range $i, $b := . }}<a class="rcjh-btn {{ if eq $i 0 }}rcjh-btn-primary{{ else }}rcjh-btn-ghost{{ end }}" href="{{ $b.url | relURL }}">{{ $b.label }}</a>{{ end }}
+      </div>
+      {{ end }}
     </div>
-    {{ end }}
   </div>
 </section>
 

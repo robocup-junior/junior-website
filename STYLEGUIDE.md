@@ -252,7 +252,10 @@ Before publishing a page or template change, check:
 ## 8. Writing CSS and templates
 
 - Put site-wide rules in `rcj-site.css` under the matching numbered section,
-  homepage rules in `home.css`. Don't add inline `<style>` blocks to content.
+  homepage rules in `home.css`, and rules for one page in
+  `assets/css/pages/<content file name>.css` (loaded automatically, e.g.
+  `pages/soccer.css` for `content/soccer.md`). Don't add inline `<style>`
+  blocks to content.
 - Use **slash-star comments only**. A `//` comment silently drops the next
   rule, and a `*/` inside a comment ends it early (both happened here).
 - When overriding the theme, prefer `:not()` and an extra class over

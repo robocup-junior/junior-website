@@ -18,7 +18,8 @@
           "label": "Getting Started",
           "url": "/gettingstarted/"
         }
-      ]
+      ],
+      "image_alt": "Hundreds of RoboCupJunior students and mentors gathered outside the venue at RoboCup 2025 in Salvador, Brazil"
     },
     "hero": {
       "paragraphs": [

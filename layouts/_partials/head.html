@@ -47,6 +47,8 @@
 <link rel="stylesheet" href="{{ $custom.RelPermalink }}" integrity="{{ $custom.Data.Integrity }}">
 {{ $site := resources.Get "css/rcj-site.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $site.RelPermalink }}" integrity="{{ $site.Data.Integrity }}">
+{{- /* Page-specific styles: assets/css/pages/<content file name>.css, if present */ -}}
+{{ with .File }}{{ with resources.Get (printf "css/pages/%s.css" .ContentBaseName) }}{{ $p := . | minify | fingerprint }}<link rel="stylesheet" href="{{ $p.RelPermalink }}" integrity="{{ $p.Data.Integrity }}">{{ end }}{{ end }}
 {{ if .IsHome }}{{ $home := resources.Get "css/home.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $home.RelPermalink }}" integrity="{{ $home.Data.Integrity }}">{{ end }}
 <style>
   :root { --wp--preset--font-size--normal: 17px; --wp--preset--font-size--small: 10px; --wp--preset--font-size--medium: 20px; --wp--preset--font-size--large: 27px; --wp--preset--font-size--x-large: 42px; --wp--preset--font-size--larger: 43px; }

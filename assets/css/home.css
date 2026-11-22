@@ -4,7 +4,7 @@
 
 .rcjh { font-size: 1.0625rem; line-height: 1.6; color: var(--rcj-navy); }
 .rcjh *, .rcjh *::before, .rcjh *::after { box-sizing: border-box; }
-.rcjh-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.rcjh-inner { max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 .rcjh-plain { list-style: none; margin: 0; padding: 0; }
 .rcjh h1, .rcjh h2, .rcjh h3 { font-family: Poppins, "Source Sans Pro", sans-serif; letter-spacing: -0.01em; }
 .rcjh p { margin: 0 0 1em; }
@@ -34,20 +34,35 @@
 .rcjh a.rcjh-btn-outline:hover, .rcjh a.rcjh-btn-outline:focus-visible { background: var(--rcj-navy); color: var(--rcj-white) !important; }
 .rcjh-band-navy a:focus-visible, .rcjh-hero a:focus-visible { outline-color: var(--rcj-white); }
 
-/* Hero: photo under a solid navy wash so text always meets contrast */
-.rcjh-hero { position: relative; color: var(--rcj-white); background: var(--rcj-navy) var(--rcjh-hero-image, none) center / cover no-repeat; }
-.rcjh-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 18, 66, .94) 0%, rgba(0, 18, 66, .86) 55%, rgba(0, 18, 66, .6) 100%); }
-.rcjh-hero-inner { position: relative; padding-top: 96px; padding-bottom: 80px; }
-.rcjh-hero h1 { color: var(--rcj-white); font-size: clamp(2.25rem, 6vw, 3.75rem); line-height: 1.05; font-weight: 800; margin: 0 0 12px; }
-.rcjh-tagline { font-style: italic; font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--rcj-white); max-width: 40ch; }
-.rcjh-lead { font-size: 1.125rem; max-width: 62ch; color: rgba(255, 255, 255, .92); }
+/* Hero: full-width photo of the whole event. On desktop the text panel
+   (solid navy, 96%) sits over the sky at top left so the crowd stays visible;
+   on phones the photo comes first and the text follows on navy. */
+.rcjh-hero { position: relative; background: var(--rcj-navy); color: var(--rcj-white); }
+.rcjh-hero-photo { margin: 0; }
+.rcjh-hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.rcjh-hero-panel { background: rgba(0, 18, 66, .96); border-radius: 16px; padding: 40px; max-width: 600px; box-shadow: 0 20px 50px rgba(0, 0, 0, .35); }
+.rcjh-hero h1 { color: var(--rcj-white); font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.05; font-weight: 800; margin: 0 0 12px; }
+.rcjh-tagline { font-style: italic; font-size: clamp(1.125rem, 1.8vw, 1.3rem); color: var(--rcj-white); }
+.rcjh-lead { font-size: 1.0625rem; color: rgba(255, 255, 255, .92); }
+.rcjh-lead:last-child { margin-bottom: 0; }
+@media (min-width: 1153px) {
+  /* Exactly the photo's 16:9 shape, so the whole event is in view */
+  .rcjh-hero { min-height: min(56.25vw, 900px); }
+  .rcjh-hero-photo { position: absolute; inset: 0; }
+  .rcjh-hero-wrap { position: relative; padding-top: 40px; padding-bottom: 40px; }
+  .rcjh-hero-panel { max-width: 560px; padding: 32px 36px; }
+}
+@media (max-width: 1152px) {
+  .rcjh-hero-photo img { aspect-ratio: 16 / 9; height: auto; object-position: center; }
+  .rcjh-hero-wrap { padding-top: 32px; padding-bottom: 40px; }
+  .rcjh-hero-panel { background: none; box-shadow: none; padding: 0; max-width: 760px; border-radius: 0; }
+}
 
-/* Strip under the hero */
-.rcjh-strip { background: var(--rcj-white); border-bottom: 1px solid var(--rcj-border); padding: 24px 0; }
-.rcjh-strip .rcjh-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; }
-.rcjh-strip-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; }
-.rcjh-strip-list li { font-family: Poppins, "Source Sans Pro", sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--rcj-navy); padding-left: 16px; border-left: 4px solid var(--rcj-pink); line-height: 1.2; }
-.rcjh-strip p { margin: 0; color: var(--rcj-muted); flex: 1 1 320px; }
+/* Statement band: "Any robot. Any software. Any experience." */
+.rcjh-strip { background: var(--rcj-white); border-bottom: 1px solid var(--rcj-border); padding: 56px 0; }
+.rcjh-strip-list { list-style: none; margin: 0 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 36px; }
+.rcjh-strip-list li { font-family: Poppins, "Source Sans Pro", sans-serif; font-weight: 800; font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--rcj-navy); padding-left: 20px; border-left: 8px solid var(--rcj-pink); }
+.rcjh-strip p { margin: 0; color: var(--rcj-muted); font-size: 1.1875rem; max-width: 70ch; }
 
 /* Grids */
 .rcjh-grid { display: grid; gap: 24px; }
@@ -118,6 +133,8 @@
   .rcjh-split { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 800px) {
+  .rcjh-strip { padding: 40px 0; }
+  .rcjh-strip-list { flex-direction: column; gap: 12px; }
   .rcjh-grid-3 { grid-template-columns: 1fr; }
   .rcjh-band { padding: 48px 0; }
   /* News becomes a list: small square thumbnail beside the title */
@@ -128,13 +145,11 @@
   .rcjh-league img { aspect-ratio: 16 / 9; }
 }
 @media (max-width: 600px) {
-  .rcjh-inner { padding: 0 16px; }
+  .rcjh-inner { padding-left: 16px; padding-right: 16px; }
   .rcjh-grid-4 { grid-template-columns: 1fr; }
-  .rcjh-hero-inner { padding-top: 48px; padding-bottom: 48px; }
   .rcjh-btn { width: 100%; }
   .rcjh-objective { grid-template-columns: 1fr; padding: 24px; gap: 16px; }
   .rcjh-objective img { max-width: 200px; }
-  .rcjh-strip-list li { font-size: 1.125rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .rcjh * { transition: none !important; }
@@ -144,8 +159,4 @@
    banners by the same amount; do the same for the hero. */
 @media (min-width: 1153px) {
   .kahuna-fixed-menu .rcjh-hero { margin-top: 75px; }
-  .rcjh-hero-inner { padding-top: 72px; }
-}
-@media (max-width: 1152px) {
-  .rcjh-hero-inner { padding-top: 56px; }
 }

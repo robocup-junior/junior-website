@@ -6,7 +6,7 @@
   "featured_image": "/wp-content/uploads/2024/11/O041-scaled.jpeg",
   "home": {
     "slider": {
-      "image": "/wp-content/uploads/2025/08/WhatsApp-Image-2025-07-28-at-11.15.08_3ae6818e-2048x1152-1.jpg",
+      "image": "/images/home/rcj-2025-salvador-group.jpg",
       "title": "RoboCupJunior",
       "tagline": "Creating a learning environment for today, fostering technological advancement for tomorrow",
       "buttons": [

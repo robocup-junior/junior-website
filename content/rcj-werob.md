@@ -2,6 +2,7 @@
   "title": "Workshop on Educational Robotics",
   "date": "2025-01-27T07:38:29",
   "url": "/rcj-werob/",
+  "aliases": ["/werob/"],
   "wordpress_id": 2084,
   "featured_image": "/wp-content/uploads/2018/02/27960913516_d1570873a3_z.jpg",
   "type": "legacy-links",
@@ -42,7 +43,7 @@ In this workshop, we aim at bringing together teachers, mentors, and students fr
 ##### **Past events – programs, presentations and papers**
 {{< /wp-prose >}}
 
-<iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSER5XCTs_3FepEQew6VfncP_LRQ_vXb-k7mPjpO8Yd_R2onIDbMRBoECCSLqIFfHBxgdHm8VcZGY68/pubhtml?gid=2041583394&amp;single=true&amp;widget=false&amp;headers=false&amp;chrome=false" width="100%" height="900" style="border:none;"></iframe>
+<iframe loading="lazy" title="WEROB schedule" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSER5XCTs_3FepEQew6VfncP_LRQ_vXb-k7mPjpO8Yd_R2onIDbMRBoECCSLqIFfHBxgdHm8VcZGY68/pubhtml?gid=2041583394&amp;single=true&amp;widget=false&amp;headers=false&amp;chrome=false" width="100%" height="900" style="border:none;"></iframe>
 
 {{< wp-columns >}}
 {{< wp-column >}}

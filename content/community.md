@@ -141,6 +141,6 @@ RoboCupJunior has grown and evolved significantly over the years, thanks to the 
 [RCJ International 2017 Committees](/wp-content/uploads/2023/07/RCJTC-OC2017-Web-Publication.pdf)\
 [RCJ International 2016 Committees](/wp-content/uploads/2018/12/RCJTC-OC2016.pdf)\
 [RCJ International 2015 Committees](/wp-content/uploads/2018/12/RCJTC-OC2015.pdf)\
-[RCJ International 2014 Committees](http://rcj.robocup.org/rcj2014/RoboCupJunior2014_TC_OC.pdf)\
-[RCJ International 2013 Committees](http://rcj.robocup.org/rcj2013/RoboCupJunior2013_TC_OC.pdf)
+[RCJ International 2014 Committees](https://web.archive.org/web/20170921121602/http://rcj.robocup.org:80/rcj2014/RoboCupJunior2014_TC_OC.pdf)\
+[RCJ International 2013 Committees](https://web.archive.org/web/20170921121553/http://rcj.robocup.org:80/rcj2013/RoboCupJunior2013_TC_OC.pdf)
 {{< /wp-prose >}}

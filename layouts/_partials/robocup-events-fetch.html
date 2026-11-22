@@ -1,7 +1,7 @@
 {{- /* Read RoboCup's event listings directly, without depending on WordPress. */ -}}
 {{- $events := slice -}}
 {{- $valid := false -}}
-{{- with try (resources.GetRemote .url (dict "timeout" "3s")) -}}
+{{- with try (resources.GetRemote .url (dict "timeout" (site.Params.remote_timeout | default "15s"))) -}}
   {{- with .Value -}}
     {{- $blocks := findRE `(?s)<h4>\s*<a href="/events/[0-9]+">.*?</a>\s*</h4>.*?<a href="/events/[0-9]+">Read More</a>` .Content -}}
     {{- /* A recognizable empty listing is different from a failed fetch. */ -}}

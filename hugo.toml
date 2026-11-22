@@ -2,8 +2,14 @@ baseURL = "https://junior.robocup.org/"
 locale = "en-US"
 title = "RoboCupJunior"
 enableRobotsTXT = true
+# WordPress used Toronto time; front matter dates without an offset use this.
+timeZone = "America/Toronto"
+# No /categories/ index page (WordPress had none); category pages stay.
+disableKinds = ["taxonomy"]
 
 [params]
+  # Default link-preview image for pages without a featured image.
+  ogImage = "/wp-content/uploads/2024/10/RCjr_high_L.jpg"
   description = "RoboCupJunior: a project-oriented educational initiative that supports local, regional and international robotic events for young students."
 
 # Keep WordPress URLs: pages and posts both live at /<slug>/,

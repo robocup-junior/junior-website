@@ -1,0 +1,171 @@
+{{- /*
+  Homepage. Text, links and images come from the "home" fields in
+  content/_index.md; news comes from posts in the "news" category.
+  Styles: assets/css/home.css. Design rules: STYLEGUIDE.md.
+*/ -}}
+{{- $home := .Params.home -}}
+{{- $hero := $home.hero -}}
+{{- $slider := $home.slider -}}
+
+<div class="rcjh">
+
+<!-- Hero: the whole-of-RoboCup photo, full width. Text sits on a solid
+     navy panel over the sky (desktop) or below the photo (phones). -->
+<section class="rcjh-hero" aria-labelledby="rcjh-title">
+  {{ with $slider.image }}
+  <figure class="rcjh-hero-photo">
+    <img src="{{ . | relURL }}" alt="{{ $slider.image_alt }}" fetchpriority="high" decoding="async">
+  </figure>
+  {{ end }}
+  <div class="rcjh-inner rcjh-hero-wrap">
+    <div class="rcjh-hero-panel">
+      <h1 id="rcjh-title">{{ $slider.title | default site.Title }}</h1>
+      {{ with $slider.tagline }}<p class="rcjh-tagline">{{ . }}</p>{{ end }}
+      {{ with index ($hero.paragraphs | default slice) 0 }}<p class="rcjh-lead">{{ . }}</p>{{ end }}
+      {{ with $hero.buttons }}
+      <div class="rcjh-actions">
+        {{ range $i, $b := . }}<a class="rcjh-btn {{ if eq $i 0 }}rcjh-btn-primary{{ else }}rcjh-btn-ghost{{ end }}" href="{{ $b.url | relURL }}">{{ $b.label }}</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with $hero.image_lines }}
+<div class="rcjh-strip">
+  <div class="rcjh-inner">
+    <ul class="rcjh-strip-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+    {{ with index ($hero.paragraphs | default slice) 1 }}<p>{{ . }}</p>{{ end }}
+  </div>
+</div>
+{{ end }}
+
+<!-- Leagues -->
+{{ with $home.leagues }}
+<section class="rcjh-band rcjh-band-white" aria-labelledby="rcjh-leagues">
+  <div class="rcjh-inner">
+    <header class="rcjh-head">
+      <h2 id="rcjh-leagues">{{ .heading }}</h2>
+      {{ with .intro }}<p>{{ . }}</p>{{ end }}
+    </header>
+    <ul class="rcjh-grid rcjh-grid-3 rcjh-plain">
+      {{ range .cards }}
+      <li><a class="rcjh-league" href="{{ .url | relURL }}">
+        <img src="{{ .image | relURL }}" alt="" loading="lazy" decoding="async"{{ with .width }} width="{{ . }}"{{ end }}{{ with .height }} height="{{ . }}"{{ end }}>
+        <span class="rcjh-league-body">
+          <span class="rcjh-card-title">{{ .title }}</span>
+          <span class="rcjh-card-text">{{ .text }}</span>
+          <span class="rcjh-more" aria-hidden="true">Explore {{ .title }} →</span>
+        </span>
+      </a></li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+<!-- Journey -->
+{{ with $home.journey }}
+<section class="rcjh-band rcjh-band-light" aria-labelledby="rcjh-journey">
+  <div class="rcjh-inner">
+    <header class="rcjh-head">
+      <h2 id="rcjh-journey">{{ .heading }}</h2>
+      {{ with .intro }}<p>{{ . }}</p>{{ end }}
+    </header>
+    <ol class="rcjh-grid rcjh-grid-4 rcjh-plain rcjh-steps">
+      {{ range .cards }}
+      <li><a class="rcjh-step" href="{{ .url | relURL }}">
+        <span class="rcjh-step-num" aria-hidden="true">{{ .number }}</span>
+        <span class="rcjh-card-title">{{ .title }}</span>
+        <span class="rcjh-card-text">{{ .text }}</span>
+        <span class="rcjh-more" aria-hidden="true">{{ .link_label | default "Read more →" }}</span>
+      </a></li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+<!-- News -->
+{{ $news := where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" (slice "news") }}
+{{ with first 6 $news }}
+<section class="rcjh-band rcjh-band-white" aria-labelledby="rcjh-news">
+  <div class="rcjh-inner">
+    <header class="rcjh-head rcjh-head-row">
+      <h2 id="rcjh-news">{{ $home.news_heading | default "Latest news" }}</h2>
+      <a class="rcjh-all" href="{{ "/category/news/" | relURL }}">All news <span aria-hidden="true">→</span></a>
+    </header>
+    <ul class="rcjh-grid rcjh-grid-3 rcjh-plain rcjh-news">
+      {{ range . }}
+      {{ $meta := index (index hugo.Data "wordpress-posts") (printf "%v" .Params.wordpress_id) }}
+      {{ $thumb := .Params.featured_image }}
+      {{ with $meta }}{{ with index .images "kahuna-featured-third" }}{{ $thumb = . }}{{ end }}{{ end }}
+      <li><article class="rcjh-news-item">
+        <div class="rcjh-news-thumb">{{ with $thumb }}<img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async">{{ end }}</div>
+        <div class="rcjh-news-body">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        </div>
+      </article></li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+<!-- Why -->
+{{ with $home.why }}
+<section class="rcjh-band rcjh-band-navy" aria-labelledby="rcjh-why">
+  <div class="rcjh-inner">
+    <header class="rcjh-head">
+      <h2 id="rcjh-why">{{ .heading }}</h2>
+      {{ with .intro }}<p>{{ . }}</p>{{ end }}
+    </header>
+    <ul class="rcjh-grid rcjh-grid-3 rcjh-plain">
+      {{ range .cards }}<li class="rcjh-why"><h3>{{ .title }}</h3><p>{{ .text }}</p></li>{{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+<!-- Pathway, video and the RoboCup Objective -->
+<section class="rcjh-band rcjh-band-light" aria-labelledby="rcjh-pathway">
+  <div class="rcjh-inner">
+    <div class="rcjh-split">
+      <div>
+        {{ with $home.pathway }}
+        <h2 id="rcjh-pathway">{{ .heading }}</h2>
+        {{ range .paragraphs }}<p>{{ . }}</p>{{ end }}
+        {{ end }}
+      </div>
+      {{ with $home.video }}
+      <figure class="rcjh-video">
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ .id }}" title="{{ .title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </figure>
+      {{ end }}
+    </div>
+    {{ with $home.objective }}
+    <div class="rcjh-objective">
+      {{ with .image }}<img src="{{ .src | relURL }}" alt="{{ .alt }}" width="{{ .width }}" height="{{ .height }}" loading="lazy" decoding="async">{{ end }}
+      <div>
+        <h3>{{ .heading }}</h3>
+        <p>{{ .text }}</p>
+        {{ with .buttons }}<div class="rcjh-actions">{{ range $i, $b := . }}<a class="rcjh-btn {{ if eq $i 0 }}rcjh-btn-dark{{ else }}rcjh-btn-outline{{ end }}" href="{{ $b.url }}">{{ $b.label }}</a>{{ end }}</div>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- Closing -->
+{{ with $home.closing }}
+<section class="rcjh-band rcjh-band-navy rcjh-closing" aria-labelledby="rcjh-closing">
+  <div class="rcjh-inner">
+    <h2 id="rcjh-closing">{{ .heading }}</h2>
+    {{ with .text }}<p>{{ . }}</p>{{ end }}
+    {{ with .buttons }}<div class="rcjh-actions">{{ range $i, $b := . }}<a class="rcjh-btn {{ if eq $i 0 }}rcjh-btn-primary{{ else }}rcjh-btn-ghost{{ end }}" href="{{ $b.url | relURL }}">{{ $b.label }}</a>{{ end }}</div>{{ end }}
+  </div>
+</section>
+{{ end }}
+
+</div>

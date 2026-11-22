@@ -6,4 +6,4 @@
   "type": "legacy-links"
 }
 
-- <b>[RoboCupJunior Annual Workshop 2015 schedule](http://rcj.robocup.org/werob/werob2015/WEROB2015Schedule.pdf "newtab-noopener")</b>
+- <b>[RoboCupJunior Annual Workshop 2015 schedule](https://web.archive.org/web/20170223002813/http://rcj.robocup.org/werob/werob2015/WEROB2015Schedule.pdf "newtab-noopener")</b>

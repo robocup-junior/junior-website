@@ -23,7 +23,7 @@ These rules apply to the international RoboCupJunior competition. However, regio
 
 {{< wp-spacer height="33" >}}
 
-{{< wp-iframe src="https://robocup-junior.github.io/general-rules/main/general-rules.html" width="100%" height="800px" >}}
+{{< wp-iframe title="RoboCupJunior General Rules" src="https://robocup-junior.github.io/general-rules/main/general-rules.html" width="100%" height="800px" >}}
 {{< /wp-group >}}
 
 {{< wp-empty-paragraph >}}

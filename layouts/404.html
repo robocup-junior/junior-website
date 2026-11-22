@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div id="content" class="cryout"><div id="container" class="one-column">
+  <main id="main" class="main">
+    <article class="page hentry"><div class="article-inner"><div class="entry-content">
+      <h1>Page not found</h1>
+      <p>Sorry, we couldn't find that page. It may have moved when the RoboCupJunior website was rebuilt.</p>
+      <ul>
+        <li><a href="{{ "/" | relURL }}">Go to the homepage</a></li>
+        <li><a href="{{ "/gettingstarted/" | relURL }}">How to get started</a></li>
+        <li><a href="{{ "/resources/" | relURL }}">Resources library</a></li>
+        <li><a href="{{ "/category/news/" | relURL }}">Latest news</a></li>
+      </ul>
+    </div></div></article>
+  </main>
+</div>{{ partial "colophon.html" . }}</div>
+{{ end }}

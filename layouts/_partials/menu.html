@@ -1,8 +1,9 @@
-<ul>
-  {{ range .entries }}
-    <li{{ if .HasChildren }} class="has-children"{{ end }}>
-      <a href="{{ .URL }}"{{ if $.page.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}>{{ .Name }}</a>
-      {{ with .Children }}{{ partial "menu.html" (dict "entries" . "page" $.page) }}{{ end }}
-    </li>
-  {{ end }}
-</ul>
+{{- /* Renders the main menu from hugo.toml ([[menus.main]]) with the theme's
+       markup. Used for both the desktop (#prime_nav) and mobile (#mobile-nav)
+       menus, so the menu is edited in one place. */ -}}
+{{- range .entries }}
+<li class="menu-item{{ if .HasChildren }} menu-item-has-children{{ end }}"><a href="{{ .URL | relURL }}"><span>{{ .Name }}</span></a>
+{{- if .HasChildren }}<button class="dropdown-toggle" aria-expanded="false" aria-label="{{ .Name }} submenu"></button>
+<ul class="sub-menu">{{ partial "menu.html" (dict "entries" .Children) }}</ul>
+{{- end }}</li>
+{{- end }}

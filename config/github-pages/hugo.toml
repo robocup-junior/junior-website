@@ -1,1 +1,7 @@
 canonifyURLs = true
+
+[params]
+  # Staging copy: keep it out of search results and point search engines
+  # at the real site. Remove both when junior.robocup.org moves here.
+  noindex = true
+  canonicalBaseURL = "https://junior.robocup.org/"

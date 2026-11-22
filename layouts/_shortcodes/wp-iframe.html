@@ -1,1 +1,1 @@
-<iframe loading="lazy" src="{{ .Get "src" }}" width="{{ .Get "width" }}" height="{{ .Get "height" }}"></iframe>
+<iframe loading="lazy" title="{{ .Get "title" | default "Embedded document" }}" src="{{ .Get "src" }}" width="{{ .Get "width" }}" height="{{ .Get "height" }}"></iframe>

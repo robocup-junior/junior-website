@@ -15,10 +15,7 @@
 
 @font-face {
   font-family: 'iconmeta';
-  src:  url('iconmeta.eot?lfe45x');
-  src:  url('iconmeta.eot?lfe45x#iefix') format('embedded-opentype'),
-    url('iconmeta.woff?lfe45x') format('woff'),
-    url('iconmeta.svg?lfe45x#iconmeta') format('svg');
+  src: url('iconmeta.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -575,11 +572,7 @@
 /* Social Icons */
 @font-face {
     font-family: 'socials';
-    src: url('socials.eot');
-    src: url('socials.eot?#iefix') format('embedded-opentype'),
-       url('socials.woff') format('woff'),
-       url('socials.ttf') format('truetype'),
-       url('socials.svg?#socials') format('svg');
+    src: url('socials.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -909,11 +902,7 @@
 /* Blocks font */
 @font-face {
     font-family: 'kahuna-blocks';
-    src: url('blocks.eot');
-    src: url('blocks.eot?#iefix') format('embedded-opentype'),
-        url('blocks.woff') format('woff'),
-        url('blocks.ttf') format('truetype'),
-        url('blocks.svg?#blocks') format('svg');
+    src: url('blocks.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: block;

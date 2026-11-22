@@ -1,4 +1,4 @@
-{{- $source := printf "https://www.youtube.com/embed/%s?feature=oembed" (.Get "id") -}}
+{{- $source := printf "https://www.youtube-nocookie.com/embed/%s?feature=oembed" (.Get "id") -}}
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 <iframe loading="lazy" title="{{ .Get "title" }}" width="1128" height="635" src="{{ $source }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div></figure>

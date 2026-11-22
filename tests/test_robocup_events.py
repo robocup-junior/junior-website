@@ -68,6 +68,7 @@ class RoboCupEventsTest(unittest.TestCase):
         (self.root / "hugo.toml").write_text(
             "baseURL = 'https://example.test/'\n"
             "[params]\n"
+            "remote_timeout = '2s'\n"
             f"events_upcoming_url = 'http://127.0.0.1:{port}/upcoming'\n"
             f"events_past_url = 'http://127.0.0.1:{port}/past'\n"
             "[security]\nallowContent = ['! ^text/org$']\n"

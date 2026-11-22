@@ -52,7 +52,7 @@
     "path": "/robocupjunior-general-rules/",
     "banner_image": null,
     "banner_title": "RoboCupJunior General Rules",
-    "layout": "two-columns-right",
+    "layout": "one-column",
     "sidebar": true
   },
   "157": {
@@ -170,7 +170,7 @@
     "path": "/external-resources/",
     "banner_image": null,
     "banner_title": "External Resources",
-    "layout": "two-columns-right",
+    "layout": "one-column",
     "sidebar": true
   },
   "3030": {

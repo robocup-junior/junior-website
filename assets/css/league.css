@@ -127,7 +127,7 @@
 .entry-content .lg-news .wp-block-latest-posts__post-excerpt a { color: var(--rcj-muted); }
 
 /* ---- Forum posts: tidy list in columns --------------------------------- */
-.entry-content .lg-forum ul.rss-aggregator { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 32px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.entry-content .lg-forum ul.rss-aggregator { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 32px; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
 .entry-content .lg-forum li.feed-item { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--rcj-border); }
 .entry-content .lg-forum li.feed-item > a { font-weight: 700; color: var(--rcj-navy); text-decoration: none; }
 .entry-content .lg-forum li.feed-item > a:hover { color: var(--rcj-pink); text-decoration: underline; }

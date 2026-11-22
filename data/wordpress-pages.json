@@ -105,9 +105,9 @@
   },
   "223": {
     "path": "/rcj-rescue-line/",
-    "banner_image": null,
+    "banner_image": "/wp-content/uploads/2026/01/Robocup-361-1536x1024.jpg",
     "banner_title": "RCJ Rescue Line",
-    "layout": "two-columns-right",
+    "layout": "one-column",
     "sidebar": true
   },
   "227": {

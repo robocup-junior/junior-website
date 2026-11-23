@@ -57,19 +57,20 @@ In this workshop, we aim to bring together teachers, mentors, and students from 
 </div>
 
 {{< werob-actions >}}
-[Open the WEROB 2026 programme in Google Sheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vSER5XCTs_3FepEQew6VfncP_LRQ_vXb-k7mPjpO8Yd_R2onIDbMRBoECCSLqIFfHBxgdHm8VcZGY68/pubhtml?gid=2041583394&single=true "newtab")
+[WEROB 2026 talks and papers](/werob-2026/) [Open the WEROB 2026 programme in Google Sheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vSER5XCTs_3FepEQew6VfncP_LRQ_vXb-k7mPjpO8Yd_R2onIDbMRBoECCSLqIFfHBxgdHm8VcZGY68/pubhtml?gid=2041583394&single=true "newtab")
 {{< /werob-actions >}}
 
 <h2 id="past-workshops">Past workshops: programmes, presentations and papers</h2>
 
 {{< werob-index >}}
-2025 | Salvador, Brazil | [Programme (Google Sheets)](https://docs.google.com/spreadsheets/d/e/2PACX-1vQF41s4ukxGYtsDp4_k9e5czX-cXxY278kmhGc2W_jt-5R8L7LEv-0bKbQerVez-8rAGTdCCUq2ru5V/pubhtml?gid=184212957&single=true "newtab")
-2024 | Eindhoven, Netherlands | [Programme (Google Sheets)](https://docs.google.com/spreadsheets/d/e/2PACX-1vS2l2hDYkiZS6GfZaEx2-RHJ6otdNNlo3nH28hiTRj0RgoYY_WW_9Pp1ZwXLRO5qiiq2GlGPSgWr7Qz/pubhtml? "newtab")
+2026 | Incheon, Republic of Korea | [WEROB 2026 page](/werob-2026/) [Programme (Google Sheets)](https://docs.google.com/spreadsheets/d/e/2PACX-1vSER5XCTs_3FepEQew6VfncP_LRQ_vXb-k7mPjpO8Yd_R2onIDbMRBoECCSLqIFfHBxgdHm8VcZGY68/pubhtml?gid=2041583394&single=true "newtab")
+2025 | Salvador, Brazil | [WEROB 2025 page](/werob-2025/) [Programme (Google Sheets)](https://docs.google.com/spreadsheets/d/e/2PACX-1vQF41s4ukxGYtsDp4_k9e5czX-cXxY278kmhGc2W_jt-5R8L7LEv-0bKbQerVez-8rAGTdCCUq2ru5V/pubhtml?gid=184212957&single=true "newtab")
+2024 | Eindhoven, Netherlands | [WEROB 2024 page](/werob-2024/) [Programme (Google Sheets)](https://docs.google.com/spreadsheets/d/e/2PACX-1vS2l2hDYkiZS6GfZaEx2-RHJ6otdNNlo3nH28hiTRj0RgoYY_WW_9Pp1ZwXLRO5qiiq2GlGPSgWr7Qz/pubhtml? "newtab")
 2023 | Bordeaux, France | [WEROB 2023 page](/workshop-on-educational-robotics-werob-2023/) [Programme (Google Sheets)](https://docs.google.com/spreadsheets/d/e/2PACX-1vSMC4-ghdGJFEjp3VcbNBfITH9ZwOrCRcOdPiwmR8ChpZnl5xDGztUa-XFlYl7_35DnEYIyQN3RhPqf/pubhtml?gid=0&amp "newtab")
 2022 | Bangkok, Thailand | {none}
 2021 | Worldwide (virtual) | {none}
 2019 | Sydney, Australia | [WEROB 2019 page](/workshop-on-educational-robotics-werob-2019/)
-2018 | Montreal, Canada | [Schedule (PDF)](/wp-content/uploads/2018/2018-WEROB/WEROB2018Schedule.pdf)
+2018 | Montreal, Canada | [WEROB 2018 page](/werob-2018/) [Schedule (PDF)](/wp-content/uploads/2018/2018-WEROB/WEROB2018Schedule.pdf)
 2017 | Nagoya, Japan | [WEROB 2017 website](https://2017.robocup.org/eng/webob2017.html "newtab")
 2016 | Leipzig, Germany | [WEROB 2016 page](/werob-2016/)
 2015 | Hefei, China | [WEROB 2015 page](/werob-2015/)

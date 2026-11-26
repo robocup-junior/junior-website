@@ -1,5 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+{{- /* Apply the saved or system theme before first paint (see static/js/theme.js) */}}
+<script>(function(){var t;try{t=localStorage.getItem("rcj-theme")}catch(e){}if(t!=="dark"&&t!=="light"){t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t})();</script>
 <link rel="icon" href="/wp-content/uploads/2024/10/cropped-RCJ25Years-32x32.jpg" sizes="32x32">
 <link rel="icon" href="/wp-content/uploads/2024/10/cropped-RCJ25Years-192x192.jpg" sizes="192x192">
 <link rel="apple-touch-icon" href="/wp-content/uploads/2024/10/cropped-RCJ25Years-180x180.jpg">
@@ -52,6 +55,7 @@
 {{- /* Page-specific styles: assets/css/pages/<content file name>.css, if present */ -}}
 {{ with .File }}{{ with resources.Get (printf "css/pages/%s.css" .ContentBaseName) }}{{ $p := . | minify | fingerprint }}<link rel="stylesheet" href="{{ $p.RelPermalink }}" integrity="{{ $p.Data.Integrity }}">{{ end }}{{ end }}
 {{ if .IsHome }}{{ $home := resources.Get "css/home.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $home.RelPermalink }}" integrity="{{ $home.Data.Integrity }}">{{ end }}
+{{ $dark := resources.Get "css/dark.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $dark.RelPermalink }}" integrity="{{ $dark.Data.Integrity }}">
 <style>
   :root { --wp--preset--font-size--normal: 17px; --wp--preset--font-size--small: 10px; --wp--preset--font-size--medium: 20px; --wp--preset--font-size--large: 27px; --wp--preset--font-size--x-large: 42px; --wp--preset--font-size--larger: 43px; }
   img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 .07em !important; vertical-align: -.1em !important; background: none !important; padding: 0 !important; }

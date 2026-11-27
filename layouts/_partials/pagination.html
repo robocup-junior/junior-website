@@ -1,6 +1,8 @@
+{{- /* Archive pagination: Newer / Older links and "Page x of y". */ -}}
 {{ with .Paginator }}{{ if gt .TotalPages 1 }}
-<nav class="pagination" aria-label="Pagination">
-  {{ with .Prev }}<a href="{{ .URL }}">&larr; Newer</a>{{ end }}
-  {{ with .Next }}<a href="{{ .URL }}">Older &rarr;</a>{{ end }}
+<nav class="rcjp-pagination" aria-label="Pagination">
+  {{ with .Prev }}<a class="rcjp-page-link" href="{{ .URL }}" rel="prev"><span aria-hidden="true">←</span> Newer posts</a>{{ else }}<span></span>{{ end }}
+  <p class="rcjp-page-status">Page {{ .PageNumber }} of {{ .TotalPages }}</p>
+  {{ with .Next }}<a class="rcjp-page-link" href="{{ .URL }}" rel="next">Older posts <span aria-hidden="true">→</span></a>{{ else }}<span></span>{{ end }}
 </nav>
 {{ end }}{{ end }}

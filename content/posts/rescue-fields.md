@@ -21,7 +21,7 @@ Whether you want something delivered and ready to go, or prefer to build your ow
 ## Competition Ready Fields
 {{< /wp-prose >}}
 
-{{< media-text image="/wp-content/uploads/2026/01/RoboCup-Asia-Pacific-2025-1024x768.png" columns="28% auto" >}}
+{{< media-text image="/wp-content/uploads/2026/01/RoboCup-Asia-Pacific-2025-1024x768.png" alt="Rescue Line fields set up on tables at RoboCup Asia-Pacific 2025" columns="28% auto" >}}
 For schools, clubs, or event organisers who want a reliable and consistent solution, **cost-efficient pre-built Rescue fields and parts** are available for purchase for Rescue Line and Rescue Maze, including European entry divisions.
 
 rosslight robotics provides professionally manufactured Rescue Line and Rescue Maze fields that closely follow RoboCupJunior specifications and are suitable for use in official competitions. All designs also come with drawings as open source PDFs for own manufacturing.
@@ -50,12 +50,13 @@ Printable files are available through RoboCupJunior Australia, giving you access
 {{< wp-prose >}}
 ### Open-Source Maze Design
 
-For a complete Rescue maze layout, RoboCupJunior Australia has shared an open-source full field cutting layout. This PDF gives you precise measurements and cutting guides so you can build a durable practice maze from plywood or MDF.\
+For a complete Rescue maze layout, RoboCupJunior Australia has shared an open-source full field cutting layout. This PDF gives you precise measurements and cutting guides so you can build a durable practice maze from plywood or MDF.
+
 There is also a *flat pack tile* version that lets you create a modular maze that can be easily assembled, disassembled, and stored between sessions.
 {{< /wp-prose >}}
 
 {{< wp-buttons >}}
-{{< wp-button-item url="https://www.robocupjunior.org.au/wp-content/uploads/2021/02/Maze-Full-Field-Cutting-Layout.pdf" text="Open Source Design" >}}
+{{< wp-button-item url="https://www.robocupjunior.org.au/wp-content/uploads/2021/02/Maze-Full-Field-Cutting-Layout.pdf" text="Open Source Maze Design (PDF)" >}}
 {{< /wp-buttons >}}
 {{< /wp-column >}}
 
@@ -67,11 +68,11 @@ There is also a *flat pack tile* version that lets you create a modular maze tha
 {{< /wp-columns >}}
 
 {{< wp-prose >}}
-### **International Construction Guides**
+### International Construction Guides
 
-The global RoboCupJunior community also contributes detailed build guides. One excellent example comes from Brazil (PE), where organisers have documented the full construction process for Rescue fields, including materials, assembly steps, and photos. Brazilian field construction guide: <https://drive.google.com/file/d/1-_lxuDCm8KAa1W6xArCqt5S_D9aWZwGq/view>
+The global RoboCupJunior community also contributes detailed build guides. One excellent example comes from Brazil (PE), where organisers have documented the full construction process for Rescue fields, including materials, assembly steps, and photos: [Brazilian field construction guide (Google Drive)](https://drive.google.com/file/d/1-_lxuDCm8KAa1W6xArCqt5S_D9aWZwGq/view).
 
-## **Build, Share, Improve**
+## Build, Share, Improve
 
 One of the strengths of RoboCupJunior Rescue is its **open and collaborative spirit**. Whether you buy a ready-made field or build your own from open resources, you are encouraged to adapt designs, share improvements, and help grow the global Rescue community.
 

@@ -1,0 +1,9 @@
+{{- /* League page intro: italic tagline, short lead text, optional logo.
+     Also loads the shared league styles (assets/css/league.css), so use it
+     exactly once per page, at the top.
+     Params: tagline, logo, logo-alt. Inner: Markdown. */ -}}
+{{- $css := resources.Get "css/league.css" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- $img := .Get "logo" -}}
+{{- $w := 0 -}}{{- $h := 0 -}}{{- with try (images.Config (printf "static%s" $img)) -}}{{- with .Value -}}{{- $w = .Width -}}{{- $h = .Height -}}{{- end -}}{{- end -}}
+<div class="lg-intro{{ with $img }} lg-intro--logo{{ end }}"><div class="lg-intro-text">{{ with .Get "tagline" }}<p class="lg-tagline">{{ . }}</p>{{ end }}{{ .Page.RenderString (dict "display" "block") .Inner }}</div>{{ with $img }}<img class="lg-intro-logo" src="{{ . }}"{{ with $w }} width="{{ . }}"{{ end }}{{ with $h }} height="{{ . }}"{{ end }} alt="{{ $.Get "logo-alt" }}">{{ end }}</div>

@@ -6,70 +6,64 @@
   "featured_image": "/wp-content/uploads/2017/12/DSC05231.jpg"
 }
 
-{{< media-text image="/wp-content/uploads/2025/01/logo.png" columns="20% auto" >}}
-**RoboCupJunior Rescue** challenges teams to design, build, and program autonomous robots capable of navigating disaster scenarios and assisting victims. The objective is to develop robots that can successfully complete various rescue missions, from following lines on a flat surface to maneuvering through complex mazes or overcoming obstacles on uneven terrain. The competition consists of different sub-leagues, including Rescue Line, Rescue Maze, Rescue Simulation, and the Rapidly Manufactured Robot Challenge, which serves as a stepping stone to the Major League. Teams are encouraged to experiment with innovative engineering, sensing, and artificial intelligence techniques to enhance their robots’ problem-solving abilities.
-{{< /media-text >}}
+{{< league-intro logo="/wp-content/uploads/2025/01/logo.png" logo-alt="RoboCupJunior Rescue logo" >}}
+**RoboCupJunior Rescue** challenges teams to design, build and program autonomous robots that can navigate disaster scenarios and assist victims. Missions range from following lines on a flat surface to manoeuvring through complex mazes and overcoming obstacles on uneven terrain.
 
-{{< wp-prose >}}
-## Rescue Leagues
+Teams are encouraged to experiment with innovative engineering, sensing and artificial intelligence techniques to improve their robots' problem-solving abilities.
+{{< /league-intro >}}
 
-RoboCupJunior Rescue features multiple leagues, each designed to challenge students at different levels of expertise. The main competitions are the **Rescue Line**, **Rescue Maze** and **Rescue Simulation** leagues, while a bridge competition, Rapidly Manufactured Robot Challenge exists as a stepping stone to the RoboCup Major Rescue competition.
-{{< /wp-prose >}}
+{{< league-facts label="Rescue at a glance" >}}
+{{< league-fact label="Robots" >}}Autonomous robots on rescue missions{{< /league-fact >}}
+{{< league-fact label="Main leagues" >}}**Rescue Line**, **Rescue Maze** and **Rescue Simulation**{{< /league-fact >}}
+{{< league-fact label="Bridge to RoboCup Major" >}}**Rapidly Manufactured Robot Challenge** (RMRC){{< /league-fact >}}
+{{< league-fact label="RMRC age limit" >}}None: there is **no over-19 age limit** for RMRC{{< /league-fact >}}
+{{< /league-facts >}}
 
-{{< wp-spacer height="22" >}}
+{{< league-section title="Rescue leagues" lead="Each league challenges students at a different level of expertise. The main competitions are **Rescue Line**, **Rescue Maze** and **Rescue Simulation**. The Rapidly Manufactured Robot Challenge is a bridge competition and a stepping stone to the RoboCup Major Rescue competition." >}}
+{{< league-grid cols="2" >}}
+{{< league-item title="Rescue Line" image="/wp-content/uploads/2024/11/53866181552_25ddf9b673_z.jpg" alt="Rescue Line robot on a tiled course with a raised ramp" position="48% 46%" >}}
+An autonomous robot follows a black line through a modular arena of tiles with different patterns, overcoming obstacles, debris and a range of different lines. The final challenge is to rescue victims, sorted by colour, and navigate to an end zone for extraction.
 
-{{< media-text image="/wp-content/uploads/2024/11/53866181552_25ddf9b673_z.jpg" columns="37% auto" fill="true" style="object-position:48% 46%" >}}
-#### Rescue Line
+{{< league-actions >}}
+{{< league-btn url="/rcj-rescue-line/" text="About Rescue Line" >}}
+{{< /league-actions >}}
+{{< /league-item >}}
+{{< league-item title="Rescue Maze" image="/wp-content/uploads/2024/11/12aec9b1-4487-4f9b-9460-3bbccd9fa5d4.jpg" alt="Rescue Maze robot exploring a white-walled maze" >}}
+The robot searches a maze for victims. Instead of finding the fastest path, it should explore as much of the maze as possible. It scores points for each victim found and for delivering a rescue kit close to the victim, and must avoid areas with black floors.
 
-The Rescue Line challenge involves a search and rescue challenge where an autonomous robot has to follow a black line while overcoming different obstacles, debris and a range of different lines in a modular arena formed by tiles with different patterns. The final challenge is to rescue victims, sorted by colour and successfully navigate to an end zone for final extraction.
+{{< league-actions >}}
+{{< league-btn url="/rcj-rescue-maze/" text="About Rescue Maze" >}}
+{{< /league-actions >}}
+{{< /league-item >}}
+{{< league-item title="Rescue Simulation" image="/wp-content/uploads/2025/01/simulation-1024x1024.png" alt="Rendering of the Rescue Simulation maze" >}}
+A newly developed platform, Webots-Erebus, brings exciting new learning opportunities. The virtual robot explores and maps a maze with different rooms and identifies victims on its way.
 
-{{< wp-button url="/rcj-rescue-line/" text="Find out more" width="50" >}}
-{{< /media-text >}}
+{{< league-actions >}}
+{{< league-btn url="/rcj-rescue-sim" text="About Rescue Simulation" >}}
+{{< /league-actions >}}
+{{< /league-item >}}
+{{< league-item title="RoboCupRescue Rapidly Manufactured Robot Challenge" image="/wp-content/uploads/2024/11/53866975493_d38ecd0db4_z.jpg" alt="Student testing a small tracked robot in a wooden test arena" >}}
+The Rapidly Manufactured Robot Challenge (RMRC) is part of the RoboCupRescue Robot competition. It promotes low-cost, rapidly manufacturable small (30 cm wide) robots and components that help responders perform hazardous missions more safely and effectively.
 
-{{< wp-spacer height="23" >}}
+Students from high school through to graduate students and early career researchers take on the same challenges. **There is no over-19 age limit for this league.**
 
-{{< media-text image="/wp-content/uploads/2024/11/12aec9b1-4487-4f9b-9460-3bbccd9fa5d4.jpg" columns="37% auto" align="center" fill="true" >}}
-#### Rescue Maze
+{{< league-actions >}}
+{{< league-btn url="https://rrl-rmrc.org/" text="RMRC website" >}}
+{{< /league-actions >}}
+{{< /league-item >}}
+{{< /league-grid >}}
+{{< /league-section >}}
 
-The robot needs to search through a maze for victims. The robot should not find the fastest path through the maze; instead, it should explore as much of the maze as possible. The robot will get points for each victim found and deliver a rescue kit close to the victim. The robot must avoid areas with a black floors.
+{{< league-section title="Rescue community website" tone="panel" >}}
+{{< league-media image="/wp-content/uploads/2025/01/RescueComWeb-1024x525.png" alt="Screenshot of the RoboCupJunior Rescue community website" fit="contain" >}}
+Want to know more about RoboCup Rescue? The community website has information about past competitions, resources and more.
 
-{{< wp-button url="/rcj-rescue-maze/" text="Find out more" width="50" >}}
-{{< /media-text >}}
+{{< league-actions >}}
+{{< league-btn url="https://rescue.rcj.cloud/" text="Community website" accent="true" >}}
+{{< /league-actions >}}
+{{< /league-media >}}
+{{< /league-section >}}
 
-{{< wp-spacer height="23" >}}
-
-{{< media-text image="/wp-content/uploads/2025/01/simulation-1024x1024.png" columns="37% auto" align="center" fill="true" >}}
-#### Rescue Simulation
-
-The RoboCupJunior Rescue Simulation provides exciting new learning opportunities with a newly developed platform (Webots-Erebus). The virtual robot is tasked with exploring and mapping a maze with different rooms and identifying victims on its way.
-
-{{< wp-button url="/rcj-rescue-sim" text="Find out more" width="50" >}}
-{{< /media-text >}}
-
-{{< wp-spacer height="23" >}}
-
-{{< media-text image="/wp-content/uploads/2024/11/53866975493_d38ecd0db4_z.jpg" columns="37% auto" align="center" fill="true" >}}
-#### RoboCupRescue Rapidly Manufactured Robot Challenge
-
-The Rapidly Manufactured Robot Challenge (RMRC) is part of RoboCupRescue Robot competition. RMRC promotes the development of low cost, rapidly manufacturable small (30 cm width) robots and robotic components that enable responders to more safely and effectively perform hazardous mission tasks. Students from high school through to graduate students and early career researchers compete against the same challenges – **There is no over 19 age limit for this league.**
-
-{{< wp-button url="https://rrl-rmrc.org/" text="Find out more" width="50" align="left" >}}
-{{< /media-text >}}
-
-{{< wp-spacer height="42" >}}
-
-{{< media-text image="/wp-content/uploads/2025/01/RescueComWeb-1024x525.png" side="right" >}}
-## Rescue Community Website
-
-Want to know more about RoboCup Rescue? Check out the community website with information about past competitions, resources and more!
-
-{{< wp-button url="https://rescue.rcj.cloud/" text="Community Website" width="50" align="center" >}}
-{{< /media-text >}}
-
-{{< wp-prose >}}
-## Latest Rescue Articles
-{{< /wp-prose >}}
-
+{{< league-section title="Latest Rescue articles" class="lg-news" raw="true" >}}
 {{< latest-posts category="rescue" >}}
-
-{{< wp-empty-paragraph >}}
+{{< /league-section >}}

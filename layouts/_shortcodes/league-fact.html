@@ -1,0 +1,2 @@
+{{- /* One key fact. Param: label. Inner: short Markdown. */ -}}
+<div class="lg-fact"><dt>{{ .Get "label" }}</dt><dd>{{ .Page.RenderString (dict "display" "block") (trim .Inner "\n ") }}</dd></div>

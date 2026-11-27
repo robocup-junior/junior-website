@@ -1,0 +1,8 @@
+{{- /* Image beside text; stacks on phones with the image first.
+     Params: image, alt, side (right), fit (contain), position (object-position),
+     size (small: for images under ~500px wide),
+     or video (YouTube id) + video-title instead of image.
+     Inner: Markdown (may hold league-actions). */ -}}
+{{- $img := .Get "image" -}}
+{{- $w := 0 -}}{{- $h := 0 -}}{{- with try (images.Config (printf "static%s" $img)) -}}{{- with .Value -}}{{- $w = .Width -}}{{- $h = .Height -}}{{- end -}}{{- end -}}
+<div class="lg-media{{ if eq (.Get "side") "right" }} lg-media--right{{ end }}{{ if .Get "video" }} lg-media--video{{ end }}{{ if eq (.Get "size") "small" }} lg-media--small{{ end }}">{{ with .Get "video" }}<figure class="lg-media-fig lg-media-video"><iframe loading="lazy" title="{{ $.Get "video-title" }}" width="1128" height="635" src="https://www.youtube-nocookie.com/embed/{{ . }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></figure>{{ else }}<figure class="lg-media-fig{{ if eq ($.Get "fit") "contain" }} lg-media-fig--contain{{ end }}"><img loading="lazy" decoding="async" src="{{ $img }}"{{ with $w }} width="{{ . }}"{{ end }}{{ with $h }} height="{{ . }}"{{ end }} alt="{{ $.Get "alt" }}"{{ with $.Get "position" }} style="object-position: {{ . | safeCSS }}"{{ end }}></figure>{{ end }}<div class="lg-media-body">{{ .Page.RenderString (dict "display" "block") .Inner }}</div></div>

@@ -1,0 +1,5 @@
+{{- /* One card in a league-grid. Params: title, image, alt, fit (contain),
+     position (object-position). Inner: Markdown (may hold league-actions). */ -}}
+{{- $img := .Get "image" -}}
+{{- $w := 0 -}}{{- $h := 0 -}}{{- with try (images.Config (printf "static%s" $img)) -}}{{- with .Value -}}{{- $w = .Width -}}{{- $h = .Height -}}{{- end -}}{{- end -}}
+<li class="lg-card{{ if not $img }} lg-card--plain{{ end }}">{{ with $img }}<figure class="lg-card-img{{ if eq ($.Get "fit") "contain" }} lg-card-img--contain{{ end }}"><img loading="lazy" decoding="async" src="{{ . }}"{{ with $w }} width="{{ . }}"{{ end }}{{ with $h }} height="{{ . }}"{{ end }} alt="{{ $.Get "alt" }}"{{ with $.Get "position" }} style="object-position: {{ . | safeCSS }}"{{ end }}></figure>{{ end }}<div class="lg-card-body"><h3 class="lg-h3">{{ .Get "title" }}</h3>{{ .Page.RenderString (dict "display" "block") .Inner }}</div></li>

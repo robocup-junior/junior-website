@@ -1,0 +1,160 @@
+/*
+ * Dark mode. Applied when <html data-theme="dark"> is set: by the visitor's
+ * toggle (saved in localStorage) or, until they choose, by their system
+ * setting. See static/js/theme.js and the inline script in head.html.
+ *
+ * How it works:
+ * 1. The colour tokens switch to dark values, so components that use
+ *    --rcj-* tokens (cards, chips, borders, muted text) follow automatically.
+ *    --rcj-white becomes the dark card colour and --rcj-navy the light text
+ *    colour.
+ * 2. Components that are dark in the light theme too (navy bands, the hero,
+ *    banners, buttons, badges) switch the tokens back locally, so their white
+ *    text on navy or pink stays exactly as designed.
+ * 3. The WordPress theme files use fixed colours, so the main surfaces are
+ *    overridden directly.
+ * Contrast targets are the same as the light theme: WCAG 2.2 AA.
+ * Only slash-star comments: a double-slash comment drops the next rule.
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. Dark tokens
+ * ------------------------------------------------------------------------- */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --rcj-navy: #e8ecf6;          /* text and headings: 14.5:1 on cards      */
+  --rcj-white: #141b2e;         /* cards and content sheet                 */
+  --rcj-surface: #0b1020;       /* page background                         */
+  --rcj-surface-2: #1c2440;     /* chips, meta tags, table stripes         */
+  --rcj-border: #2d3757;
+  --rcj-muted: #aab3c8;         /* secondary text: 8.1:1 on cards          */
+  --rcj-pink: #ff6b9e;          /* links and accents as text: 6.4:1        */
+  --rcj-pink-dark: #ff8fb5;
+  --rcj-lavender: #8e9ee0;
+  --rcj-lavender-text: #b4c0ff; /* link hover: 9.7:1                       */
+  --rcj-ink: #3a4358;           /* dark buttons: white text 9.9:1          */
+  --rcj-dark-heading: #ffffff;
+  --rcj-focus: 3px solid #ff6b9e;
+}
+
+/* Components that are dark in both themes: restore the light-theme tokens
+   inside them so white text on navy, ink or pink keeps its contrast. */
+html[data-theme="dark"] :is(
+  .rcjh-hero, .rcjh-band-navy, .rcjh-step-num, .rcjh-btn-primary, .rcjh-btn-dark,
+  .rcjp-banner, .rcj-banner-plain, #header-image-main, #footer,
+  .wp-block-button__link, .wp-element-button, .wp-block-file__button,
+  .lg-section--navy, a.lg-btn, .lg-more > summary::before,
+  a.about-btn, .about-year__badge, .about-year__note,
+  .werob-actions a, .rules-embed__bar, a.rules-embed__open,
+  .gs-steps > ol > li::before, .gs-checklist > ul > li::before, a.rcjlx-btn, a.rcjp-page-link
+) {
+  --rcj-navy: #001242;
+  --rcj-white: #ffffff;
+  --rcj-pink: #d40560;
+  --rcj-pink-dark: #bb0047;
+  --rcj-ink: #32373c;
+  --rcj-muted: #4f5968;
+  --rcj-focus: 3px solid #ffffff;
+}
+
+/* Navy sections need to stand apart from the dark page */
+html[data-theme="dark"] :is(.rcjh-band-navy, .lg-section--navy) { background: #12205a; }
+
+/* ---------------------------------------------------------------------------
+ * 2. Page structure (WordPress theme colours)
+ * ------------------------------------------------------------------------- */
+html[data-theme="dark"] body { background-color: #0b1020; color: #e8ecf6; }
+html[data-theme="dark"] body:not(.kahuna-landing-page) :is(article.hentry, .main),
+html[data-theme="dark"] #primary .widget-container,
+html[data-theme="dark"] #secondary .widget-container,
+html[data-theme="dark"] .has-sitebg-background-color { background-color: #141b2e; }
+html[data-theme="dark"] :is(.entry-content, .lp-text-content) :is(h1, h2, h3, h4, h5, h6),
+html[data-theme="dark"] .entry-title,
+html[data-theme="dark"] :is(h1, h2, h3, h4, h5, h6) { color: #ffffff; }
+html[data-theme="dark"] :is(.entry-meta, .entry-utility) :is(span, a, time),
+html[data-theme="dark"] .entry-meta .icon-metas::before { color: #aab3c8; }
+html[data-theme="dark"] hr, html[data-theme="dark"] .wp-block-separator { background-color: #2d3757; border-color: #2d3757; color: #2d3757; }
+html[data-theme="dark"] :is(pre, code, kbd) { background-color: #1c2440; color: #e8ecf6; }
+html[data-theme="dark"] blockquote { color: #e8ecf6; border-color: #ff6b9e; }
+
+/* Links in text */
+html[data-theme="dark"] a { color: #ff6b9e; }
+html[data-theme="dark"] a:hover,
+html[data-theme="dark"] .entry-meta span a:hover { color: #b4c0ff; }
+
+/* Header and menus */
+html[data-theme="dark"] #site-header-main,
+html[data-theme="dark"] #site-header-main.header-fixed #site-header-main-inside,
+html[data-theme="dark"] #site-header-main-inside,
+html[data-theme="dark"] #access ul ul,
+html[data-theme="dark"] #access::after,
+html[data-theme="dark"] #access ul.sub-menu li a,
+html[data-theme="dark"] #access ul.children li a { background-color: #0f1529; }
+html[data-theme="dark"] #site-header-main { border-bottom: 1px solid #2d3757; }
+html[data-theme="dark"] #access > div > ul > li > a,
+html[data-theme="dark"] #access ul.sub-menu li a,
+html[data-theme="dark"] #access ul.children li a,
+html[data-theme="dark"] #access .dropdown-toggle { color: #e8ecf6; }
+html[data-theme="dark"] #access > div > ul > li > a:hover,
+html[data-theme="dark"] #access ul ul li a:hover { color: #ff6b9e; }
+html[data-theme="dark"] #access > div > ul > li:is(.current_page_item, .current-menu-item, .current_page_ancestor, .current-menu-ancestor) > a { color: #b4c0ff; }
+html[data-theme="dark"] #access > div > ul > li > a:hover > span { background-color: rgba(255, 255, 255, .06); }
+html[data-theme="dark"] nav#mobile-menu { background-color: #0f1529; }
+html[data-theme="dark"] #mobile-nav a,
+html[data-theme="dark"] nav#mobile-menu .dropdown-toggle,
+html[data-theme="dark"] #nav-cancel { color: #e8ecf6; }
+html[data-theme="dark"] #mobile-nav li.current-menu-item > a,
+html[data-theme="dark"] #mobile-nav a:hover { color: #ff6b9e; }
+html[data-theme="dark"] #nav-toggle { color: #ff6b9e; }
+/* The logo is a JPEG on white: give it a soft rounded white backing */
+html[data-theme="dark"] #logo img { background: #ffffff; border-radius: 10px; padding: 2px 4px; }
+
+/* Tables, forms */
+html[data-theme="dark"] table,
+html[data-theme="dark"] :is(th, td) { border-color: #2d3757; color: #e8ecf6; }
+html[data-theme="dark"] .wp-block-table thead,
+html[data-theme="dark"] th { background-color: #1c2440; }
+html[data-theme="dark"] .wp-block-table.is-style-stripes tbody tr:nth-child(odd) { background-color: #1a2138; }
+html[data-theme="dark"] :is(input, textarea, select) { background-color: #0f1529; color: #e8ecf6; border-color: #2d3757; }
+html[data-theme="dark"] :is(input, textarea, select):is(:hover, :focus) { background-color: #1c2440; }
+html[data-theme="dark"] ::placeholder { color: #8f98ad; }
+
+/* Forum feed lists and pagination */
+html[data-theme="dark"] .wprss-feed-meta, html[data-theme="dark"] .feed-date, html[data-theme="dark"] .feed-author { color: #aab3c8; }
+html[data-theme="dark"] .pagination a:hover { background-color: #1c2440; }
+
+/* Images: soften very bright images slightly; keep logos and photos true */
+html[data-theme="dark"] .entry-content img:not([src$=".svg"]) { filter: brightness(.95); }
+
+/* ---------------------------------------------------------------------------
+ * 3. Theme toggle button
+ * ------------------------------------------------------------------------- */
+.rcj-theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 1px solid transparent; border-radius: 50%; background: transparent; color: var(--rcj-navy); cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.rcj-theme-toggle:hover { background: rgba(0, 18, 66, .06); color: var(--rcj-pink); }
+.rcj-theme-toggle:focus-visible { outline: var(--rcj-focus); outline-offset: 2px; }
+html[data-theme="dark"] .rcj-theme-toggle { color: #e8ecf6; }
+html[data-theme="dark"] .rcj-theme-toggle:hover { background: rgba(255, 255, 255, .08); color: #ff6b9e; }
+.rcj-theme-toggle .rcj-icon-sun { display: none; }
+html[data-theme="dark"] .rcj-theme-toggle .rcj-icon-moon { display: none; }
+html[data-theme="dark"] .rcj-theme-toggle .rcj-icon-sun { display: block; }
+/* Desktop: last item of the main menu */
+#access .rcj-theme-item { display: flex; align-items: center; height: 75px; padding: 0 0 0 .5em; }
+/* Mobile menu (≤1100px, see rcj-site.css): beside the hamburger */
+.rcj-theme-toggle-mobile { display: none; position: absolute; top: 15px; right: 64px; z-index: 3; }
+@media (max-width: 1100px) {
+  .rcj-theme-toggle-mobile { display: inline-flex; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rcj-theme-toggle { transition: none; }
+}
+
+/* Navy circles and markers would vanish on dark cards: lift them */
+html[data-theme="dark"] :is(.rcjh-step-num, .about-year__badge) { background: #2b3f8f; }
+
+/* Resource finder (its colours are set inline in resource-finder.html) */
+html[data-theme="dark"] .rcjrf button.rcjrf-chip { background-color: #141b2e !important; color: #e8ecf6 !important; border-color: #8f98ad; }
+html[data-theme="dark"] .rcjrf button.rcjrf-chip[aria-pressed="true"] { background-color: #e8ecf6 !important; color: #0b1020 !important; border-color: #e8ecf6; }
+html[data-theme="dark"] .rcjrf-search input { border-color: #8f98ad; }
+html[data-theme="dark"] .rcjrf-card { background: #141b2e; border-color: #2d3757; border-top-color: #8f98ad; }
+html[data-theme="dark"] .rcjrf-tag { background: #1c2440; color: #e8ecf6; }
+html[data-theme="dark"] :is(.rcjrf-src, .rcjrf-by, .rcjed-src) { color: #aab3c8; }

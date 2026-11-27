@@ -73,6 +73,28 @@ Avoid:
   Use `--rcj-muted` instead.
 - Lavender `#5d71b3` text on grey backgrounds (4.0–4.2:1, fails).
 
+### Dark mode
+
+The site has a light and a dark theme. Visitors switch with the sun/moon
+button (last item of the desktop menu; beside the menu button on phones).
+Until they choose, the site follows their device setting. The choice is
+saved in the browser (`localStorage`, key `rcj-theme`).
+
+- `<html data-theme="dark">` is set by a tiny script in `head.html` before
+  anything is drawn, so there is no flash of the wrong theme.
+- All dark styles are in `assets/css/dark.css`, loaded last. In dark mode the
+  tokens change: `--rcj-white` becomes the dark card colour (`#141b2e`),
+  `--rcj-navy` the light text colour (`#e8ecf6`), and `--rcj-pink` a lighter
+  pink for text (`#ff6b9e`, 6.4:1). New components that only use tokens get
+  dark mode for free.
+- Things that are navy, ink or pink in both themes (bands, hero, banners,
+  buttons, badges) are listed in `dark.css` and get the light-theme tokens
+  back, so their white text keeps its contrast. **Add new dark-surface
+  components to that list.**
+- Colours written as hex values (not tokens) need a dark override in
+  `dark.css`. Prefer tokens.
+- Check both themes before publishing. Every page passes WCAG AA in both.
+
 ## 3. Typography
 
 | Role | Font | Weight | Size |

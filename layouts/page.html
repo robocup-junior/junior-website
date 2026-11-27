@@ -4,16 +4,17 @@
      data: author, avatar and related picks come from data/ when present. */ -}}
 {{ $metadata := index hugo.Data "wordpress-posts" (printf "%v" .Params.wordpress_id) }}
 {{ $author := .Params.author | default $metadata.author }}
+{{ $avatar := .Params.avatar | default $metadata.avatar }}
 <div class="rcjp-banner{{ if not .Params.featured_image }} rcjp-banner-plain{{ end }}">
   {{ with .Params.featured_image }}<img class="rcjp-banner-photo" src="{{ . | relURL }}" alt="" fetchpriority="high" decoding="async">{{ end }}
   <div class="rcjp-banner-inner"><div class="rcjp-banner-panel"><h1 class="entry-title">{{ .Title }}</h1></div></div>
 </div>
-<div id="content" class="cryout rcjp"><div id="container" class="one-column">
+<div id="content" class="cryout rcjp rcjp-single"><div id="container" class="one-column">
   <main id="main" class="main">
     <article class="post type-post status-publish rcjp-post">
       <header class="rcjp-meta">
         <p class="rcjp-meta-line">
-          {{ with $author }}<span class="rcjp-author">{{ with $metadata.avatar }}<img src="{{ . | relURL }}" width="32" height="32" alt="">{{ end }}By {{ . }}</span>{{ end }}
+          {{ with $author }}<span class="rcjp-author">{{ with $avatar }}<img src="{{ . | relURL }}" width="32" height="32" alt="">{{ end }}By {{ . }}</span>{{ end }}
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
         </p>
         {{ with .GetTerms "categories" }}

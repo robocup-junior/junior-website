@@ -1,0 +1,49 @@
+/* External Resources (content/external-resources.md).
+   rules-card: white card with a logo column beside the text, stacked on
+   phones. Tokens and rules: rcj-site.css and STYLEGUIDE.md. */
+
+.entry-content > p.has-large-font-size:first-child { line-height: 1.4; max-width: 62ch; }
+
+.rules-card {
+  background: var(--rcj-white);
+  border: 1px solid var(--rcj-border);
+  border-top: 4px solid var(--rcj-pink);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0 0 48px;
+}
+.rules-card--media {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+.rules-card__media {
+  background: var(--rcj-white);
+  border: 1px solid var(--rcj-border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+.rules-card__media img { display: block; width: 100%; height: auto; max-height: 220px; object-fit: contain; }
+.rules-card__body > :first-child { margin-top: 0; }
+.rules-card__body > :last-child { margin-bottom: 0; }
+.entry-content .rules-card h3 { font-size: 1.25rem; line-height: 1.3; margin: 24px 0 8px; }
+.entry-content .rules-card__body > h3:first-child { font-size: 1.5rem; margin-top: 0; }
+.entry-content .rules-card ul, .entry-content .rules-card ol { margin: 0 0 1em; padding-left: 1.5em; }
+.entry-content .rules-card li { margin-bottom: 6px; line-height: 1.55; }
+.entry-content .rules-card .wp-block-buttons { gap: 12px; margin-top: 24px; }
+
+@media (max-width: 800px) {
+  .rules-card--media { grid-template-columns: 1fr; gap: 20px; }
+  .rules-card__media { max-width: 240px; }
+}
+@media (max-width: 600px) {
+  .rules-card { padding: 16px; }
+  .entry-content .rules-card .wp-block-button { width: 100%; }
+  .entry-content .rules-card .wp-block-button__link { width: 100%; }
+}
+
+/* Accent (pink) buttons: the theme gives them a white border, which makes
+   them look smaller than the charcoal buttons beside them */
+.entry-content .wp-block-button__link.has-accent-1-background-color { border-color: var(--rcj-pink); }

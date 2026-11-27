@@ -1,0 +1,5 @@
+{{- /* A league section of the rules archive: h2 plus a grid of rules-year
+       cards. Params: id (anchor, e.g. "soccer"), title, optional note
+       (Markdown, shown under the heading). */ -}}
+{{- $id := .Get "id" -}}
+<section class="rules-league" id="{{ $id }}" aria-labelledby="{{ $id }}-title"><h2 class="wp-block-heading rules-league__title" id="{{ $id }}-title">{{ .Get "title" }}</h2>{{ with .Get "note" }}<p class="rules-league__note">{{ $.Page.RenderString . }}</p>{{ end }}<div class="rules-year-grid">{{ .Inner }}</div><p class="rules-back"><a href="#rules-index">Back to the year index</a></p></section>

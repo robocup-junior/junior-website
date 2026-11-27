@@ -1,0 +1,8 @@
+{{- /* One year of archived rules: a card with an h3 and a link list.
+       Params: league (id of the enclosing rules-league), year, optional
+       label (card heading), short (index label) and id (anchor). The anchor
+       defaults to <league>-<year>, e.g. #soccer-2024. */ -}}
+{{- $id := .Get "id" | default (printf "%s-%s" (.Get "league") (.Get "year")) -}}
+{{- $label := .Get "label" | default (.Get "year") -}}
+{{- $body := partial "wp-render-markdown.html" (dict "page" .Page "text" (trim .Inner "\n")) -}}
+<div class="rules-year" id="{{ $id }}"><h3 class="rules-year__title">{{ with .Parent }}{{ with .Get "title" }}<span class="rules-year__league">{{ . }}<span class="rules-sr">: </span></span>{{ end }}{{ end }}{{ $label }}</h3>{{ $body | safeHTML }}</div>

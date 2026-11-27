@@ -1,0 +1,14 @@
+{{- /* Card with an optional logo or image beside the text (stacked on
+       phones). Params: image (site path), alt, side ("right" puts the image
+       after the text), id. The inner text is Markdown and may contain
+       other shortcodes such as wp-buttons. */ -}}
+{{- $img := .Get "image" -}}
+{{- $body := partial "wp-render-markdown.html" (dict "page" .Page "text" (trim .Inner "\n")) -}}
+{{- $media := "" -}}
+{{- with $img -}}
+  {{- $cfg := imageConfig (path.Join "static" .) -}}
+  {{- $info := index hugo.Data.wp_media . | default dict -}}
+  {{- $srcset := "" -}}{{- with $info.srcset -}}{{- $srcset = printf ` srcset="%s" sizes="(max-width: 800px) 208px, 188px"` . -}}{{- end -}}
+  {{- $media = printf `<div class="rules-card__media"><img src="%s" alt="%s" width="%d" height="%d"%s loading="lazy" decoding="async"></div>` . ($.Get "alt") $cfg.Width $cfg.Height $srcset -}}
+{{- end -}}
+<div class="rules-card{{ with $img }} rules-card--media{{ end }}{{ if eq (.Get "side") "right" }} rules-card--right{{ end }}"{{ with .Get "id" }} id="{{ . }}"{{ end }}>{{ if ne (.Get "side") "right" }}{{ $media | safeHTML }}{{ end }}<div class="rules-card__body">{{ $body | safeHTML }}</div>{{ if eq (.Get "side") "right" }}{{ $media | safeHTML }}{{ end }}</div>

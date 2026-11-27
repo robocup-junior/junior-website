@@ -1,0 +1,22 @@
+{{- /* Year index for the rules archive, built from the rules-league and
+       rules-year shortcodes on the same page, so it never goes out of date.
+       Param: title (heading text). */ -}}
+{{- $tokens := findRESubmatch `\{\{<\s*rules-(league|year)\s+([^>]*?)\s*>\}\}` .Page.RawContent -}}
+{{- $leagues := slice -}}
+{{- $cur := dict -}}
+{{- range $tokens -}}
+  {{- $attrs := dict -}}
+  {{- range findRESubmatch `([a-z]+)="([^"]*)"` (index . 2) -}}{{- $attrs = merge $attrs (dict (index . 1) (index . 2)) -}}{{- end -}}
+  {{- if eq (index . 1) "league" -}}
+    {{- if $cur.id -}}{{- $leagues = $leagues | append $cur -}}{{- end -}}
+    {{- $cur = dict "id" $attrs.id "title" $attrs.title "years" slice -}}
+  {{- else if ne $attrs.index "false" -}}
+    {{- $yid := $attrs.id | default (printf "%s-%s" $attrs.league $attrs.year) -}}
+    {{- $text := $attrs.short | default ($attrs.label | default $attrs.year) -}}
+    {{- $cur = merge $cur (dict "years" ($cur.years | append (dict "id" $yid "text" $text))) -}}
+  {{- end -}}
+{{- end -}}
+{{- if $cur.id -}}{{- $leagues = $leagues | append $cur -}}{{- end -}}
+<nav class="rules-index" id="rules-index" aria-labelledby="rules-index-title"><h2 class="wp-block-heading rules-index__title" id="rules-index-title">{{ .Get "title" | default "Find a year" }}</h2>
+{{- range $leagues }}<div class="rules-index__row"><a class="rules-index__league" href="#{{ .id }}">{{ .title }}</a><ul class="rules-index__years">{{ $league := .title }}{{ range .years }}<li><a href="#{{ .id }}"><span class="rules-sr">{{ $league }} </span>{{ .text }}</a></li>{{ end }}</ul></div>{{ end -}}
+</nav>

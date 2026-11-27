@@ -1,0 +1,55 @@
+/* Resources (content/resources.md). The resource finder has its own styles
+   (layouts/_shortcodes/resource-finder.html); this file only covers the
+   text sections around it. Tokens and rules: rcj-site.css, STYLEGUIDE.md. */
+
+.entry-content > p.has-large-font-size:first-child { line-height: 1.4; max-width: 62ch; }
+
+/* Section headings: room above, so each section reads as its own block */
+.entry-content > h2.wp-block-heading { margin-top: 56px; }
+.entry-content > p.has-large-font-size + .wp-block-paragraph { margin-top: 0; }
+
+/* Share card */
+.rules-card {
+  background: var(--rcj-surface);
+  border: 1px solid var(--rcj-border);
+  border-top: 4px solid var(--rcj-pink);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0 0 24px;
+}
+.rules-card__body > :first-child { margin-top: 0; }
+.rules-card__body > :last-child { margin-bottom: 0; }
+.entry-content .rules-card .wp-block-buttons { margin: 8px 0 24px; }
+.entry-content .rules-card .wp-block-buttons + p {
+  padding-top: 20px; border-top: 1px solid var(--rcj-border);
+}
+
+/* Past WEROB programs: one row per workshop */
+.entry-content h3.wp-block-heading { font-size: 1.375rem; line-height: 1.3; margin: 32px 0 12px; }
+.rules-werob {
+  background: var(--rcj-white);
+  border: 1px solid var(--rcj-border);
+  border-radius: 12px;
+  padding: 4px 24px;
+  margin: 0 0 40px;
+}
+.entry-content .rules-werob ul { list-style: none; margin: 0; padding: 0; }
+.entry-content .rules-werob li {
+  margin: 0; padding: 12px 0;
+  border-top: 1px solid var(--rcj-surface-2);
+  line-height: 1.5;
+}
+.entry-content .rules-werob li:first-child { border-top: 0; }
+.entry-content .rules-werob li strong { color: var(--rcj-navy); }
+.entry-content .rules-werob a.rcjrf-year { white-space: nowrap; text-decoration: underline; }
+@media (min-width: 801px) {
+  .entry-content .rules-werob ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; }
+  .entry-content .rules-werob li:nth-child(2) { border-top: 0; }
+}
+@media (max-width: 600px) {
+  .rules-card, .rules-werob { padding-left: 16px; padding-right: 16px; }
+}
+
+/* Accent (pink) buttons: the theme gives them a white border, which makes
+   them look smaller than the charcoal buttons beside them */
+.entry-content .wp-block-button__link.has-accent-1-background-color { border-color: var(--rcj-pink); }

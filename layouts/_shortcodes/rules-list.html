@@ -1,0 +1,4 @@
+{{- /* Wraps a Markdown list so page CSS can lay it out as rows.
+       Param: class (extra class name). */ -}}
+{{- $body := partial "wp-render-markdown.html" (dict "page" .Page "text" (trim .Inner "\n")) -}}
+<div class="rules-list{{ with .Get "class" }} {{ . }}{{ end }}">{{ $body | safeHTML }}</div>

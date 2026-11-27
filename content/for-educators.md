@@ -3,44 +3,59 @@
   "date": "2026-10-20T03:50:38",
   "url": "/for-educators/",
   "wordpress_id": 69374,
+  "section_css": "getting-started",
   "featured_image": "/wp-content/uploads/2026/01/53570158896_a14c83aa75_o-scaled.jpg",
   "description": "Bringing RoboCupJunior to your school or club\nRobotics is one of the most effective ways to engage students in hands-on, meaningful learning. RoboCupJunior …"
 }
 
 {{< wp-intro >}}*Bringing RoboCupJunior to your school or club*{{< /wp-intro >}}
 
-{{< wp-padded-prose >}}
+{{< wp-prose >}}
 Robotics is one of the most effective ways to engage students in hands-on, meaningful learning. RoboCupJunior gives teachers, co-curricular coordinators and community mentors a ready-made structure for it: clear challenges, rules that stay consistent from year to year, and a pathway from a first classroom robot to international competition.
 
 ## Why Robotics?
+{{< /wp-prose >}}
 
+{{< gs-cards cols="4" >}}
 - **Learning becomes visible.** When students write code and see a robot move, abstract concepts become concrete, and mistakes show up as behaviour they can debug.
 - **It works for mixed abilities.** Beginners start with simple behaviours while advanced students tackle sensing, control and optimisation.
 - **It builds lasting skills.** Programming, electronics and engineering, alongside teamwork, communication, project management and resilience.
 - **It fits across the curriculum.** Robotics connects mathematics, science, technology and design, and supports literacy through documentation and presentations.
+{{< /gs-cards >}}
 
+{{< wp-prose >}}
 Read the full article: [Why Educators Should Get Their Students Into Robotics](/why-robotics/).
 
 ## Why RoboCupJunior?
+{{< /wp-prose >}}
 
+{{< gs-cards cols="4" >}}
 - **Any platform.** Use the kits your school already has, and let advanced students move on to microcontrollers and custom designs.
 - **Fully autonomous robots.** No remote control: students design robots that sense, decide and recover from errors on their own, just like real-world robotics.
 - **Students explain their work.** Judging interviews and technical documentation reward teams who understand how and why their robot works.
 - **It complements other programs.** Many students learn the basics in kit-based competitions, then take the next step into RoboCupJunior’s open challenges.
+{{< /gs-cards >}}
 
+{{< wp-prose >}}
 Read more: [RoboCupJunior: Open-Source Robotics for Any Platform](/robocupjunior-open-source-robotics-for-any-platform/).
 
 ## You Don’t Need to Be the Expert
+{{< /wp-prose >}}
 
+{{< gs-callout >}}
 A common worry is that teachers must be highly technical to run a robotics program. In practice, the best programs often work the other way: students take ownership of the technical work and mentor each other, while the teacher provides structure, time and support. In RoboCupJunior, the robot must be the students’ own work, so the mentor’s role is to guide, not to build.
+{{< /gs-callout >}}
 
+{{< wp-prose >}}
 ## Starting a Program
+{{< /wp-prose >}}
 
+{{< gs-steps >}}
 1.  **Start small.** One or two teams in an entry-level division is a great first season. Successful programs grow over time.
 2.  **Use what you have.** Classroom kits are fine. [Starting a Team](/robocup-beginners-guide/) covers platforms, costs, practice fields and tutorials.
 3.  **Contact your Regional Representative.** They can tell you about local workshops, events and other schools nearby.
 4.  **Connect with other mentors.** The [Forum](https://junior.forum.robocup.org/) and [Discord](https://robocup-junior.github.io/soccer-rules/discord/) are full of teachers and mentors happy to help.
-{{< /wp-padded-prose >}}
+{{< /gs-steps >}}
 
 {{< wp-buttons >}}
 {{< wp-button-item url="https://drive.google.com/file/d/1aIRAKW0iF_Pxi4grYXEGVand2XSj1oLw/view" text="Find Your Regional Representative" >}}

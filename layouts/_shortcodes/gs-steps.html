@@ -1,0 +1,4 @@
+{{- /* Numbered journey steps (Getting Started section). Inner: a Markdown
+  ordered list; a bold lead-in ending in . ? or ! becomes the step title.
+  Styles: assets/css/pages/<page>.css (.gs-steps). */ -}}
+<div class="gs-steps">{{ partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) | replaceRE `<li><strong>([^<]*[.?!])</strong>\s*` `<li><strong class="gs-lead">${1}</strong> ` | safeHTML }}</div>

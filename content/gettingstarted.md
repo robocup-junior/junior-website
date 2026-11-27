@@ -3,13 +3,14 @@
   "date": "2017-12-15T14:57:19",
   "url": "/gettingstarted/",
   "wordpress_id": 76,
+  "section_css": "getting-started",
   "featured_image": "/wp-content/uploads/2024/10/cropped-O031-scaled-1.jpeg",
   "description": "Your Journey in Robotics Begins Here\nWhat is RoboCupJunior? No joysticks. No remote control. RoboCupJunior is an international educational robotics program for …"
 }
 
 {{< wp-intro >}}*Your Journey in Robotics Begins Here*{{< /wp-intro >}}
 
-{{< wp-prose >}}
+{{< gs-split video="rggjxau5NsY" title="What is RoboCupJunior? - Talk by Margaux Edwards at European Championship 2024" >}}
 ## What is RoboCupJunior?
 
 **No joysticks. No remote control.** RoboCupJunior is an international educational robotics program for school students up to age 19. Teams design, build and program **fully autonomous robots** to take on soccer, rescue and performance challenges, using any kit or platform they like.
@@ -17,23 +18,25 @@
 RoboCupJunior is part of **RoboCup**, an international robotics and AI initiative that has met every year since 1997, each time in a different host city, and is run almost entirely by volunteers. Its grand challenge is that **by 2050, a team of fully autonomous humanoid robots will beat the human World Cup champions**. RoboCupJunior is the educational pathway to that goal: many of today’s students go on to university RoboCup teams, research and engineering careers.
 
 Students start at local events and can progress all the way to the **International Competition**, held each year alongside RoboCup. This talk from the RoboCupJunior European Open 2024 is a great introduction to the competition and its leagues.
+{{< /gs-split >}}
+
+{{< wp-prose >}}
+## Who Can Take Part?
 {{< /wp-prose >}}
 
-{{< wp-youtube id="rggjxau5NsY" title="What is RoboCupJunior? - Talk by Margaux Edwards at European Championship 2024" >}}
-
-{{< wp-padded-prose >}}
-## Who Can Take Part?
-
+{{< gs-cards cols="3" >}}
 - **Students up to age 19.** For the International Competition, students must be 14 to 19 on 1 July of the competition year. Many regional events welcome younger students too.
-- **Teams of 2 to 4 students** (up to 5 in OnStage). Schools, clubs and community groups can enter more than one team.
+- **Teams of 2 to 4 students.** Up to 5 in OnStage. Schools, clubs and community groups can enter more than one team.
 - **A mentor for every team.** A teacher, parent or volunteer supports the team and travels with them to events.
+{{< /gs-cards >}}
 
+{{< wp-prose >}}
 The [General Rules](/robocupjunior-general-rules/) have the full details.
 
 ## Choose Your League
 
 RoboCupJunior has **three leagues**, each with **entry-level divisions** for teams taking part for the first time. Open a league to see its divisions and where to start.
-{{< /wp-padded-prose >}}
+{{< /wp-prose >}}
 
 {{< league-cards >}}
 {{< league-card id="league-soccer" name="Soccer" line="Autonomous robots play two-on-two games." image="/wp-content/uploads/2026/10/robocupjunior-soccer-match.jpg" alt="Small round soccer robots with glowing bases play on a green walled field while students watch from the side." primary-url="/soccer/" primary-text="Soccer league page" secondary-url="/resources/#rf-soccer" secondary-text="Soccer resources" >}}
@@ -76,15 +79,17 @@ Creative design, robot interaction and sensing, choreography, storytelling and c
 {{< /league-card >}}
 {{< /league-cards >}}
 
-{{< wp-padded-prose >}}
+{{< wp-prose >}}
 ## Your First Steps
+{{< /wp-prose >}}
 
+{{< gs-steps >}}
 1.  **Find your region.** RoboCupJunior has **over 40 active regions**. Your Regional Representative can tell you about local events, divisions and dates.
 2.  **Choose a league.** Read the league pages above and pick the challenge that excites your team. Most teams start in an entry-level division.
 3.  **Form your team and choose a robot.** Any platform is welcome, from classroom kits to custom builds. [Starting a Team](/robocup-beginners-guide/) covers platforms, costs, practice fields and tutorials.
 4.  **Find a local event.** Ask your Regional Representative, or see [RoboCup Events](/events/) for upcoming competitions.
 5.  **Join the community.** Ask questions and share what you build on the Forum and Discord.
-{{< /wp-padded-prose >}}
+{{< /gs-steps >}}
 
 {{< wp-buttons >}}
 {{< wp-button-item url="https://drive.google.com/file/d/1aIRAKW0iF_Pxi4grYXEGVand2XSj1oLw/view" text="Find Your Regional Representative" >}}
@@ -94,11 +99,17 @@ Creative design, robot interaction and sensing, choreography, storytelling and c
 ## RoboCup Worldwide
 {{< /wp-prose >}}
 
-<iframe src="https://robocup-junior.github.io/rcj-world-map/" title="Interactive map of RoboCupJunior regions worldwide" style="width:100%;height:640px;border:1px solid #dcdfe3;display:block" loading="lazy"></iframe>
+<iframe class="gs-map" src="https://robocup-junior.github.io/rcj-world-map/" title="Interactive map of RoboCupJunior regions worldwide" loading="lazy"></iframe>
 
-{{< wp-padded-prose >}}
-Use the search and list beside the map to find your region, or see the [Regional Representatives and Websites list (Google Drive)](https://drive.google.com/file/d/1aIRAKW0iF_Pxi4grYXEGVand2XSj1oLw/view) has every region and its contact. Is your region not listed yet? We are always looking to welcome new regions. See [Bringing RoboCupJunior to a New Region](/qualification/#bringing-robocupjunior-to-a-new-region).
+{{< wp-prose >}}
+Use the search and list beside the map to find your region, or see the [Regional Representatives and Websites list (Google Drive)](https://drive.google.com/file/d/1aIRAKW0iF_Pxi4grYXEGVand2XSj1oLw/view), which has every region and its contact.
+{{< /wp-prose >}}
 
+{{< gs-callout title="Is your region not listed yet?" >}}
+We are always looking to welcome new regions. See [Bringing RoboCupJunior to a New Region](/qualification/#bringing-robocupjunior-to-a-new-region).
+{{< /gs-callout >}}
+
+{{< wp-prose >}}
 ## The RoboCupJunior Season
 
 The season is a pathway: teams start at **local competitions and workshops**, move on to their **regional qualifying tournament**, and the top teams go on to a **SuperRegional** event and the **International Competition**.
@@ -106,27 +117,23 @@ The season is a pathway: teams start at **local competitions and workshops**, mo
 [Qualification and Competitions](/qualification/) explains how teams qualify, and how to take part in Open and Invitational events outside your region.
 
 ## Where to Next?
+{{< /wp-prose >}}
 
-- **[Starting a Team](/robocup-beginners-guide/)** – forming a team, choosing a platform, costs, practice fields and tutorials for every league.
-- **[Qualification and Competitions](/qualification/)** – the season, qualification, and events outside your region.
-- **[For Educators](/for-educators/)** – why robotics works in schools, and how to start a program.
-- **[Your First Competition](/your-first-competition/)** – what to expect, from registration and packing to the closing ceremony.
-- **[The RoboCupJunior Spirit](/robocupjunior-spirit/)** – compete hard, help each other, and learn together.
-{{< /wp-padded-prose >}}
+{{< gs-next >}}
+- **[Starting a Team](/robocup-beginners-guide/)** Forming a team, choosing a platform, costs, practice fields and tutorials for every league.
+- **[Qualification and Competitions](/qualification/)** The season, qualification, and events outside your region.
+- **[For Educators](/for-educators/)** Why robotics works in schools, and how to start a program.
+- **[Your First Competition](/your-first-competition/)** What to expect, from registration and packing to the closing ceremony.
+- **[The RoboCupJunior Spirit](/robocupjunior-spirit/)** Compete hard, help each other, and learn together.
+{{< /gs-next >}}
 
-{{< wp-buttons >}}
-{{< wp-button-item url="/robocup-beginners-guide/" text="Starting a Team" >}}
-{{< wp-button-item url="/qualification/" text="Qualification and Competitions" >}}
-{{< wp-button-item url="/for-educators/" text="For Educators" >}}
-{{< /wp-buttons >}}
-
-{{< wp-padded-prose >}}
+{{< wp-prose >}}
 ## Join Our Community
 
 - **Join the RoboCupJunior mailing list** to stay up-to-date on news and announcements.
 - **Visit the RoboCupJunior Forum** to ask questions and find resources from the league committees.
 - **Join the RoboCupJunior Community Discord** to chat with teams, mentors and organizers.
-{{< /wp-padded-prose >}}
+{{< /wp-prose >}}
 
 {{< wp-buttons >}}
 {{< wp-button-item url="https://lists.robocup.org/mm/lists/robocup-junior.lists.robocup.org/" text="Mailing List" >}}

@@ -1,0 +1,4 @@
+{{- /* Text beside a YouTube video, stacked below 1024px (Getting Started
+  section). Inner: Markdown. "video" is the YouTube id, "title" the iframe
+  title. Uses the privacy-enhanced youtube-nocookie.com domain. */ -}}
+<div class="gs-split"><div class="gs-split-text">{{ partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) | safeHTML }}</div><figure class="gs-video"><iframe loading="lazy" title="{{ .Get "title" }}" width="1128" height="635" src="https://www.youtube-nocookie.com/embed/{{ .Get "video" }}?feature=oembed" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></figure></div>

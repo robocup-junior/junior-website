@@ -1,0 +1,3 @@
+{{- /* Highlighted note on a light panel (Getting Started section).
+  Inner: Markdown. Optional "title" is shown as a bold first line. */ -}}
+<div class="gs-callout">{{ with .Get "title" }}<p class="gs-callout-title">{{ . }}</p>{{ end }}{{ partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) | safeHTML }}</div>

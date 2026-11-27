@@ -1,0 +1,5 @@
+{{- /* A card with its own heading (Getting Started section), used inside
+  gs-grid. "title" is the heading text; "level" the heading level
+  (default 2, so the card is a section of the page). Inner: Markdown. */ -}}
+{{- $level := .Get "level" | default "2" -}}
+<section class="gs-card"><h{{ $level }} class="gs-card-title">{{ .Get "title" }}</h{{ $level }}>{{ partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) | safeHTML }}</section>

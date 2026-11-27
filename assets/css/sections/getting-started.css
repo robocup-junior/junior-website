@@ -1,0 +1,194 @@
+/*
+ * Getting Started section: gettingstarted, robocup-beginners-guide,
+ * qualification, your-first-competition, for-educators and
+ * robocupjunior-spirit. The six pages/<name>.css files for these pages are
+ * IDENTICAL: edit gettingstarted.css, then copy it over the other five
+ * (tests/test_getting_started.py checks they match).
+ * Components come from the gs-* shortcodes. Tokens: rcj-site.css.
+ * Rules: STYLEGUIDE.md. Slash-star comments only.
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. Page column: the homepage's 1200px column, 24px gutters (16px on phones)
+ * ------------------------------------------------------------------------- */
+#main { padding: 48px 24px 64px; }
+#main .article-inner { padding: 0; }
+.entry-content { max-width: 1200px; margin: 0 auto; font-size: 1.0625rem; line-height: 1.6; color: var(--rcj-navy); }
+.entry-content *, .entry-content *::before, .entry-content *::after { box-sizing: border-box; }
+
+/* ---------------------------------------------------------------------------
+ * 2. Type and spacing
+ * ------------------------------------------------------------------------- */
+.entry-content h2, .entry-content h3 { font-family: Poppins, "Source Sans Pro", sans-serif; color: var(--rcj-navy); letter-spacing: -0.01em; }
+.entry-content h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); line-height: 1.15; font-weight: 800; margin: 56px 0 20px; }
+.entry-content h3 { font-size: clamp(1.2rem, 1.8vw, 1.375rem); line-height: 1.3; font-weight: 700; margin: 32px 0 12px; }
+.entry-content h2 + h3 { margin-top: 0; }
+.entry-content p { margin: 0 0 1em; }
+
+/* Italic tagline under the banner */
+.entry-content > p.has-large-font-size:first-child { font-size: clamp(1.25rem, 2.2vw, 1.5rem); line-height: 1.4; margin: 0 0 24px; }
+
+/* Prose lists (replaces the old inline padding on each list) */
+.entry-content .wp-block-paragraph ~ .wp-block-list, .entry-content > .wp-block-list { padding-left: 1.5em; margin: 0 0 1em; }
+.entry-content > .wp-block-list > li, .entry-content .wp-block-paragraph ~ .wp-block-list > li { margin: 0 0 .4em; }
+
+/* Images: full column width, rounded, caption in muted text */
+.entry-content figure.wp-block-image { margin: 40px 0; }
+.entry-content figure.wp-block-image img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: cover; border-radius: 12px; }
+.entry-content figure.wp-block-image figcaption { margin-top: 8px; font-size: .9375rem; color: var(--rcj-muted); text-align: left; }
+
+/* ---------------------------------------------------------------------------
+ * 3. Button rows: dark uppercase block buttons, left-aligned with the text
+ * ------------------------------------------------------------------------- */
+.entry-content .wp-block-buttons { justify-content: flex-start; gap: 12px; margin: 24px 0 8px; }
+.entry-content .wp-block-button__link { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; border-radius: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; font-size: .9375rem; line-height: 1.2; text-decoration: none; }
+.entry-content .wp-block-button__link:focus-visible { outline: var(--rcj-focus); outline-offset: 3px; }
+
+/* ---------------------------------------------------------------------------
+ * 4. Shared card look (STYLEGUIDE 5: white, 1px border, 12px radius)
+ * ------------------------------------------------------------------------- */
+.entry-content .gs-steps > ol, .entry-content .gs-cards > ul, .entry-content .gs-next > ul { list-style: none; margin: 8px 0 24px; padding: 0; display: grid; gap: 24px; }
+.gs-steps > ol > li, .gs-cards > ul > li, .gs-next > ul > li, .gs-card { margin: 0; background: var(--rcj-white); border: 1px solid var(--rcj-border); border-radius: 12px; padding: 24px; }
+.gs-lead { display: block; font-family: Poppins, "Source Sans Pro", sans-serif; font-weight: 800; font-size: 1.125rem; line-height: 1.3; margin-bottom: 8px; }
+
+/* Numbered journey steps: navy number circle, pink top edge (as homepage) */
+.gs-steps > ol { counter-reset: gs-step; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.gs-steps > ol > li { counter-increment: gs-step; border-top: 4px solid var(--rcj-pink); }
+.gs-steps > ol > li::before { content: counter(gs-step); display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin-bottom: 16px; border-radius: 50%; background: var(--rcj-navy); color: var(--rcj-white); font-family: Poppins, "Source Sans Pro", sans-serif; font-weight: 800; }
+
+/* Key-point cards: light surface with a charcoal edge */
+.gs-cards > ul { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.gs-cards > ul > li { background: var(--rcj-surface); border-left: 4px solid var(--rcj-ink); }
+.gs-cards-2 > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gs-cards-3 > ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gs-cards-4 > ul { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Cards with their own heading (gs-grid / gs-card) */
+.gs-grid { display: grid; gap: 24px; margin: 32px 0; }
+.gs-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gs-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gs-card { border-top: 4px solid var(--rcj-pink); }
+.entry-content .gs-card-title { font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.25; margin: 0 0 12px; }
+.gs-card > :last-child, .gs-cards li > :last-child { margin-bottom: 0; }
+
+/* "Where to next?" link cards: the whole card is the link */
+.gs-next > ul { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.gs-next > ul > li { position: relative; display: flex; flex-direction: column; color: var(--rcj-muted); transition: box-shadow .2s ease, border-color .2s ease; }
+.gs-next > ul > li > strong:first-child { display: block; font-family: Poppins, "Source Sans Pro", sans-serif; font-weight: 800; font-size: 1.2rem; line-height: 1.25; margin-bottom: 4px; }
+.gs-next a { color: var(--rcj-navy); text-decoration: none; }
+.gs-next a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
+.gs-next > ul > li:hover { border-color: var(--rcj-lavender); box-shadow: 0 8px 24px rgba(0, 18, 66, .12); }
+.gs-next > ul > li:hover a { color: var(--rcj-pink); text-decoration: underline; }
+.gs-next > ul > li:focus-within { outline: var(--rcj-focus); outline-offset: 3px; }
+.gs-next a:focus-visible { outline: none; }
+
+/* ---------------------------------------------------------------------------
+ * 5. Lists with bold lead-ins, two columns on wide screens
+ * ------------------------------------------------------------------------- */
+.entry-content .gs-checklist > ul { list-style: none; margin: 8px 0 24px; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.gs-checklist > ul > li { position: relative; margin: 0; padding: 12px 0 12px 28px; border-bottom: 1px solid var(--rcj-border); }
+.gs-checklist > ul > li::before { content: ""; position: absolute; left: 4px; top: 22px; width: 10px; height: 10px; border-radius: 2px; background: var(--rcj-pink); }
+
+/* ---------------------------------------------------------------------------
+ * 6. Callout: a highlighted note on a light panel with a pink edge
+ * ------------------------------------------------------------------------- */
+.gs-callout { margin: 24px 0; padding: 20px 24px; background: var(--rcj-surface); border-left: 6px solid var(--rcj-pink); border-radius: 0 12px 12px 0; }
+.gs-callout-title { font-family: Poppins, "Source Sans Pro", sans-serif; font-weight: 800; font-size: 1.125rem; margin: 0 0 4px !important; }
+.gs-callout > :last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------------------
+ * 7. Text beside a video (homepage "pathway" pattern)
+ * ------------------------------------------------------------------------- */
+.gs-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; margin: 0 0 16px; }
+.gs-split-text > h2:first-child { margin-top: 0; }
+.gs-video { margin: 0; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--rcj-navy); }
+.gs-video iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+/* World map embed (was an inline style) */
+.gs-map { display: block; width: 100%; height: 640px; border: 1px solid var(--rcj-border); border-radius: 12px; }
+
+/* ---------------------------------------------------------------------------
+ * 8. FAQ: one <details> per question
+ * ------------------------------------------------------------------------- */
+.gs-faqs { margin: 8px 0 24px; border-top: 1px solid var(--rcj-border); }
+.gs-faq { border-bottom: 1px solid var(--rcj-border); }
+.gs-faq summary { position: relative; display: block; list-style: none; cursor: pointer; padding: 16px 48px 16px 0; }
+.gs-faq summary::-webkit-details-marker { display: none; }
+.gs-faq summary::after { content: "+"; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 700; line-height: 1; color: var(--rcj-pink); }
+.gs-faq[open] summary::after { content: "\2013"; }
+.gs-faq summary:hover .gs-faq-q { color: var(--rcj-pink); }
+.gs-faq summary:focus-visible { outline: var(--rcj-focus); outline-offset: 2px; }
+.entry-content .gs-faq-q { display: inline; margin: 0; font-size: 1.125rem; line-height: 1.4; }
+.gs-faq-a { padding: 0 0 16px; }
+.gs-faq-a > :last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------------------
+ * 9. League accordion on /gettingstarted/ (league-cards / league-card)
+ * ------------------------------------------------------------------------- */
+.rcjlx { display: flex; flex-direction: column; gap: 12px; margin: 8px 0 24px; }
+.rcjlx-card { background: var(--rcj-white); border: 1px solid var(--rcj-border); border-left: 6px solid var(--rcj-ink); border-radius: 12px; overflow: hidden; }
+.rcjlx-card[open] { border-left-color: var(--rcj-pink); }
+.rcjlx-card summary { position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; list-style: none; cursor: pointer; padding: 18px 56px 18px 20px; }
+.rcjlx-card summary::-webkit-details-marker { display: none; }
+.rcjlx-card summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 700; line-height: 1; color: var(--rcj-pink); }
+.rcjlx-card[open] summary::after { content: "\2013"; }
+.rcjlx-card summary:hover .rcjlx-name { color: var(--rcj-pink); }
+.rcjlx-card summary:focus-visible { outline: var(--rcj-focus); outline-offset: -3px; border-radius: 10px; }
+.rcjlx-name { font-family: Poppins, "Source Sans Pro", sans-serif; font-size: 1.35rem; font-weight: 800; }
+.rcjlx-line { color: var(--rcj-muted); }
+.rcjlx-body { padding: 0 20px 20px; border-top: 1px solid var(--rcj-surface-2); }
+.rcjlx-body ul { padding-left: 1.5em; margin: 4px 0 12px; }
+.rcjlx-photo { display: block; width: 100%; height: auto; max-height: 340px; object-fit: cover; margin: 20px 0 8px; border-radius: 8px; }
+.rcjlx-sub { font-weight: 700; margin: 16px 0 4px !important; }
+.rcjlx-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 0 !important; }
+.rcjlx a.rcjlx-btn { display: inline-flex; align-items: center; min-height: 48px; padding: 12px 22px; border: 2px solid var(--rcj-ink); border-radius: 4px; background: var(--rcj-ink); color: var(--rcj-white) !important; font-weight: 700; text-transform: uppercase; font-size: .9375rem; line-height: 1.2; text-decoration: none; }
+.rcjlx a.rcjlx-btn-alt { background: var(--rcj-white); color: var(--rcj-ink) !important; }
+.rcjlx a.rcjlx-btn:hover, .rcjlx a.rcjlx-btn:focus-visible { background: var(--rcj-navy); border-color: var(--rcj-navy); color: var(--rcj-white) !important; }
+.rcjlx a.rcjlx-btn:focus-visible { outline: var(--rcj-focus); outline-offset: 3px; }
+
+/* ---------------------------------------------------------------------------
+ * 10. Educator resources on /for-educators/ (educator-resources)
+ * ------------------------------------------------------------------------- */
+.rcjed { margin: 8px 0 32px; }
+.rcjed h3 { margin: 32px 0 8px; }
+.rcjed-list { list-style: none !important; margin: 0 !important; padding: 0 !important; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.rcjed-list li { margin: 0 !important; padding: 12px 0; border-bottom: 1px solid var(--rcj-border); line-height: 1.45; }
+.rcjed-src { display: block; margin-top: 2px; font-size: .9375rem; color: var(--rcj-muted); }
+.rcjed-more { margin: 12px 0 0; font-weight: 700; }
+.rcjed a:focus-visible { outline: var(--rcj-focus); outline-offset: 2px; }
+
+/* ---------------------------------------------------------------------------
+ * 11. Latest forum posts on /gettingstarted/: a compact grid, not one long list
+ * ------------------------------------------------------------------------- */
+.entry-content .wpra-item-list { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; }
+.entry-content .wpra-item-list > li { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--rcj-border); line-height: 1.4; }
+.entry-content .wpra-item-list .wprss-feed-meta { margin-top: 4px; font-size: .9375rem; color: var(--rcj-muted); }
+
+/* ---------------------------------------------------------------------------
+ * 12. Responsive (STYLEGUIDE breakpoints)
+ * ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .gs-cards-4 > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gs-split { grid-template-columns: 1fr; gap: 32px; }
+  .entry-content .wpra-item-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .gs-cards-3 > ul, .gs-grid-3 { grid-template-columns: 1fr; }
+  .gs-steps > ol, .gs-next > ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .entry-content .gs-checklist > ul, .rcjed-list { grid-template-columns: 1fr; }
+  .entry-content h2 { margin-top: 48px; }
+}
+@media (max-width: 600px) {
+  #main { padding: 32px 16px 48px; }
+  .gs-cards-2 > ul, .gs-cards-4 > ul, .gs-grid-2, .gs-steps > ol, .gs-next > ul { grid-template-columns: 1fr; }
+  .gs-steps > ol { gap: 16px; }
+  .entry-content .gs-steps > ol > li { position: relative; padding-left: 72px; }
+  .gs-steps > ol > li::before { position: absolute; left: 20px; top: 20px; margin: 0; }
+  .gs-steps > ol > li, .gs-cards > ul > li, .gs-next > ul > li, .gs-card { padding: 20px; }
+  .gs-map { height: 520px; }
+  .entry-content .wpra-item-list { grid-template-columns: 1fr; }
+  .entry-content figure.wp-block-image { margin: 32px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gs-next > ul > li { transition: none; }
+}

@@ -1,0 +1,4 @@
+{{- /* Key-point cards (Getting Started section). Inner: a Markdown bullet
+  list; a bold lead-in ending in . ? or ! becomes the card title. Optional "cols"
+  ("2", "3" or "4") sets the desktop column count (default: auto-fit). */ -}}
+<div class="gs-cards{{ with .Get "cols" }} gs-cards-{{ . }}{{ end }}">{{ partial "wp-render-markdown.html" (dict "page" .Page "text" .Inner) | replaceRE `<li><strong>([^<]*[.?!])</strong>\s*` `<li><strong class="gs-lead">${1}</strong> ` | safeHTML }}</div>

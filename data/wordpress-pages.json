@@ -59,36 +59,36 @@
     "path": "/werob-2012/",
     "banner_image": null,
     "banner_title": "WEROB 2012",
-    "layout": "two-columns-right",
-    "sidebar": true
+    "layout": "one-column",
+    "sidebar": false
   },
   "166": {
     "path": "/werob-2013/",
     "banner_image": null,
     "banner_title": "WEROB 2013",
-    "layout": "two-columns-right",
-    "sidebar": true
+    "layout": "one-column",
+    "sidebar": false
   },
   "171": {
     "path": "/werob-2014/",
     "banner_image": null,
     "banner_title": "WEROB 2014",
-    "layout": "two-columns-right",
-    "sidebar": true
+    "layout": "one-column",
+    "sidebar": false
   },
   "178": {
     "path": "/werob-2015/",
     "banner_image": null,
     "banner_title": "WEROB 2015",
-    "layout": "two-columns-right",
-    "sidebar": true
+    "layout": "one-column",
+    "sidebar": false
   },
   "182": {
     "path": "/werob-2016/",
     "banner_image": null,
     "banner_title": "WEROB 2016",
-    "layout": "two-columns-right",
-    "sidebar": true
+    "layout": "one-column",
+    "sidebar": false
   },
   "188": {
     "path": "/history/",
@@ -120,7 +120,7 @@
   "820": {
     "path": "/workshop-on-educational-robotics-werob-2019/",
     "banner_image": null,
-    "banner_title": "Workshop On Educational Robotics-WEROB 2019",
+    "banner_title": "WEROB 2019",
     "layout": "one-column",
     "sidebar": false
   },
@@ -141,7 +141,7 @@
   "1800": {
     "path": "/workshop-on-educational-robotics-werob-2023/",
     "banner_image": null,
-    "banner_title": "Workshop On Educational Robotics – WEROB 2023",
+    "banner_title": "WEROB 2023",
     "layout": "one-column",
     "sidebar": false
   },

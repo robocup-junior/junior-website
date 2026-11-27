@@ -1,0 +1,268 @@
+/*
+ * Workshop on Educational Robotics (WEROB) pages: the main page and the
+ * archive year pages. Loaded by the werob-intro shortcode, which each of
+ * these pages uses once at the top. Tokens come from rcj-site.css.
+ * Slash-star comments only.
+ */
+
+/* Page rhythm --------------------------------------------------------- */
+.main .entry-content > * + h2 { margin-top: 48px; }
+.main .entry-content h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.5rem, 3.2vw, 1.875rem);
+  line-height: 1.25;
+  color: var(--rcj-navy);
+}
+.main .entry-content h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--rcj-navy);
+}
+
+/* Intro: italic tagline, then a short lead ---------------------------- */
+.werob-intro { max-width: 62ch; margin: 0 0 32px; }
+.werob-intro .werob-tagline {
+  margin: 0 0 12px;
+  font-style: italic;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  color: var(--rcj-muted);
+}
+.werob-intro p { margin: 0 0 12px; line-height: 1.6; }
+.werob-intro p:last-child { margin-bottom: 0; }
+
+/* Facts row: Where / Event / Material ------------------------------- */
+.werob-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.werob-facts div { margin: 0; }
+.werob-facts dt {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--rcj-muted);
+}
+.werob-facts dd { margin: 0; font-weight: 600; color: var(--rcj-navy); }
+
+/* Dark uppercase button row (links keep their legacy-links titles) --- */
+.werob-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 32px;
+  padding: 0;
+}
+.main .werob-actions { margin-bottom: 32px; }
+.main .entry-content .werob-actions a { text-decoration: none; }
+.werob-actions a,
+.werob-actions a:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 2px solid var(--rcj-ink);
+  border-radius: 4px;
+  background: var(--rcj-ink);
+  color: var(--rcj-white) !important;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+.werob-actions a:hover,
+.werob-actions a:focus-visible,
+.werob-actions a:active {
+  background: var(--rcj-navy);
+  border-color: var(--rcj-navy);
+  color: var(--rcj-white) !important;
+}
+.werob-actions a:focus-visible { outline: var(--rcj-focus); outline-offset: 3px; }
+.werob-actions br { display: none; }
+
+/* Talks and papers ---------------------------------------------------- */
+.main ul.werob-talks,
+.werob-talks {
+  max-width: 960px;
+  margin: 0 0 32px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rcj-border);
+}
+.werob-talk {
+  margin: 0;
+  padding: 16px 0 16px 20px;
+  border-bottom: 1px solid var(--rcj-border);
+  position: relative;
+}
+.werob-talk::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 6px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--rcj-pink);
+}
+.main .werob-talk p { margin: 0; }
+.werob-talk__title { font-weight: 700; line-height: 1.4; color: var(--rcj-navy); }
+.werob-talk__by { max-width: 75ch; margin-top: 4px !important; line-height: 1.5; color: var(--rcj-muted); }
+.werob-talk__files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-top: 8px !important;
+  font-weight: 600;
+}
+.werob-talk__files br { display: none; }
+.werob-talk__files a { display: inline-block; padding: 4px 0; }
+
+/* Schedule table (werob-schedule head="true") ------------------------- */
+.werob-schedule-wrap {
+  max-width: 1100px;
+  margin: 0 0 32px;
+  overflow-x: auto;
+  border: 1px solid var(--rcj-border);
+  border-radius: 12px;
+  background: var(--rcj-white);
+}
+.werob-schedule-wrap:focus-visible { outline: var(--rcj-focus); outline-offset: 3px; }
+.main table.werob-schedule,
+table.werob-schedule {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--rcj-navy);
+  background: var(--rcj-white);
+}
+.werob-schedule caption {
+  padding: 16px 20px 0;
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--rcj-navy);
+  caption-side: top;
+}
+.werob-schedule thead th {
+  padding: 12px 16px;
+  border: 0;
+  border-bottom: 2px solid var(--rcj-navy);
+  background: var(--rcj-white);
+  text-align: left;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--rcj-muted);
+}
+.werob-schedule tbody th,
+.werob-schedule tbody td {
+  padding: 12px 16px;
+  border: 0;
+  border-top: 1px solid var(--rcj-border);
+  vertical-align: top;
+  text-align: left;
+  background: transparent;
+}
+.werob-schedule tbody tr:first-child > * { border-top: 0; }
+.werob-schedule tbody th {
+  width: 1%;
+  white-space: nowrap;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--rcj-navy);
+}
+.werob-schedule tbody tr:nth-child(even) > * { background: var(--rcj-surface-2); }
+.werob-schedule td.werob-break { font-style: italic; color: var(--rcj-muted); }
+.werob-schedule .werob-sub { display: block; margin-top: 6px; }
+.werob-schedule .werob-time { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--rcj-muted); }
+
+/* Phones: each row becomes a block, time on top, then labelled cells. */
+@media (max-width: 600px) {
+  .werob-schedule-wrap { overflow: visible; }
+  .werob-schedule thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .werob-schedule caption { display: block; padding: 16px 16px 8px; }
+  .werob-schedule,
+  .werob-schedule tbody,
+  .werob-schedule tr,
+  .werob-schedule tbody th,
+  .werob-schedule tbody td { display: block; width: auto; }
+  .werob-schedule tbody tr { padding: 12px 16px; border-top: 1px solid var(--rcj-border); }
+  .werob-schedule tbody tr:first-child { border-top: 0; }
+  .werob-schedule tbody th,
+  .werob-schedule tbody td { padding: 0; border: 0; background: transparent !important; }
+  .werob-schedule tbody tr:nth-child(even) { background: var(--rcj-surface-2); }
+  .werob-schedule tbody th { margin-bottom: 4px; white-space: normal; }
+  .werob-schedule tbody td + td { margin-top: 4px; }
+  .werob-schedule tbody td:empty { display: none; }
+  .werob-schedule--labels tbody td[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: var(--rcj-muted);
+  }
+}
+
+/* Past workshops index (werob-index) ---------------------------------- */
+.main ol.werob-index,
+.werob-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 0 0 32px;
+  padding: 0;
+  list-style: none;
+}
+.werob-index__item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px 24px;
+  border: 1px solid var(--rcj-border);
+  border-radius: 12px;
+  background: var(--rcj-white);
+}
+.main .werob-index__item p { margin: 0; }
+.werob-index__year {
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1.1;
+  color: var(--rcj-navy);
+}
+.werob-index__place { margin-top: 4px !important; font-weight: 600; color: var(--rcj-navy); }
+.werob-index__links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px !important;
+  padding-top: 12px;
+  border-top: 1px solid var(--rcj-border);
+}
+.werob-index__links a { display: inline-block; padding: 4px 0; font-weight: 600; }
+.werob-index__none { color: var(--rcj-muted); font-style: italic; }
+.werob-index__item.has-page { border-top: 4px solid var(--rcj-pink); }
+
+@media (max-width: 600px) {
+  .werob-actions a { width: 100%; }
+  .main ol.werob-index, .werob-index { gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .werob-index__item { padding: 14px 16px; }
+  .werob-index__year { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .werob-actions a { transition: none; }
+}

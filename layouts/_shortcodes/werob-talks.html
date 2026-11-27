@@ -1,0 +1,20 @@
+{{- /* Talks and papers. One talk per line: Title | Authors and affiliation | links
+     Links are Markdown links separated by spaces. Leave the second or third
+     cell out (or write {empty}) when there is nothing to show. */ -}}
+{{- $page := .Page -}}
+<ul class="werob-talks">
+{{- range split (strings.TrimSpace .Inner) "\n" -}}
+  {{- with strings.TrimSpace . -}}
+  {{- $cells := split . " | " -}}
+  <li class="werob-talk">
+    {{- range $i, $cell := $cells -}}
+      {{- $cell = strings.TrimSpace $cell -}}
+      {{- if and $cell (ne $cell "{empty}") -}}
+        {{- $class := index (slice "werob-talk__title" "werob-talk__by" "werob-talk__files") (cond (lt $i 3) $i 2) -}}
+        <p class="{{ $class }}">{{ $page.RenderString $cell }}</p>
+      {{- end -}}
+    {{- end -}}
+  </li>
+  {{- end -}}
+{{- end -}}
+</ul>

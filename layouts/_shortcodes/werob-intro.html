@@ -1,0 +1,16 @@
+{{- /* Intro for WEROB pages (use once, at the top: it also loads the shared
+     WEROB styles): italic tagline, a short Markdown lead, and an
+     optional facts row. Usage:
+     {{< werob-intro tagline="..." where="City, Region" event="RoboCup 2019" >}}Lead text{{< /werob-intro >}} */ -}}
+{{- partial "werob-css.html" .Page -}}
+<div class="werob-intro">
+{{- with .Get "tagline" }}<p class="werob-tagline">{{ $.Page.RenderString . }}</p>{{ end -}}
+{{- with strings.TrimSpace .Inner }}{{ $.Page.RenderString (dict "display" "block") . }}{{ end -}}
+{{- if or (.Get "where") (.Get "event") (.Get "material") -}}
+<dl class="werob-facts">
+{{- with .Get "where" }}<div><dt>Where</dt><dd>{{ . }}</dd></div>{{ end -}}
+{{- with .Get "event" }}<div><dt>Held at</dt><dd>{{ . }}</dd></div>{{ end -}}
+{{- with .Get "material" }}<div><dt>Material</dt><dd>{{ . }}</dd></div>{{ end -}}
+</dl>
+{{- end -}}
+</div>

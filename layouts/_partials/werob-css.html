@@ -1,0 +1,5 @@
+{{- /* Shared WEROB styles (assets/css/werob.css). Emitted by werob-intro,
+     which every WEROB page uses once at the top. */ -}}
+{{- with resources.Get "css/werob.css" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{- end -}}
